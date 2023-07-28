@@ -41,12 +41,14 @@
                 /* 크기 */
                 width: 800px;
                 /* 외곽선 */
-                border: 4px double darkkhaki;
+                border: 5px double rgb(211, 213, 218);
                 /* 패딩 */
                 padding: 20px;
                 /* 마진 */
                 margin: 0 auto;
                 /* 양쪽 마진을 auto로 쓰면 등분할 되어 블록박스가 중앙에 위치함 */
+                box-sizing: border-box;
+                border-radius: 30px;
 
                 /* 
                   [ 마진/패딩 공통 개수별 정의 ]
@@ -59,31 +61,42 @@
                 text-align: center;
             }
 
-            
-
             /* 메인 이미지 */
             .cimg {
-                width: 100%;
+                width: 60%;
             }
 
             /* 1.상단영역 */
             #top {
-                background-color: lightcyan;
+                background-color: #B2FFAC;
+            }
+
+            #title{
+              color: #10620A;
+              size: auto;;
             }
 
             /* 2.메인영역 */
             #cont{
               margin: 20px auto; 
+              background-color: #B2FFAC;
+            }
+
+            #info{
+              background-color: #B2FFAC;
+              font-style: italic;
             }
 
         </style>
     </head>
 
     <body>
+
+
         <!-- 1. 상단 영역 : 제목, 메뉴 -->
         <header id="top" class="bx">
             <!-- 1-1. 제목 -->
-            <h1>네이버 요약 뉴스</h1>
+            <h1 id="title">네이버 요약 뉴스</h1>
             <!-- 1-2. GNB메뉴 -->
             <!-- GNB(Global Navigation Bar) -->
             <nav id="gnb">
@@ -100,11 +113,21 @@
                 <a href="sub5.html">TV/연예</a>
             </nav>
         </header>
+
+
+
+
+
         <!-- 2. 메인 영역 : 켄텐츠 -->
         <main id="cont" class="bx">
             <img class="cimg" src="./images/newsimg.png" alt="메인이미지" />
         </main>
         <!-- 3. 하단 영역 : 회사 정보 -->
+
+
+
+
+
         <footer id="info" class="bx">
             <address>
                 서울시 강남구 테헤란로119 대호B <br />
