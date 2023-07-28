@@ -1,27 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- viewport : 모바일에서 실제 픽셀로 변환시켜주는 역할 -->
-    <title>네이버 요약 뉴스</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- viewport : 모바일에서 실제 픽셀로 변환시켜주는 역할 -->
+        <title>네이버 요약 뉴스</title>
 
-    <!-- CSS 인라인 코딩 영역 -->
+        <!-- CSS 인라인 코딩 영역 -->
 
-    <style>
-      /* CSS영역 내 주석문 */
-    </style>
-  </head>
+        <style>
+            /* CSS영역 내 주석문 */
 
-  <body>
-    <!-- 1. 상단 영역 : 제목, 메뉴 -->
-    <header id="top" class="bx"></header>
-    <!-- 2. 메인 영역 : 켄텐츠 -->
-    <main id="cont" class="bx"></main>
-    <!-- 3. 하단 영역 : 회사 정보 -->
-    <footer id="info" class="bx"></footer>
+            /* [ 모든 요소 공통 디자인요소 : 박스모델 ]
+                1. 크기 : width 가로, height 세로
+                2. 경계선 : border
+                3. 내부여백 : padding
+                4. 외부여백 : margin
+                 (여백공통방향 : top, bottom, right, left) 
 
-    <!-- 
+                 _____________________________________________
+                
+                 [ CSS 속성 셋팅 형식 ]
+                 선택자 {
+                    속성:값;
+                 }
+
+                 [ CSS 선택자 방식 ]
+                 1. 타입선택자 : 태그명 (div,p,a 등)
+                 2. 아이디선택자 : #아이디명
+                 3. 클래스선택자 : .클래스명
+                 4. 자식선택자 : 띄어쓰기 (div a)
+                 5. 직계자식선택자 : 오른쪽꺽쇠 (div > a)
+                 6. 종속선택자 : 요소명#아이디명 / 요소명.클래스명
+                  (div.mymy -> div인데 클래스가 mymy)
+
+                 */
+
+            /* 레이아웃 박스 공통 디자인 */
+            .bx {
+                /* 크기 */
+                width: 800px;
+                /* 외곽선 */
+                border: 4px double darkkhaki;
+                /* 패딩 */
+                padding: 20px;
+                /* 마진 */
+                margin: 0 auto;
+                /* 양쪽 마진을 auto로 쓰면 등분할 되어 블록박스가 중앙에 위치함 */
+
+                /* 
+                  [ 마진/패딩 공통 개수별 정의 ]
+                  margin : 4방향; (1개)
+                  margin : 위아래 양쪽; (2개)
+                  margin : 위 양쪽 아래; (3개)
+                  margin : 위 오른 아래 왼; (4개 - 시계방향)
+                */
+                /* 텍스트 중앙 정렬 tac */
+                text-align: center;
+            }
+
+            
+
+            /* 메인 이미지 */
+            .cimg {
+                width: 100%;
+            }
+
+            /* 1.상단영역 */
+            #top {
+                background-color: lightcyan;
+            }
+
+            /* 2.메인영역 */
+            #cont{
+              margin: 20px auto; 
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- 1. 상단 영역 : 제목, 메뉴 -->
+        <header id="top" class="bx">
+            <!-- 1-1. 제목 -->
+            <h1>네이버 요약 뉴스</h1>
+            <!-- 1-2. GNB메뉴 -->
+            <!-- GNB(Global Navigation Bar) -->
+            <nav id="gnb">
+                <a href="index.html">
+                    <img src="./images/logo.png" alt="네이버로고" style="width: 15px" />
+                    <!-- style 속성으로 CSS를 셋팅하는 방법은 인라인 방식이라고 함 -->
+                    <!-- <img src="../01.Info_PJ/images/logo.png" alt="네이버로고"> -->
+                    <!-- <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="네이버로고"> -->
+                </a>
+                <a href="sub1.html">정치</a>
+                <a href="sub2.html">경제</a>
+                <a href="sub3.html">사회</a>
+                <a href="sub4.html">IT/과학</a>
+                <a href="sub5.html">TV/연예</a>
+            </nav>
+        </header>
+        <!-- 2. 메인 영역 : 켄텐츠 -->
+        <main id="cont" class="bx">
+            <img class="cimg" src="./images/newsimg.png" alt="메인이미지" />
+        </main>
+        <!-- 3. 하단 영역 : 회사 정보 -->
+        <footer id="info" class="bx">
+            <address>
+                서울시 강남구 테헤란로119 대호B <br />
+                대표: Yoonmin Kim <br />
+                전화: 010-4796-6510
+            </address>
+        </footer>
+
+        <!-- 
         [ 레이아웃을 위한 블록요소 ]
         div : 영역을 나누고 묶어주는 요소
 
@@ -42,6 +134,19 @@
             요소(element)는 공통적인 성질을 이를때 사용
             태그(tag)는 구체적인 요소를 사용할 때 지칭하는 말
 
+          [ 웹에서의 경로 ]
+            1. 상대경로 : 현재 파일 위치에서 파악되는 경로
+              1) ./ - 현재 위치 (또는 쓰지 않고 바로 ctl + spacebar)
+              2) ../ - 상위 폴더로 이동
+            
+              2. 절대경로 : http부터 쓰는 웹 경로
+            
+            3. 절대상대경로 : 웹 사이트 루트부터의 경로
+             -> 슬래쉬(/)부터 씀
+
+             -> 주의 : 절대상대경로는 서버 루트 폴더가 같지 않으면 경로가 망가진다
+                       또는 로컬에서 직접 웹 페이지를 열어도 망가진다
+
      -->
-  </body>
+    </body>
 </html>
