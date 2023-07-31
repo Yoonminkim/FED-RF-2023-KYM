@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* 메인 페이지용 css - main.css */
+
+/* 공통외부 css 합치기 */
+@import url(./common.css);
