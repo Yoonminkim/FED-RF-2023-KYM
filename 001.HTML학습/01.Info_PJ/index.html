@@ -36,19 +36,34 @@
 
                  */
 
+            /* 웹폰트 CDN(Content Delevery Network) */
+            @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap");
+
+            /* 
+                웹폰트 font-family 이름
+                font-family: 'Gowun Batang', serif;
+                font-family: 'Nanum Gothic', sans-serif;
+            */
+
+            /* 
+                 @import url(주소)
+                  - 외부CSS를 불러올 때 사용하는 형식
+                  - 외부CSS 파일을 하나로 합칠 때 많이 사용함
+            */
+
             /* 레이아웃 박스 공통 디자인 */
             .bx {
                 /* 크기 */
-                width: 800px;
+                width: 50%;
                 /* 외곽선 */
-                border: 5px double rgb(211, 213, 218);
+                border: 5px double #ffffff;
                 /* 패딩 */
-                padding: 20px;
+                padding: 10px;
                 /* 마진 */
                 margin: 0 auto;
                 /* 양쪽 마진을 auto로 쓰면 등분할 되어 블록박스가 중앙에 위치함 */
                 box-sizing: border-box;
-                border-radius: 30px;
+                border-radius: 25px;
 
                 /* 
                   [ 마진/패딩 공통 개수별 정의 ]
@@ -63,36 +78,105 @@
 
             /* 메인 이미지 */
             .cimg {
-                width: 60%;
+                width: 100%;
             }
 
             /* 1.상단영역 */
             #top {
-                background-color: #B2FFAC;
+                background-color: #9ccc65;
             }
 
-            #title{
-              color: #10620A;
-              size: auto;;
+            #title {
+                color: #000000;
+                size: auto;
+            }
+
+            /* 타이틀 */
+
+            #top h1 {
+                color: #ffffff;
+                /* text-shadow: 1px 1px 10px #29f09d62;
+                text-shadow: 2px 2px 10px #10b8727c; */
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,'돋움';
+                font-size: 40px;
+                /* 
+                    font-family 글씨체
+                    값 - 콤마로 구분하여 우선순위 적용함
+                    (상위체가 없으면 하위체를 적용, 이도없으면 브라우저 기본체로 표시)
+                */
+
+            }
+
+            /* 메뉴 링크 */
+            #gnb a {
+                color: #423838;
+                text-decoration: none; /*  */
+                font-size: 20px;
+                text-shadow: 0px 0px 1px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            /* 가상 클래스 : hover 마우스 오버시 */
+            /* a + a는 앞에 a요소가 있는 형제 a요소를 선택
+                결과적으로 첫번째 a요소가 선택되지 않는다. */
+            #gnb a+a:hover {
+                color: blue;
+                text-decoration: underline;
+                text-decoration-style: unset;
+                /* 
+                                text-shadow : 글자 그림자
+                                값 - x축 y축 블러(경계흐림) 색
+                            */
+            }
+
+            /* 
+                vertical-align : 인라인 요소간 세로정렬
+                값 - top/bottom/middle/baseline/수치
+            */
+
+            /* 고로 이미지 */
+
+            #gnb img {
+                vertical-align: -6px;
             }
 
             /* 2.메인영역 */
-            #cont{
-              margin: 20px auto; 
-              background-color: #B2FFAC;
+            #cont {
+                margin: 20px auto;
+                background-color: #9ccc65;
             }
 
-            #info{
-              background-color: #B2FFAC;
-              font-style: italic;
+            #info {
+                background-color: #9ccc65;
+                color: #423838;
             }
 
+            #info address{
+                /*  */
+                font-style: unset;
+                text-shadow: 0px 0px 1px;
+                /* font-style: normal; */
+            }
+
+            /* 대표자 span */
+            .CEO_name{
+                text-decoration: underline;
+                color: #423838;
+            }
+            
+            /* 종속선택자로 같은 이름의 클래스인데
+            다른 디자인으로 변경하여 셋팅하기 */
+            
+            .CEO_number{
+                text-decoration: underline;
+                color: #423838;
+            }
+            
+            
         </style>
     </head>
 
     <body>
-
-
         <!-- 1. 상단 영역 : 제목, 메뉴 -->
         <header id="top" class="bx">
             <!-- 1-1. 제목 -->
@@ -101,42 +185,48 @@
             <!-- GNB(Global Navigation Bar) -->
             <nav id="gnb">
                 <a href="index.html">
-                    <img src="./images/logo.png" alt="네이버로고" style="width: 15px" />
+                    <img src="./images/logo.png" alt="네이버로고" style="width: 25px" />
                     <!-- style 속성으로 CSS를 셋팅하는 방법은 인라인 방식이라고 함 -->
                     <!-- <img src="../01.Info_PJ/images/logo.png" alt="네이버로고"> -->
                     <!-- <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="네이버로고"> -->
                 </a>
-                <a href="sub1.html">정치</a>
-                <a href="sub2.html">경제</a>
-                <a href="sub3.html">사회</a>
-                <a href="sub4.html">IT/과학</a>
+                <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> | <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
                 <a href="sub5.html">TV/연예</a>
             </nav>
         </header>
 
-
-
-
-
         <!-- 2. 메인 영역 : 켄텐츠 -->
         <main id="cont" class="bx">
-            <img class="cimg" src="./images/newsimg.png" alt="메인이미지" />
+            <img class="cimg" src="./images/news image_7.png" alt="메인이미지" />
         </main>
         <!-- 3. 하단 영역 : 회사 정보 -->
 
-
-
-
-
         <footer id="info" class="bx">
-            <address>
+            <address id="address">
                 서울시 강남구 테헤란로119 대호B <br />
-                대표: Yoonmin Kim <br />
-                전화: 010-4796-6510
+                대표: <a href="index.html" class="CEO_name">Yoonmin Kim</a> <br />
+                전화: <a href="index.html" class="CEO_number">010-4796-6510</a>
             </address>
         </footer>
 
-        <!-- 
+        <!--
+            
+             [ 웹 표준이란? ]
+                - 모든 부라우저에서 하나의 소스로
+                  동일한 디스플레이 및 기능이 작동하도록 정한 웹 코딩의 표준안이다!
+                
+             [ 웹 접근성이란? ]
+                - 평등의 원칙! 즉, 장애인 차별금지법에 따라
+                  이미지(alt속성), 동영상(자막) 등에 설명을 추가하여 정보 제공에 차별이 없도록 하는 것!
+
+             [ img 요소 : 이미지 연결요소 ]
+                - 필수속성
+                1) src : 이미지 경로
+                (source)
+                2) alt : 이미지 설명(웹접근성)
+                (alternative text - 대체 텍스트)
+
+                
         [ 레이아웃을 위한 블록요소 ]
         div : 영역을 나누고 묶어주는 요소
 
