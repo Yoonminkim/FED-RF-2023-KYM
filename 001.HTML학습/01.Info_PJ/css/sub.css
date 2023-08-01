@@ -5,7 +5,7 @@
 html,
 body,
 h1,
-h2 {
+h2, figure {
     margin: 0;
     padding: 0;
 }
@@ -28,7 +28,7 @@ h2.stit {
 .prlogo {
     margin-left: 40px;
     margin-right: 40px;
-    width: 15%;
+    height: 15%;
 }
 
 /* 뉴스 제목 */
@@ -39,9 +39,9 @@ h2.stit {
 
 /* 뉴스 이미지 */
 .nimg {
-    width: 100%;
-    padding-left: auto;
-    padding-right: auto;
+    width: 90%;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 /* 뉴스 이미지 설명 */
@@ -49,22 +49,37 @@ h2.stit {
     font-size: 14px;
     font-style: italic;
     color: #4e4e4e;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
-/* 동영상 크기 설정 */
 .mvbx {
     width: 90%;
     height: 450px;
     padding-right: 40px;
     padding-left: 40px;
+    padding-bottom: 15px;
+}
+/* div와 같은 block 요소는 width 설정을 하지 않으면 width:auto로 자동설정됨. 이는 싸고 있는 박스 컨텐트 영역을 자동으로 채워준다! */
+
+/* 동영상 크기 설정 */
+.mvbx iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
 }
 
 /* 뉴스 내용 단락 */
 .acont {
+    color: #303038;
+    font-size: 17px;
+    text-align: justify;
+    line-height: 1.56;
     padding-top: 2px;
     padding-bottom: 15px;
     padding-right: 40px;
     padding-left: 40px;
+    word-spacing: 1px;
 }
 
 /* 기자 정보 */
@@ -75,10 +90,31 @@ h2.stit {
 }
 
 /* 기사 원문 보기 하이퍼링크 */
-h5.source {
+.source {
+    text-align: right;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 0px;
     padding-bottom: 20px;
+}
+
+.source a {
+    width: 70px;
+    height: 70px;
+    border: 1px solid green;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    line-height: 70px;
+    text-decoration: none;
+    color: #000;
+}
+
+.source a:hover {
+    color: #000;
+    background-color: #8bb45c;
+    box-shadow: 3px 3px 3px 1px #303038;
+
 }
 
 /* 주해 */
@@ -86,5 +122,5 @@ h5.source {
     padding-right: 40px;
     padding-left: 40px;
     padding-bottom: 40px;
+    text-align: justify;
 }
-

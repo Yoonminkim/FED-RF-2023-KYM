@@ -5,13 +5,13 @@
 html,
 body,
 h1,
-h2 {
+h2{
     margin: 0;
     padding: 0;
 }
 
 .bx_header {
-    width: 40%;
+    max-width: 900px;
     border: 10px double #ffffff;
     padding: 20px;
     margin: 0 auto;
@@ -21,7 +21,7 @@ h2 {
 }
 
 .bx_sub {
-    width: 40%;
+    max-width: 900px;
     border: 10px double #9ccc65;
     padding: 20px;
     margin: 0 auto;
@@ -30,7 +30,7 @@ h2 {
 }
 
 .bx {
-    width: 40%;
+    max-width: 900px;
     border: 10px double #ffffff;
     padding: 20px;
     margin: 0 auto;
@@ -79,16 +79,16 @@ h2 {
     color: blue;
     text-decoration: underline;
     text-decoration-style: wavy;
-    /* 
-                                                        text-shadow : 글자 그림자
-                                                        값 - x축 y축 블러(경계흐림) 색
-                                                    */
+/* 
+    text-shadow : 글자 그림자
+    값 - x축 y축 블러(경계흐림) 색
+*/
 }
 
 /* 
-                                        vertical-align : 인라인 요소간 세로정렬
-                                        값 - top/bottom/middle/baseline/수치
-                                    */
+    vertical-align : 인라인 요소간 세로정렬
+    값 - top/bottom/middle/baseline/수치
+*/
 
 /* 로고 이미지 */
 
@@ -102,6 +102,10 @@ h2 {
     background-color: #9ccc65;
 }
 
+
+/* 종속선택자로 같은 이름의 클래스인데
+            다른 디자인으로 변경하여 셋팅하기 */
+
 #info {
     background-color: #9ccc65;
     color: #423838;
@@ -113,14 +117,13 @@ h2 {
     /* font-style: normal; */
 }
 
+
 /* 대표자 span */
 .CEO_name {
     text-decoration: underline;
     color: #423838;
 }
 
-/* 종속선택자로 같은 이름의 클래스인데
-            다른 디자인으로 변경하여 셋팅하기 */
 
 .CEO_number {
     text-decoration: underline;

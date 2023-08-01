@@ -28,7 +28,8 @@
 
             <!-- 2-2 언론사 로고 -->
             <div>
-                <img class="prlogo" src="./images/prlogo4.png" alt="IT/과학 뉴스" />
+                <img class="prlogo"
+                src="./images/prlogo4.png" alt="IT/과학 뉴스" />
             </div>
 
             <!-- 2-3 기사 제목 -->
@@ -42,7 +43,12 @@
                 <figcaption class="nfig">북극곰 가족이 녹고 있는 얼음 위에 위태롭게 서 있다. [사진=극지연구소 주형민]</figcaption>
             </figure>
 
-            <!-- [figure 요소] 
+            <!-- [ifigure 요소] 
+                - inline frame
+                - 한 웹페이지안에 다른 시스템의 웹을 불러올 수 있는 요소
+                -필수 속성 : src - 시스템 경로
+                - 주의 :
+
                 - 이미지나 표를 포함하는 박스요소
                 - 이미지 설명은 내부 요소인 figcaption을 사용함
                    (설명이 있을 경우에만 사용)-->
@@ -61,20 +67,16 @@
                 <p>
                     <em><b>수상작은 총 14작품이다.</b></em>
                     <em
-                        ><b><mark>대상 수상작</mark></b></em
-                    >은 북극해 바다얼음에 모여 있는 북극곰 가족을 촬영한
+                        ><b><mark>대상 수상작</mark></b></em>은 북극해 바다얼음에 모여 있는 북극곰 가족을 촬영한
                     <em
                         ><b><mark>‘지구를 살려주세요!’</mark></b></em
                     >(주형민 극지연구소 차세대 쇄빙연구선 건조사업단장 촬영)가 차지했다.
                 </p>
             </section>
 
-                <div>
-                    <iframe class="mvbx"
-                        src="https://www.youtube.com/embed/bVMlUarekuE" 
-                        title="[지금은 기후위기] 찬란한 슬픔의 남·북극" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
+                <div class="mvbx">
+                    <iframe src="https://www.youtube.com/embed/bVMlUarekuE" 
+                        title="[지금은 기후위기] 찬란한 슬픔의 남·북극">
                     </iframe>
                 </div>
 
@@ -114,7 +116,7 @@
                 - 주의 : 내부에 div와 같은 block 요소를 넣을 수 없다. -->
 
             <!-- 기자 정보 -->
-            <div class="rpt">정종오 기자 ikokid@inews24.com</div>
+            <div class="rpt">정종오 기자 - ikokid@inews24.com</div>
 
             <!-- 기사 원문 -->
             <h5 class="source">
