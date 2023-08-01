@@ -10,6 +10,25 @@ h2 {
     padding: 0;
 }
 
+.bx_header {
+    width: 40%;
+    border: 10px double #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.bx_sub {
+    width: 40%;
+    border: 10px double #9ccc65;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
 .bx {
     width: 40%;
     border: 10px double #ffffff;
@@ -59,17 +78,17 @@ h2 {
 #gnb a + a:hover {
     color: blue;
     text-decoration: underline;
-    text-decoration-style: unset;
+    text-decoration-style: wavy;
     /* 
-                                text-shadow : 글자 그림자
-                                값 - x축 y축 블러(경계흐림) 색
-                            */
+                                                        text-shadow : 글자 그림자
+                                                        값 - x축 y축 블러(경계흐림) 색
+                                                    */
 }
 
 /* 
-                vertical-align : 인라인 요소간 세로정렬
-                값 - top/bottom/middle/baseline/수치
-            */
+                                        vertical-align : 인라인 요소간 세로정렬
+                                        값 - top/bottom/middle/baseline/수치
+                                    */
 
 /* 로고 이미지 */
 
@@ -106,4 +125,11 @@ h2 {
 .CEO_number {
     text-decoration: underline;
     color: #423838;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    padding: 5px;
+    z-index: 10;
 }

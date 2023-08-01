@@ -9,34 +9,26 @@
     </head>
 
     <body>
-
-        <header id="top" class="bx">
-
+        <header id="top" class="bx_header">
             <h1 id="title">네이버 요약 뉴스</h1>
 
             <nav id="gnb">
-
                 <a href="index.html">
-
                     <img src="./images/logo.png" alt="네이버로고" style="width: 25px" />
-
                 </a>
 
-                <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> | <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
+                <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> | <a href="sub3.html">사회</a> | <a href="sub4.html" style="color: blue">IT/과학</a> |
                 <a href="sub5.html">TV/연예</a>
-
             </nav>
-
         </header>
 
         <main id="cont_sub" class="bx_sub">
-
             <!-- 2-1 서브 타이틀 -->
             <h2 class="stit">IT/과학 뉴스</h2>
 
             <!-- 2-2 언론사 로고 -->
-            <div class="prlogo">
-                <img src="./images/prlogo4.png" alt="IT/과학 뉴스">
+            <div>
+                <img class="prlogo" src="./images/prlogo4.png" alt="IT/과학 뉴스" />
             </div>
 
             <!-- 2-3 기사 제목 -->
@@ -47,10 +39,7 @@
                 <!-- 이미지 -->
                 <img class="nimg" src="./images/afig4-1.png" alt="북극곰 가족이 녹고 있는 얼음 위에 위태롭게 서 있다." />
                 <!-- 이미지 설명 -->
-                <figcaption class="nfig">
-                    북극곰 가족이 녹고 있는 얼음 위에 위태롭게 서 있다. [사진=극지연구소 주형민]
-                </figcaption>
-
+                <figcaption class="nfig">북극곰 가족이 녹고 있는 얼음 위에 위태롭게 서 있다. [사진=극지연구소 주형민]</figcaption>
             </figure>
 
             <!-- [figure 요소] 
@@ -60,101 +49,148 @@
 
             <!-- 기사내용 -->
             <section class="acont">
-
                 <p>
-                    극지연구소(소장 강성호)가 13회 극지사진콘테스트 21일 수상작을 공개했다.
-                    우리나라 쇄빙선 아라온호를 타고 남극과 북극을 오가는 극지연구소 연구원들이 찍은 사진들이다.
+                    <em
+                        ><b><mark>극지연구소(소장 강성호)가 13회 극지사진콘테스트 21일 수상작</mark>을 공개</b></em
+                    >했다. <em>우리나라 쇄빙선 아라온호<sub>Ararion</sub></em
+                    >를 타고 남극<sup>①</sup>과 북극<sup>②</sup>을 오가는 극지연구소 연구원들이 찍은 사진들이다.
                 </p>
 
-                <p>
-                    남극과 북극은 현재 지구 가열화로 가장 변화가 심한 곳으로 꼽힌다.
-                    이대로 지구 가열화가 진행되면 북극은 얼음이 없는 상황에까지 이를 수 있다는 위기감마저 감돈다. ‘찬란한 슬픔’의 시간을 맞고 있다.
-                </p>
+                <p>남극과 북극은 현재 지구 가열화로 가장 변화가 심한 곳으로 꼽힌다. 이대로 지구 가열화가 진행되면 북극은 얼음이 없는 상황에까지 이를 수 있다는 위기감마저 감돈다. ‘찬란한 슬픔’의 시간을 맞고 있다.</p>
 
                 <p>
-                    수상작은 총 14작품이다. 대상 수상작은 북극해 바다얼음에 모여 있는 북극곰 가족을 촬영한
-                    ‘지구를 살려주세요!’(주형민 극지연구소 차세대 쇄빙연구선 건조사업단장 촬영)가 차지했다.
+                    <em><b>수상작은 총 14작품이다.</b></em>
+                    <em
+                        ><b><mark>대상 수상작</mark></b></em
+                    >은 북극해 바다얼음에 모여 있는 북극곰 가족을 촬영한
+                    <em
+                        ><b><mark>‘지구를 살려주세요!’</mark></b></em
+                    >(주형민 극지연구소 차세대 쇄빙연구선 건조사업단장 촬영)가 차지했다.
                 </p>
+            </section>
 
-                <p>
-                    줄어드는 얼음 위에 북극곰 가족이 모여 있는 위태로운 모습을 담았다.
-                    북극곰은 개체 수가 계속 줄어들면서 지구 가열화가 가속화하면 끝내 북극에서 생존할 수 없는 상황에 처할 수 있다는 경고음까지 나오고 있다.
-                </p>
+                <div>
+                    <iframe class="mvbx"
+                        src="https://www.youtube.com/embed/bVMlUarekuE" 
+                        title="[지금은 기후위기] 찬란한 슬픔의 남·북극" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
 
+            <section class="acont"
+                <p>줄어드는 얼음 위에 북극곰 가족이 모여 있는 위태로운 모습을 담았다. 북극곰은 개체 수가 계속 줄어들면서 지구 가열화가 가속화하면 끝내 북극에서 생존할 수 없는 상황에 처할 수 있다는 경고음까지 나오고 있다.</p>
             </section>
 
             <figure>
-                <img class="nimg" src="./images/afig4-2.png" alt="세종과학기지에서 일몰과 함께 젠투펭귄이 카메라에 포착됐다.">
-                <figcaption class="'nfig">
-                    세종과학기지에서 일몰과 함께 젠투펭귄이 카메라에 포착됐다. [사진=극지연구소 최동건]
-                </figcaption>
+                <img class="nimg" src="./images/afig4-2.png" alt="세종과학기지에서 일몰과 함께 젠투펭귄이 카메라에 포착됐다." />
+                <figcaption class="nfig">세종과학기지에서 일몰과 함께 젠투펭귄이 카메라에 포착됐다. [사진=극지연구소 최동건]</figcaption>
             </figure>
 
             <section class="acont">
                 <p>
-                    남극의 상징인 펭귄도 북극곰 운명과 크게 다르지 않다.
-                    지구 가열화로 먹이 활동이 여의치 않으면서 황제펭귄 등 개체수가 감소하고 있다는 연구결과가 계속 보고되고 있다.
+                    남극의 상징인 <ins>귀여운</ins>펭귄도 북극곰 운명과 크게 다르지 않다. 지구 가열화로 먹이 활동이 여의치 않으면서
+                    <em
+                        ><b><mark>황제펭귄 등 개체수가 감소하고 있다는 연구결과가 계속 보고되고 있다.</mark></b></em
+                    >
+                    <del>만약 배고픈 북극곰이 과학기지로 내려오게 된다면 되돌릴 수 없는 일이 일어날 것이다.</del>
                 </p>
 
-                <p>
-                    수상작에는 이외에도 남극에서 고래와 펭귄이 마주치는 장면, 남극의 젠투와 황제펭귄의 아름다운 모습도 담겼다.
-                    하늘에서 본 세종과학기지와 먼 거리에서 본 남극의 산, 연구원들의 현장 사진도 눈길을 끈다.
-                </p>
+                <p>수상작에는 이외에도 남극에서 고래와 펭귄이 마주치는 장면, 남극의 젠투와 황제펭귄의 아름다운 모습도 담겼다. 하늘에서 본 세종과학기지와 먼 거리에서 본 남극의 산, 연구원들의 현장 사진도 눈길을 끈다.</p>
 
                 <p>
-                    장보고과학기지에서 남극점까지 길을 뚫고 있는 ‘K-루트 탐사대’의 활동 상황도 카메라에 잡혔다.
-                    한편 우리나라는 남극에 세종과학기지와 장보고과학기지를 운영하고 있다. 북극에는 노르웨이에 다산과학기지가 있다.
+                    장보고과학기지에서 남극점까지 길을 뚫고 있는 ‘K-루트 탐사대’의 활동 상황도 카메라에 잡혔다. 한편
+                    <em
+                        >우리나라는 <b><mark>남극에 세종과학기지와 장보고과학기지를 운영</mark></b></em
+                    >하고 있다.
+                    <em
+                        ><mark><b>북극에는 노르웨이에 다산과학기지</b></mark></em
+                    >가 있다.
                 </p>
             </section>
-            
-
 
             <!-- [ P 요소 : 문단(paragraph) ]
                 - 문단을 구분하기 위한 요소
                 - 주의 : 내부에 div와 같은 block 요소를 넣을 수 없다. -->
 
             <!-- 기자 정보 -->
-            <div class="rpt">
-                정종오 기자 ikokid@inews24.com
-            </div>
+            <div class="rpt">정종오 기자 ikokid@inews24.com</div>
 
             <!-- 기사 원문 -->
             <h5 class="source">
-
                 <a href="https://n.news.naver.com/mnews/hotissue/article/031/0000760697?cid=1087779" target="_blank">기사원문</a>
-
             </h5>
 
+            <hr />
+            <!-- 구분선 요소 hr : horizontal -->
+            <!-- 주해영역 -->
+            <article class="desc">
+                <h5>주해</h5>
+                <div>
+                    ① 남극(南極, 영어: Antarctica 남극대륙[*]영어: Antarctic 남극의[*])은 지구의 최남단의 대륙으로, 한가운데 남극점이 있다. <br />
+                    ② 북극(영어: Arctic, 北極)은 지구 북극점 근처의 지역이다. 북극점을 '북극'으로 부르기도 한다.
+                </div>
+            </article>
         </main>
 
         <footer id="info" class="bx">
-
             <address id="address">
-
                 서울시 강남구 테헤란로119 대호B <br />
                 대표: <a href="index.html" class="CEO_name">Yoonmin Kim</a> <br />
                 전화: <a href="index.html" class="CEO_number">010-4796-6510</a>
-
             </address>
-
         </footer>
 
         <!-- 
                 [ HTML 서식 관련 요소들 ]
+                
+                1. 두꺼운 글자
                 <b>- 굵은 텍스트
                 <strong>- 중요 텍스트
 
-                <i>- 기울임꼴 텍스트
-                <em>- 강조된 텍스트
+                2. 이탤릭글자
+                <i>- 기울임꼴 텍스트 (Italic text - 글자만 이탤릭처리)
+                <em>- 강조된 텍스트 (Emphasized text - 강조의 의미)
 
-                <mark>- 표시된 텍스트
-                <small>- 더 작은 텍스트
-                <del>- 삭제된 텍스트
-                <ins>- 삽입된 텍스트
+                3. 색상 표시
+                <mark>- 표시된 텍스트 (marked text up)
+
+                4. 작은글자
+                <small>- 더 작은 텍스트 (Smaller text)
+                    -> h5요소의 글자크기와 같음
+                    -> 상속된 글자크기에 대한 상대적인 크기이므로 브라우저에서 소수점으로 표시될 수 있음
+
+                5. 삭제하기
+                <del>- 삭제된 텍스트 (Deleted text)
+                    -> text-decoration: line-through
+
+                6. 삽입된 글자표시
+                <ins>- 삽입된 텍스트(Inserted text)
+                    -> text-decoration: underline
+                
+                7. 첨자표시
                 <sub>- 아래 첨자 텍스트
+                    - 약간 아랫쪽 작은글자(Subscript text)
+                    - 병행표시글자 (영문,한문 등)
                 <sup>- 위첨자 텍스트
+                    - 약간 위쪽에 작은글자(Superscript text)
+                    - 주석표시 숫자(숫자와 설명을 연결함)
+
+
+                -----------------------------------------------------------------------------------------------
+
+
+                [ 시멘틱 태그란? ]
+                - sementic (의미론적인, 의미있는)
+                즉, 태그가 어떤 구분하는 의미가 있을 경우 이런 요소를 시멘틱 태그라고 한다
+                예) strong, em, address, header, footer 등
+
+                -> 시멘틱 태그를 쓸 때 장점은?
+                1) 정보에 대한 의미있는 별도의 컨트롤이 가능함!
+                2) DB서버에서 데이터 수집 및 분석시에 활용하여 더 정교한 데이터 검색이 되도록 할 수 있다!
+
+
+
          -->
-
     </body>
-
 </html>

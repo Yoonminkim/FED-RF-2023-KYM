@@ -10,37 +10,81 @@ h2 {
     padding: 0;
 }
 
-.bx_sub {
-    width: 40%;
-    border: 10px double #9ccc65;
-    padding: 20px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    border-radius: 25px;
-}
 
-.nimg {
-    width: 100%;
-}
-
-.prlogo {
-    margin-left: 40px;
-    margin-right: 40px;
-    width: 20%;
-}
-
+/* 메인 박스 흰 배경 처리 */
 #cont_sub {
     background-color: #ffffff;
     margin: 20px auto;
 }
 
-h5.source {
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
+/* 단락 제목 */
 h2.stit {
     text-align: center;
     color: #8bb45c;
     text-shadow: 1px 1px 2px #000;
 }
+
+/* 신문사 로고 */
+.prlogo {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 15%;
+}
+
+/* 뉴스 제목 */
+.atit {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* 뉴스 이미지 */
+.nimg {
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+/* 뉴스 이미지 설명 */
+.nfig {
+    font-size: 14px;
+    font-style: italic;
+    color: #4e4e4e;
+}
+
+/* 동영상 크기 설정 */
+.mvbx {
+    width: 90%;
+    height: 450px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+/* 뉴스 내용 단락 */
+.acont {
+    padding-top: 2px;
+    padding-bottom: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+/* 기자 정보 */
+.rpt {
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+/* 기사 원문 보기 하이퍼링크 */
+h5.source {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 20px;
+}
+
+/* 주해 */
+.desc {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+
