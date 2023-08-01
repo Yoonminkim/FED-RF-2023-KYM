@@ -1,52 +1,46 @@
 @charset "utf-8";
-/* 서브 페이지용 CSS - sub.css */
 
-/* 공통외부 css 합치기 */
 @import url(./common.css);
 
-#cont_sub {
-    background-color: #ffffff;
-}
-
-.prlogo{
-
-}
-
-.atit{
-
-}
-
-.afig{
-
-}
-
-.acont{
-
-}
-
-.rpt{
-    
-}
-
-
-.stit {
-    text-align: center;
-    color: #8bb45c;
-    text-shadow: 1px 1px 2px #000;
+html,
+body,
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
 }
 
 .bx_sub {
-    width: 50%;
-    /* 외곽선 */
+    width: 40%;
     border: 10px double #9ccc65;
-    /* border: 5px double #ffffff; */
-    /* 패딩 */
     padding: 20px;
-    /* 마진 */
     margin: 0 auto;
-    /* 양쪽 마진을 auto로 쓰면 등분할 되어 블록박스가 중앙에 위치함 */
-
-    /* 둥근 모서리 */
     box-sizing: border-box;
     border-radius: 25px;
+}
+
+.nimg {
+    width: 100%;
+}
+
+.prlogo {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 20%;
+}
+
+#cont_sub {
+    background-color: #ffffff;
+    margin: 20px auto;
+}
+
+h5.source {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+h2.stit {
+    text-align: center;
+    color: #8bb45c;
+    text-shadow: 1px 1px 2px #000;
 }
