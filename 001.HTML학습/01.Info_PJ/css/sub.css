@@ -5,7 +5,7 @@
 html,
 body,
 h1,
-h2, figure {
+h2, figure, blockquote {
     margin: 0;
     padding: 0;
 }
@@ -107,7 +107,6 @@ h2.stit {
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 0px;
-    padding-bottom: 20px;
 }
 
 .source a {
@@ -132,7 +131,88 @@ h2.stit {
 /* 주해 */
 .desc {
     padding-right: 40px;
-    padding-left: 40px;
-    padding-bottom: 40px;
+    padding-left: 4gray;
+    width: auto;    padding-bottom: 40px;
     text-align: justify;
+}
+
+.work {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.atit4 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+}
+
+/* 강조 em요소 디자인 변경 */
+
+
+.acont mark {
+    display: block;
+    background-color: rgb(224, 224, 224);
+    text-align: center;
+    margin: 15px 0;
+    padding: 20px 50px;
+    font-size: 16px;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid grey;
+    color: #395815;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 70%;
+    margin: 15px auto;
+}
+
+
+.acont p em {
+    /* 이탤릭해제 */
+    font-style: normal;
+    /* 글자색 변경 */
+    color: #8bb45c;
+    /* 글자 그림자 */
+    text-shadow: 1px 1px 1px #000;
+}
+
+.desc h5 {
+    display: inline-block;
+    background-color: rgb(238, 238, 238);
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px #000;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-left: 12px;
+    
+}
+
+.bqbx {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-top: 3px double #8bb45c;
+}
+
+.bqbx img{
+    float: right;
+    padding-left: 20px;
+}
+
+.bqbx blockquote {
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 20px;
+    line-height: 1.56;
+}
+
+.bqbx div {
+    padding-left: 10px;
+    padding-right: 20px;
+    line-height: 1.56;
 }
