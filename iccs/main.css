@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* 아카이브 메인 CSS - main.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap");
+
+
+/* 초기화 */
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 전체 배경 이미지 */
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: url(../001.HTML학습/01.Info_PJ/images/man\ city\ winner.jpeg) no-repeat fixed center/30%;
+}
+
+
+.wrap {
+    background-color: #b1dcecc5;
+    width: 70%;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+#my_logo {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+}

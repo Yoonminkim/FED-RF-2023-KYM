@@ -140,6 +140,8 @@ h2.stit {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: rgb(240, 240, 193);
+    border-radius: 20px;
 }
 
 .atit4 {
