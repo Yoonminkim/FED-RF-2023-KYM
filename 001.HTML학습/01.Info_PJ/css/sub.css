@@ -26,8 +26,7 @@ h2.stit {
 
 /* 신문사 로고 */
 .prlogo {
-    margin-left: 40px;
-    margin-right: 40px;
+    padding-left: 40px;
     height: 15%;
 }
 
@@ -40,8 +39,14 @@ h2.stit {
 /* 뉴스 이미지 */
 .nimg {
     width: 90%;
-    padding-left: 40px;
-    padding-right: 40px;
+    height: auto;
+    text-align: center;
+}
+
+#nimg{
+    width: 100%;
+    height: auto;
+    text-align: center;
 }
 
 /* 뉴스 이미지 설명 */
@@ -51,15 +56,22 @@ h2.stit {
     color: #4e4e4e;
     padding-left: 40px;
     padding-right: 40px;
+    text-align: left;
 }
 
 .mvbx {
     width: 90%;
     height: 450px;
-    padding-right: 40px;
-    padding-left: 40px;
+    text-align: center;
+}
+
+#mvbx {
+    width: 100%;
+    height: 450px;
+    text-align: center;
     padding-bottom: 15px;
 }
+
 /* div와 같은 block 요소는 width 설정을 하지 않으면 width:auto로 자동설정됨. 이는 싸고 있는 박스 컨텐트 영역을 자동으로 채워준다! */
 
 /* 동영상 크기 설정 */
