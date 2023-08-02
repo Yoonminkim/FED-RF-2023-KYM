@@ -19,19 +19,44 @@ body {
     background: url(../001.HTML학습/01.Info_PJ/images/man\ city\ winner.jpeg) no-repeat fixed center/30%;
 }
 
+#my_logo {
+    width: 150px;
+    height: 150px;
+}
 
-.wrap {
+.wrap_body {
     background-color: #b1dcecc5;
     width: 70%;
     border-radius: 20px;
     margin: 20px auto;
-    padding-left: 50px;
-    padding-bottom: 50px;
+    padding: 50px;
+    line-height: 2;
 }
 
-#my_logo {
+.wrap_head {
     margin-top: 50px;
     margin-bottom: 20px;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
+    text-align: center;
 }
+
+.tit {
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.wrap_body li {
+    margin-left: 45px;
+}
+
+.wrap_body h2 {
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.wrap_body h3 {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
