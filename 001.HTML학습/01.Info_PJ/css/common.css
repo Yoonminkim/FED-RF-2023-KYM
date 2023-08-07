@@ -5,17 +5,22 @@
 html,
 body,
 h1,
-h2, figure, ul, dl,ol, dd {
+h2,
+figure,
+ul,
+dl,
+ol,
+dd {
     margin: 0;
     padding: 0;
 }
 
 /* 리스트 블릿, 숫자 없애기 */
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
-
 
 .bx_header {
     max-width: 900px;
@@ -86,7 +91,7 @@ ul, ol {
     color: blue;
     text-decoration: underline;
     text-decoration-style: wavy;
-/* 
+    /* 
     text-shadow : 글자 그림자
     값 - x축 y축 블러(경계흐림) 색
 */
@@ -109,7 +114,6 @@ ul, ol {
     background-color: #9ccc65;
 }
 
-
 /* 종속선택자로 같은 이름의 클래스인데
             다른 디자인으로 변경하여 셋팅하기 */
 
@@ -124,13 +128,11 @@ ul, ol {
     /* font-style: normal; */
 }
 
-
 /* 대표자 span */
 .CEO_name {
     text-decoration: underline;
     color: #423838;
 }
-
 
 .CEO_number {
     text-decoration: underline;
