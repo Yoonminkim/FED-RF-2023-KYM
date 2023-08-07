@@ -180,6 +180,22 @@ h2.stit {
     padding-left: 40px;
 }
 
+.second_title>.atit4{
+    margin-left: 40px;
+    padding-left: 20px;
+    border-left: 2px solid #000;
+    font-size: 14px;
+}
+
+.second_title {
+    margin-bottom: 30px;
+}
+
+.nfig_5{
+    text-align: center;
+    font-size: 12px;
+}
+
 /* 강조 em요소 디자인 변경 */
 
 .acont mark {

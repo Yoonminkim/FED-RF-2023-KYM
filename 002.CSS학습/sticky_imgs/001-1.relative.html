@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01. static 포지션</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;/* fwb */
+            /* 글자세로중앙 */
+            line-height: 100px;
+        }
+
+        /* 첫번째 박스에 포지션 체크 */
+        #r1{
+            position: relative; /*por*/
+
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+
+            /* 먼저 그렸지만 Z-index를 1만 줘도 위로 올라감! */
+
+            background: url(../images/ab5.jpg) no-repeat center/cover;
+        }
+
+        /********************************************************************************************* 
+
+            [ 2. relative 포지션 ]
+            - 랠러티브! 라고 읽어주세요!
+
+            1. 위치이동 속성이 적용된다!
+
+            2. 위치이동의 기준은 원래있던 위치임!
+                (그래서 상대적인 즉, relative 라는 단어를 사용함!)
+
+            3. 이동시 다른요소에 영향이 없이 겹쳐질 수 있다!
+
+            4. 원래있던 위치는 그대로 보존된다!
+                (의미 : 기존 위치가 보존되기 때문에 본래의 디자인이 망가지지 않는다!)
+
+            5. 위치 값 설정 시, 2가지 기준으로만 셋팅한다.
+            - 위, 아래 중 하나
+            - 좌, 우 중 하나
+            top, left / top, right
+            bottom, left / bottom, right
+
+            6. 마진은 그대로 적용된다!
+            (다른 static한 요소에 영향을 미친다!)
+            -> 본래 위치에 마진이 적용된 것이므로 상대적인 이동값도 변경된 것으로 보인다!
+
+            7. relative는 위치이동값을 사용하지 않으면 static과 똑같은 특징을 가진다!
+
+            8. relative는 겹쳐질 수 있으므로, 위 아래 관계가 성립된다.
+
+            기본적인 위아래 관계는 아래와 같다!
+            (1) static 보다는 항상 위!
+            (2) static 포지션이 아닌경우 나중에 그려진 요소가 위!
+                (손 놓고 손등때리기)
+            (3) z-index 속성으로 숫자가 크면 위! 
+
+            9. 부모자격
+
+            ________________________________________________________________________________
+
+            [ z-index 란? ] - static이 아닌 포지션만 적용!
+
+            - 겹치는 포지션을 준 경우 위치순서를 정하여 디스플레이를 변경하는 속성
+            - z 는 화면방향의 축을 의미함.
+            - z-index의 기본값은 0 -> 같은 층에 있는 모든 요소는 0!
+            - 숫자를 비교하여 큰 숫자가 위에 위치함!
+
+            -> 기본값 0이므로 마이너스값은 static 요소보다 아래로 내려감!
+            (직접 선택툴로 안만져지는 이유는 body보다 아래에 있어서 그렇다!)
+
+            ((유의사항!))
+            z-index 비교시에 형제 Level에서 먼저 비교하고
+            그 다음 하위 자손에서 비교하기 때문에 여러 부분에 z-index를 주게되면,
+            위아래 관계가 복잡해져서 정리가 어려워진다! 남발하지 말자!!
+
+
+        *********************************************************************************************/
+
+        
+        #r2{
+            position: relative;
+            bottom: 80px;
+            right: -124px;
+            background: url(../images/ab4.jpg) no-repeat center/cover;
+        }
+        #s1{
+            /* margin-top: -20px; */
+            background-color: lightcoral;
+        }
+        #s2{
+            /* margin-top: -10px;
+            margin-left: 20px; */
+            background-color: lightblue;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="bx" id="r1">s1</div>
+    <div class="bx" id="s21">s1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s2">s2</div>
+
+
+    <!-- [ 젠코딩(에밋코딩) ] 
+        
+        .bx#s$*3
+    _____________________________
+    . : 클래스
+    # : 아이디
+    $ : 증가숫자자리
+    *숫자 : 반복생성 횟수
+    {} : 데이터 출력 (꺽쇠 사이 값)
+    [] : 속성셋팅값
+    > : 하위직계 자식요소
+    + : 형제요소
+    () : 요소구분하기
+
+    -->
+
+</body>
+    
+</html>
