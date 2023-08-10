@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <title>클래스 다중적용</title>
         <style>
-            h1{
+            h1 {
                 text-align: center;
             }
             /* ul셋팅 */
-            .bx{
+            .bx {
                 margin: 0;
                 padding: 0;
                 list-style: none;
                 /* 블릿없앰 */
             }
-            .bx li{
+
+                /* 가상요소로 플롯해제 */
+
+            .bx::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .bx li {
                 width: 33.333%;
                 /* 가로크기 3등분 */
                 float: left;
@@ -27,7 +36,6 @@
                 박스가 걸려서 중간부터 나오는 경우가
                 생긴다. 이런 경우 같은 줄에 오는
                 요소에 높이값을 주어서 해결한다! */
-
 
                 border: 5px solid #000;
                 padding: 15px;
@@ -42,23 +50,23 @@
             /* 글자관련 클래스 */
             /* 클래스명은 숫자를 뒤에 쓸 수 있으나
             숫자로 시작할 수 없다(숫자로 시작하면 적용안됨!) */
-            .fcls1{
+            .fcls1 {
                 font-weight: bold;
                 color: red;
                 font-size: 24px;
             }
-            .fcls2{
+            .fcls2 {
                 font-size: 32px;
                 color: blue;
                 font-style: italic;
             }
-            .fcls3{
+            .fcls3 {
                 font-size: 12px;
                 color: green;
                 text-decoration: underline;
             }
             /* 글자크기만 변경한 클래스 - 클래스 코딩 위치 중요!!!*/
-            .fz1{
+            .fz1 {
                 font-size: 38px;
             }
 
@@ -77,16 +85,20 @@
 
             /* 사용할 요소의 기존 보더 셋팅은 .bx li 이것으로 됨
             .bx .클래스명 우선순위가 높아지거나 같은 레벨이면 덮어쓰기를함! */
-            .bx .bd1{
+            .bx .bd1 {
                 border: 10px dotted pink;
             }
-            .bx .bd2{
+            .bx .bd2 {
                 border: 5px dashed darkcyan;
             }
-            .bx .bd3{
+            .bx .bd3 {
                 border: 20px ridge darkorchid;
             }
-            
+
+            /* 아이디 보더속성 변경 */
+            #bd4 {
+                border: 10px dotted darkgreen;
+            }
 
             /* 
                 [ 클래스 다중사용 가이드 ]
@@ -114,21 +126,23 @@
 
 
              */
-
         </style>
     </head>
     <body>
         <h1>클래스 다중적용</h1>
         <ul class="bx">
-            <li class="">클래스적용1</li>
-            <li class="">클래스적용2</li>
-            <li class="">클래스적용3</li>
-            <li class="">클래스적용4</li>
-            <li class="">클래스적용5</li>
-            <li class="">클래스적용6</li>
-            <li class="">클래스적용7</li>
-            <li class="">클래스적용8</li>
-            <li>클래스적용9</li>
+            <li class="fcls1 bd1">클래스적용1</li>
+            <li class="fcls2 bd2">클래스적용2</li>
+            <li class="fcls3 bd3">클래스적용3</li>
+            <li class="fcls1" id="bd4">클래스적용4</li>
+            <li class="fcls2">클래스적용5</li>
+            <li class="fcls3">클래스적용6</li>
+            <li class="fcls1 bd2 bd1">클래스적용7</li>
+            <li class="fcls2">클래스적용8</li>
+            <li class="fcls3">클래스적용9</li>
         </ul>
+        <div class="mybx" style="height: 200px; background: pink; border: 10px dotted darkmagenta; 
+        font-size: 40px; text-align: 
+        center; line-height: 200px">내가누구게???</div>
     </body>
 </html>
