@@ -3,7 +3,7 @@
 /* Robot PJ 메인 CSS - robot.css */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap");
 
 /* 
     font-family: 'Barlow', sans-serif;
@@ -13,43 +13,46 @@
 */
 
 /* 초기화 */
-html,body,h1,h2,h3,ul,ol{
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+ol {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     /* 전체 배경이미지 */
-    background: 
-    url(../images/bg.jpg) no-repeat fixed top/cover;
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
 }
 
 /* 공사중표시 */
-body *{
+body * {
     outline: 2px dashed yellow;
 }
 
 /* 공통 클래스 */
 
 /* 메탈배경 클래스 */
-.metal1{
-    background: 
-    url(../images/metal01.jpg) no-repeat center/cover;
+.metal1 {
+    background: url(../images/metal01.jpg) no-repeat center/cover;
 }
-.metal2{
-    background: 
-    url(../images/metal02.jpg) no-repeat center/cover;
+.metal2 {
+    background: url(../images/metal02.jpg) no-repeat center/cover;
 }
 
 /******************* 1. 상단영역 *******************/
 /* 1-1.로고 */
 
-.logo{
+.logo {
     position: fixed;
     /* 화면 정중앙 이동! calc()로! */
 
-    top: calc(50% - 200px/2);
-    left: calc(50% - 200px/2);
+    top: calc(50% - 200px / 2);
+    left: calc(50% - 200px / 2);
 
     width: 200px;
     height: 200px;
@@ -61,27 +64,24 @@ body *{
     text-align: center;
     color: aquamarine;
     /* font : 스두크/줄체 */
-    font: 45px/200px 'Orbitron';
+    font: 45px/200px "Orbitron";
     z-index: 2;
 
     text-shadow: 2px 2px 5px #000;
 
     /* 박스그림자 
     - 밝은 색을 사용하면 glow 효과를 줄 수 있다!*/
-    box-shadow: 
-    inset 0 0 20px 5px #000,
-    0 0 20px 5px aquamarine;
+    box-shadow: inset 0 0 20px 5px #000, 0 0 20px 5px aquamarine;
     /* 박스 그림자에만 spread 설정있음 
     x y blur spread color */
 
     transform: scale(2);
-
 }
 
 /* 1-2.링크타이틀 */
 /* 1-3.탑이동버튼 */
 /******************* 2. 메인영역 *******************/
-.main-aria{
+.main-aria {
     /* overflow: hidden; */
     /* 첫번째 자식요소 블록박스에 마진탑을 준경우
     그 마진값은 부모요소 바깥쪽으로 나간다!(기본성질)
@@ -90,16 +90,18 @@ body *{
     + 하단마진도 부모요소 바깥으로 나감! */
 }
 /* 2-1. 로봇박스 */
-.box-robot{
+.box-robot {
     /* 패딩 : 위,양쪽, 아래 */
-    padding: 200px 0 520px;
+    padding: 100px 50% 520px;
     /* 마진탑 */
     /* margin-top: 30px; */
 
-
+    /* 처음에 트랜스폼 변경설정 */
+    transform: translate(30%, -5%) scale(0.2);
+    position: fixed;
 }
 /* 2-1-1.머리 */
-.head{
+.head {
     position: relative;
     /* 부모자격 - 하위 앱솔루트 자식들 */
     width: 200px;
@@ -107,16 +109,15 @@ body *{
     /* 무대중앙 마영오! */
     margin: 0 auto;
     /* 메탈배경 */
-    background: 
-    url(../images/metal01.jpg) no-repeat center/cover;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
     /* 둥근모서리 */
     border-radius: 100px 100px 50% 50%;
     /* .body보다 위 */
     z-index: 1;
 }
 /* 가상요소로 머리에 가발씌우기 */
-.head::after{
-    content: '';
+.head::after {
+    content: "";
     display: block;
     /* 마치 div를 넣은것 같다~! */
     position: absolute;
@@ -128,11 +129,10 @@ body *{
     height: 383px;
 
     /* 배경 */
-    background: 
-    url(../images/hair_new2.png) no-repeat 0/100% 100%;
+    background: url(../images/hair_new2.png) no-repeat 0/100% 100%;
 }
 /* 오버시 가상요소 가발 변경하기 */
-.head:hover::after{
+.head:hover::after {
     /* 앱솔루트요소 */
     top: -74px;
     left: -127px;
@@ -141,19 +141,18 @@ body *{
     height: 551px;
 
     /* 배경 */
-    background-image: 
-    url(../images/hair_new3.png);
+    background-image: url(../images/hair_new3.png);
 }
 
 /* 머리/몸통 하위요소 공통 */
-.head>div,
-.body>div{
+.head > div,
+.body > div {
     position: absolute;
     /* 모든 직계하위요소는 앱솔루트! */
 }
 
 /* 눈공통 */
-.eye{
+.eye {
     /* 앱솔루트 top값은 공통임 */
     top: 60px;
     width: 50px;
@@ -169,19 +168,17 @@ body *{
     background-color: #fff;
 }
 /* 왼눈 */
-.eye1{
-    left: 30px;/* l50 */
-    background-image: 
-    url(../images/e1.jpg);
+.eye1 {
+    left: 30px; /* l50 */
+    background-image: url(../images/e1_1.jpg);
 }
 /* 오른눈 */
-.eye2{
-    right: 30px;/* r50 */
-    background-image: 
-    url(../images/e2.jpg);
+.eye2 {
+    right: 30px; /* r50 */
+    background-image: url(../images/e2_1.jpg);
 }
 /* 코 */
-.nose{
+.nose {
     /* 위치 */
     top: 109px;
     left: 74px;
@@ -189,10 +186,10 @@ body *{
     width: 52px;
     height: 63px;
     border-radius: 26px;
-    background: url(../images/nose.jpg) no-repeat -4px -4px/auto 105%;
+    background: url(../images/nose_1.jpg) no-repeat center/cover;
 }
 /* 입 */
-.mouth{
+.mouth {
     /* 위치 */
     left: 57px;
     bottom: 32px;
@@ -200,29 +197,27 @@ body *{
     width: 88px;
     height: 35px;
     /* 배경 */
-    background: 
-    url(../images/mouth.png) no-repeat 0/100% 100%;
+    background: url(../images/mouth_1.jpg) no-repeat 0/100% 100%;
 }
 /* 귀공통 */
-.ear{
+.ear {
     /* 위치 */
     top: 100px;
     /* 크기 */
     width: 50px;
     height: 80px;
     /* 배경 */
-    background: 
-    url(../images/metal02.jpg) no-repeat center/cover;
+    background: url(../images/metal02.jpg) no-repeat center/cover;
 }
 /* 왼귀 */
-.ear1{
+.ear1 {
     /* 개별위치 왼쪽바깥 */
     left: -50px;
     /* 둥근모서리 : 왼쪽위 왼쪽아래 */
     border-radius: 20px 0 0 20px;
 }
 /* 오른귀 */
-.ear2{
+.ear2 {
     /* 개별위치 오른쪽바깥 */
     right: -50px;
     /* 둥근모서리 : 오른쪽위 오른쪽아래 */
@@ -230,7 +225,7 @@ body *{
 }
 
 /* 2-1-2.몸통 */
-.body{
+.body {
     position: relative;
     /* 부모자격 - 하위직계자식 div앱솔루트 */
     width: 220px;
@@ -243,8 +238,8 @@ body *{
     background-size: 80%;
 }
 /* 몸통의 가상요소로 상체만들기 */
-.body::before{
-    content: '';
+.body::before {
+    content: "";
     display: block;
     position: absolute;
     top: -4px;
@@ -255,8 +250,8 @@ body *{
     border-radius: 30px;
 }
 /* 몸통의 가상요소로 하체만들기 */
-.body::after{
-    content: '';
+.body::after {
+    content: "";
     display: block;
     position: absolute;
     bottom: -7px;
@@ -267,11 +262,10 @@ body *{
     border-radius: 30px;
 }
 
-
 /* 목 */
-.neck{
+.neck {
     top: -70px;
-    left: calc(50% - 50px/2);
+    left: calc(50% - 50px / 2);
     /* 중앙보내기 원리 : 
     부모박스의 50%보내고
     자신크기의 절반빼기
@@ -282,15 +276,16 @@ body *{
     border-radius: 20px;
 }
 /* 팔공통 */
-.arm{
+.arm {
     width: 50px;
     height: 200px;
     border-radius: 20%;
+    transform-origin: top;
 }
 /* 가상요소로 팔관절만들기 */
 
-.arm::after{
-    content: '';
+.arm::after {
+    content: "";
     position: absolute;
     bottom: -25px;
     left: -3px;
@@ -301,23 +296,21 @@ body *{
     background-color: #ccc;
 }
 
-.arm::before{
-    content: '';
+.arm::before {
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 12px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-image: 
-    linear-gradient(to right,#6355af,#2fc8f7);
+    background-image: linear-gradient(to right, #6355af, #2fc8f7);
     background-color: #000;
     z-index: 1;
 }
 
-
 /* 팔하단부분 공통 */
-.arm span{
+.arm span {
     position: absolute;
     top: 100%;
     left: 10%;
@@ -327,17 +320,16 @@ body *{
     border-radius: 20%;
 }
 /* 가상요소로 손만들기 */
-.arm span::after{
-    content: '';
+.arm span::after {
+    content: "";
     display: block;
     position: absolute;
     top: 100%;
-    left: calc(50% - 80px/2);
+    left: calc(50% - 80px / 2);
     width: 80px;
     height: 120px;
     /* 배경이미지 */
-    background: 
-    url(../images/hand_left.png) no-repeat 0/100%;
+    background: url(../images/hand_left.png) no-repeat 0/100%;
 
     /* outline: 2px dashed lime; */
 }
@@ -346,33 +338,37 @@ body *{
 마진으로 하자! */
 
 /* 왼손 가상요소 변경 */
-.arm1 span::after{
+.arm1 span::after {
     margin-left: 7px;
 }
 /* 오른손 가상요소 변경 */
-.arm2 span::after{
+.arm2 span::after {
     margin-left: -6px;
     background-image: url(../images/hand_right.png);
 }
 /* 왼팔 */
-.arm1{
-    left: -70px;
+.arm1 {
+    left: -80px;
+    top: 20px;
 }
 /* 오른팔 */
-.arm2{
-    right: -70px;
+.arm2 {
+    right: -80px;
+    top: 20px;
 }
 /* 다리공통 */
-.leg{
+.leg {
     top: 95%;
     /* 부모박스 높이만큼 나감!
     아랫쪽 바깥에 위치! */
     width: 80px;
     height: 250px;
     border-radius: 20%;
+    /* 애니를 위한 트랜스폼 기준축변경 */
+    transform-origin: top;
 }
 /* 다리 하단부분 공통 */
-.leg span{
+.leg span {
     position: absolute;
     top: 100%;
     left: 10%;
@@ -382,11 +378,11 @@ body *{
     border-radius: 20%;
 }
 
-.leg::after{
-    content: '';
+.leg::after {
+    content: "";
     position: absolute;
-    bottom: calc(-80px/2);
-    left: calc(-80px/15);
+    bottom: calc(-80px / 2);
+    left: calc(-80px / 15);
     width: 80px;
     height: 80px;
     border-radius: 30%;
@@ -394,45 +390,40 @@ body *{
     background-color: #ccc;
 }
 
-
-.leg::before{
-    content: '';
+.leg::before {
+    content: "";
     position: absolute;
-    bottom: calc(-60px/2);
+    bottom: calc(-60px / 2);
     left: calc(9%);
     width: 60px;
     height: 60px;
     border-radius: 30%;
-    background-image: 
-    linear-gradient(to right,#6355af,#2fc8f7);
+    background-image: linear-gradient(to right, #6355af, #2fc8f7);
     z-index: 1;
 }
 
-
 /* 가상요소로 부츠만들기 */
-.leg span::before{
-    content: '';
+.leg span::before {
+    content: "";
     display: block;
     position: absolute;
     top: 40%;
     left: -5%;
     width: 110%;
     height: 80%;
-    background-image: 
-    linear-gradient(to right,#ccc,#393939);
+    background-image: linear-gradient(to right, #ccc, #393939);
     border-top: 5px solid #000;
 }
 /* 가상요소로 신발만들기 */
-.leg span::after{
-    content: '';
+.leg span::after {
+    content: "";
     display: block;
     position: absolute;
     top: 110%;
     left: -20%;
     width: 140%;
     height: 60px;
-    background-image: 
-    linear-gradient(to right,#ccc,#393939);
+    background-image: linear-gradient(to right, #ccc, #393939);
     border: 2px solid #000;
     border-bottom: 10px solid #000;
     border-radius: 40px 40px 0 0;
@@ -441,21 +432,21 @@ body *{
 }
 
 /* 왼다리 */
-.leg1{
+.leg1 {
     left: 10px;
 }
 /* 오른다리 */
-.leg2{
+.leg2 {
     right: 10px;
 }
 /* 어깨공통 */
-.shdr{
+.shdr {
     top: -15px;
     width: 80px;
     height: 80px;
 }
 /* 왼어깨 */
-.shdr1{
+.shdr1 {
     left: -85px;
     border-radius: 50% 0 0 50%;
     /* 
@@ -467,26 +458,35 @@ body *{
     */
 }
 /* 오른어깨 */
-.shdr2{
+.shdr2 {
     right: -85px;
     border-radius: 0 50% 50% 0;
 }
 /* TV class=tv*/
 
-.tv{
+.tv {
     top: 10%;
     left: 50%;
     /* left 방향 중앙이동 */
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
     width: 200px;
     height: 130px;
 
     /* 배경이미지 */
     background: url(../images/tv.jpg) no-repeat 0/100%;
+    z-index: 10;
+    transition: 1.2s ease-in-out;
 }
 
+/* TV가 커지는 클래스 */
+
+.tv.on{
+    transform: translateX(-50%) scale(4);
+}
+
+
 /* 스크린 */
-.screen{
+.screen {
     position: absolute;
     top: 5px;
     left: -4px;
@@ -497,10 +497,26 @@ body *{
     border-radius: 10px;
     box-shadow: inset 0 0 10px #000;
     border: 2px solid #222;
-
 }
 
-#mv{
+/* 동영상 선택버튼 */
+
+.box-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 120px;
+}
+
+.box-btn button{
+    width: 100%;
+    height: 25%;
+}
+
+
+
+#mv {
     position: absolute;
     top: -1px;
     left: -14px;
@@ -510,12 +526,6 @@ body *{
     border-radius: 10px;
 }
 
-
-
-
-
-
 /* 2-2. 로봇설명박스 */
 /******************* 3. 하단영역 *******************/
 /* 3-1. 회사정보 */
-
