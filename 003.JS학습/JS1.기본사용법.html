@@ -149,7 +149,8 @@
                 document.getElementsByClassName(클래스명).item(순번)
                 document.getElementsByClassName(클래스명)[순번]
                 
-                
+                -> 개수 : length
+
                 
         3. 태그 선택법 :
         getElementsByTagName(태그명)
@@ -161,6 +162,28 @@
         -> 순번 선택 방법: item(순번) / [순번]
                 document.getElementsByTagName(태그명).item(순번)
                 document.getElementsByTagName(태그명)[순번]
+                -> 개수 : length
+        __________________________________________________________________________________
+        
+        [ 선택자 문법을 그대로 사용하는 요소 선택법 ]
+        1. querySelector(CSS선택자)
+            -> 선택자에 맞는 요소를 처음 만나는 것으로 선택
+            -> 무조건 하나만 가져오므로 순번 불필요!
+
+            예) document.querySelector('#my>li')
+            -> 만나는 첫번째 li요소를 선택함
+
+         2. querySelectorAll(CSS선택자)
+            -> 선택자에 맞는 요소를 모두 가져옴!
+            -> html 요소 컬렉션에 담겨서 저장됨
+            -> 순번과 개수를 구할 수 있음
+            순번 : item(순번) / [순번]
+            -> 개수 : length
+        
+            예) document.querySelectorAll('#my>li')
+            -> 만나는 li모두를 선택함(순번, 개수 사용함!)
+        
+        __________________________________________________________________________________
                 
     *******************************************************************************/
 
@@ -187,12 +210,127 @@
             console.log('보여줘 함수 호출');
 
             //2. html 넣기
+            // 변경대상 : #name
             // innerHTML 속성 이용!
             // 문서.가져와이이디로(아이디명)
 
-            document.getElementById('name').innerHTML = '<img src="./images/kim.png" alt="김비서 이미지">'
+            document.getElementById('name').innerHTML = '<img src="./images/kim.png" alt="김비서 이미지">';
 
+
+            // 3. CSS 변경하기 /////////////////////////////////
+            // 변경대상 : .pbox
+            // CSS 변경 객체 : style.속성명
+            //   -> 모든 style 속성명은 변수형으로 정의됨!
+            // 예) font-size -> fontSize
+            // -를 빼고 시작문자를 대문자로 쓰면된다!
+
+
+            // 반복사용할 요소를 변수에 담기! 
+            // 변수는 재사용!
+            // 변수는 여기를 봐! var 선언 (let/const도 있음)
+            // 변수는 값이 저장되는 메모리 공간
+            // 변수명은 메모리 공간의 주소 (변수명은 유일!)
+            // 변수는 따옴표로 싸지 않는다!
+            // 변수는 띄어쓰기를 하지 않는다!
+            // 변수는 호출시에 값이 출력된다!
+
+            // var 목표 = document.getElementsByClassName('pbox').item(0);
+            var 목표 = document.getElementsByClassName('pbox')[0];
+
+            // 3-1. 배경 이미지 넣기
+            목표.style.background = 'url(./images/kimbs.jpg) no-repeat center/cover';
+
+            // 3-2. 글자색 변경하기
+            목표.style.color ='lime';
+
+            // 3-3. 글자크기 변경 : 40px
+
+            목표.style.fontSize = '40px';
+
+            // 3-4. 줄간격 변경 : 100px
+            목표.style.lineHeight = '100px';
+
+            // 3-5. 글자 그림자 : 2px 2px 2px #000
+            목표.style.textShadow = '3px 3px 3px #000';
+
+            // 3-6. 트랜지션 : 전체 2초
+            목표.style.transition =
+            '2s, transform 1s 2s, top 3s 2s, left 2s 2s';
+
+            // 3-7. 사이즈 변경 : 300 -> 600
+            목표.style.width ='600px';
+            목표.style.height = '600px';
+
+            // 3-8. 원만들기
+            목표.style.borderRadius = '50%';
+
+            //3-9. 중앙이동을 위한 위치변경
+            목표.style.top = '50%'
+            목표.style.left = '50%'
+
+            //3-10. 트랜스폼 변경
+            목표.style.transform = 'translate(-50%, -50%) rotate(360deg) scale(1.3)';
+
+            // 3-11. 전체 배경색 바꾸기
+            // 대상 : body
+            // JS에서 body 는 특별히 취급해서
+            // document.body
+
+            var 바디 = document.body;
+            바디.style.backgroundColor = 'lightgreen';
+            바디.style.transition = '5s 3s';
+
+            
         } /////////////////////////// 보여줘 함수 /////////////////////////////
+
+        /*************************************************************************** 
+
+        함수명 : 바꿔
+        기능 : 기존 박스 구성요소 및 스타일 변경
+
+        ***************************************************************************/
+
+        function 바꿔(){
+
+            // 1. 호출확인
+            console.log('바꿔가 나오냐!?');
+
+            // 2. 대상 : .pbox
+            var 목표 = document.getElementsByClassName('pbox').item(0);
+
+            // 3. CSS 변경하기 : 배경이미지
+            목표.style.backgroundImage = 'url(https://image.kmib.co.kr/online_image/2022/0727/2022072621325079008_1658838770_0017317378.jpg)';
+            
+            // 4. html 변경하기 : innerHTML
+            목표.innerHTML = '우 to the 영 to the 우~ <br> 동 to the 그 to the 라미';
+
+        } ////////////////////////// 바꿔 함수 ////////////////////////////////////
+
+
+         /*************************************************************************** 
+
+        함수명 : 맘대로해라
+        기능 : 선택요소의 style과 html을 변경함
+
+        ***************************************************************************/
+
+        function 맘대로해라(헐, 헉스){
+            // 헐 - .원이야 순번 / 헉스 - 그림제목
+            // 1. 호출 및 전달 값 확인
+            console.log('맘대로 하세요!', 헐, 헉스);
+
+            // 2. 대상선정 : .박스야 .원이야
+            var 멍청이 = document.querySelectorAll(".박스야 .원이야");
+
+
+            // 기존 방식보다 더 간단한 querySelector를 사용함!
+            // document.getElementsByClassName('박스야').item(0)
+            // .getElementsByClassName('원이야').item(0);
+
+
+        } ///////////////////////// 맘대로 해라 함수 //////////////////////////////
+
+
 
 
     </script>
@@ -208,21 +346,56 @@
             /* 부모는? window(보이는 화면) */
             margin: 0;
             padding: 0;
-            width: 600px;
-            height: 400px;
+
+            width: 500px;
+            height: 500px;
+            padding-top: 200px;
 
             /* 글자 */
-            line-height: 150px;
-            font-size: 40px;
+            line-height: 50px;
+            font-size: 30px;
             text-align: center;
             /* 줄바꿈 방지 */
             white-space: nowrap;
 
+            /* 사용자 텍스트 영역 선택방지 */
+            user-select: none;
+
             border: 4px solid purple;
             /* 보더박스:보더, 패딩포함 */
             box-sizing: border-box;
-            background: url(./images/kimbs.jpg) no-repeat center/cover;
+            /* background: url(./images/kimbs.jpg) no-repeat center/cover; */
         }
+
+        .원이야{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* 보더박스:보더,패딩포함 */
+            box-sizing: border-box;
+        }
+
+
+        .원이야:nth-child(1){
+            right: 400px;
+            background: url(./images/01.png);
+        }
+        .원이야:nth-child(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .원이야:nth-child(3){
+            background-image: url(./images/03.png);
+        }
+
+
 
     </style>
 
@@ -231,11 +404,20 @@
 <body>
 
     <!-- 드라마 소개박스 -->
-    <p class="pbox" title="여기를 클릭하세요!" onclick="보여줘()">
+    <p class="pbox" title="여기를 클릭하세요! 더블 클릭하면 우영우가 나옵니다!" onclick="보여줘()" ondblclick="바꿔()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name">
         </span>
     </p>
+
+    <!-- 원모양 박스 -->
+    <div class="박스야">
+        <!-- 원모양 -->
+        <div class="원이야" onmouseover="맘대로해라(0,'별이 빛나는 밤')"></div>
+        <div class="원이야" onmouseover="맘대로해라(1,'론강의 별이 빛나는 밤')"></div>
+        <div class="원이야" onmouseover="맘대로해라(2,'밤의 카페 테라스')"></div>
+    </div>
+
 
 </body>
 
