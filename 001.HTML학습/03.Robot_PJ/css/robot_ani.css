@@ -2,53 +2,56 @@
 
 /* Robot PJ - 애니메이션 CSS */
 
-/********************************************************************** 
-
+/****************************************** 
     [ CSS 애니메이션 ]
     - CSS 속성 변화를 장면으로 구성하여
-      애니메이션을 화면에 연출해주는 속성
-
+    애니메이션을 화면에 연출해주는 속성
 
     [ 애니메이션 키프레임 ]
     - 애니메이션 속성변화를 지정하는 코딩영역
 
     [ 2장면 코딩법 ]
-    
+
     @keyframes 키프레임명 {
         from{시작CSS}
         to{끝CSS}
     } 
-    
-    또는 
+
+    또는
 
     @keyframes 키프레임명 {
         0%{시작CSS}
         100%{끝CSS}
-    } 
+    }
+    
+    __________________________________
 
     [ 여러장면 코딩법 ]
-
+    
     @keyframes 키프레임명 {
         0%{시작CSS}
         10%{중간CSS}
         20%{중간CSS}
         ...
         70%{중간CSS}
-        80%{중간CSS}
+        90%{중간CSS}
         100%{끝CSS}
     }
 
-    -> 만약 첫장면이 이미 CSS에 설정되어 있으면 from 또는 0%를 생략할 수 있다.
-    ___________________________________________________________________________
-    
+    -> 만약 첫장면이 이미 CSS에 설정되어 있으면
+    from 또는 0% 를 생략할 수 있다!
+
+    __________________________________
+
     [ 애니메이션 연출 시간 계산법 ]
 
     - 내가 지정한 %의 장면은 언제 등장하는가?
-    전체시간(초) * 몇% / 100 = 알고싶은 시간
-    
-    예) 60초 * 50%/100 = 30초
 
-    ___________________________________________________________________________
+    전체시간(초) * 몇% / 100 = 알고싶은시간
+
+    예) 60초 * 50%/100% = 30초
+    __________________________________
+
 
     [ 설정된 키프레임 호출하는 방법 ]
 
@@ -60,45 +63,42 @@
     3) 이징(animation-timing-function) : easing 가속도
     4) 지연(animation-delay) : 애니메이션 시작지연시간(초단위:s)
     5) 반복여부(animation-iteration-count) : 애니메이션 반복횟수
-      - 기본값 1, 숫자를 쓰면 반복횟수
-      - 영원히는 infinite(인피니트)
+        - 기본값 1, 숫자를 쓰면 반복횟수
+        - 영원히는 infinite(인피니트)
     6) 방향(animation-direction) : 시작->끝
-      - 대체경로 설정하기 : alternate : 시작->끝,끝->시작
-      - 대체경로는 반복횟수가 2이상 또는 infinite 이여야함
+        - 대체경로 설정하기 : alternate : 시작->끝,끝->시작
+        - 대체경로는 반복횟수가 2이상 또는 infinite 이여야함
     7) 마지막상태(animation-fill-mode) : 애니메이션이 끝났을때
-      - 처음상태로 돌아가는 것이 기본!
-      - 마지막 상태를 유지하고 싶을때 forwards(앞쪽에...즉,애니끝장면)
+        - 처음상태로 돌아가는 것이 기본!
+        - 마지막 상태를 유지하고 싶을때 forwards(앞쪽에...즉,애니끝장면)
 
 
-**********************************************************************/
 
-/* 로고 이동 키프레임 */
+******************************************/
+
+/* 로고이동 키프레임 */
 @keyframes logo-ani {
-    /* from{} - 첫상태 이미설정해서 생략!  */
-    80%{
-        top: 10px;
-        left: 10px;
+    /* from{} - 첫상태 이미설정해서 생략! */
+    60%{
+        top: 50px;
+        left: 50px;
         transform: scale(1);
     }
-
     100%{
-        top: 10px;
-        left: 10px;
+        top: 50px;
+        left: 50px;
+        /* 처음회전상태 추가애니 rotate(-25deg) */
         transform: scale(1) rotate(-25deg);
     }
 }
-
-
-/* 로고이동 호출하기 - 대상 : .logo */
-
+/* 로고이동+오뚜기애니 호출하기 - 대상: .logo */
 .logo{
-    animation:
-     /* 이동/스케일 애니 1초후 작동 */
-    logo-ani 1.6s ease-in-out 1s 1 alternate forwards,
+    animation: 
+    /* 이동/스케일 애니 1초후 작동 */
+    logo-ani 1.5s ease-in-out 1s forwards,
     /* 기울기 애니 : 2.5초후 작동 */
-    swing-ani .5s ease-in-out 2.6s infinite alternate;
+    swing-ani .5s ease-in-out 2.5s infinite alternate;
 }
-
 
 /* 오뚜기 애니 키프레임 */
 @keyframes swing-ani {
@@ -107,101 +107,48 @@
     }
     to{
         transform: rotate(25deg);
-    }    
+    }
 }
 
 /* 로봇 위치/크기변경 애니 */
 @keyframes robot-ani {
     to{
-        transform: scale(1) translate(0,0);
+        transform: translate(0,-20%) scale(.6);
     }
 }
-
-/* 로봇애니 호출  */
+/* 로봇애니 호출 */
 .box-robot{
-    animation: robot-ani 5s linear 2.6s forwards;
+    animation: robot-ani 5s linear 3s forwards;
 }
 
-/* 걷는 다리 키프레임 */
+/* 걷는다리 키프레임 */
 @keyframes walking-ani {
     to{
-        transform: scaleY(.5);
+        transform: scaleY(.8);
     }
 }
 
-/* 왼쪽다리 키프레임 호출 */
+/* 왼쪽다리 애니호출 */
 .leg1{
-    animation: walking-ani 0.4s ease-in-out 2.5s 13 alternate;
+    animation: walking-ani .4s ease-in-out 3s 13 alternate;
 }
-
+/* 오른쪽다리 애니호출 */
 .leg2{
-    animation: walking-ani 0.4s ease-in-out 3s 12 alternate;
-}
-
-
-@keyframes left-hand-ani {
-
-    from{
-        transform: rotate(140deg);
-    }
-    to{
-        transform: rotate(100deg);
-    }
-}
-
-@keyframes left-hand-set-ani {
-
-    10%{
-        transform: rotate(10deg);
-    }
-    20%{
-        transform: rotate(30deg);
-    }
-    30%{
-        transform: rotate(50deg);
-    }
-    40%{
-        transform: rotate(70deg);
-    }
-    50%{
-        transform: rotate(90deg);
-    }
-    60%{
-        transform: rotate(110deg);
-    }
-    70%{
-        transform: rotate(120deg);
-    }
-    80%{
-        transform: rotate(130deg);
-    }
-    100%{
-        transform: rotate(140deg);
-    }
-    
-}
-
-.arm1{
-    animation:
-    left-hand-set-ani 2s ease-in-out 0.5s,
-    left-hand-ani 0.5s ease-in-out 2.5s 11 alternate,
-    left-arm-ani-01 0.3s ease-in 7.5s forwards;
+    animation: walking-ani .4s ease-in-out 3.4s 13 alternate;
 }
 
 /* 왼팔 애니1 키프레임 */
 @keyframes left-arm-ani-01 {
     to{
-        transform: rotate(45deg);
+        transform: rotate(31deg);
     }
 }
-
 /* 왼팔 애니2 키프레임 */
 @keyframes left-arm-ani-02 {
     to{
-        transform: rotate(-90deg);
+        transform: rotate(-82deg);
     }
 }
-
 /* 왼팔 애니3 키프레임 */
 @keyframes left-arm-ani-03 {
     to{
@@ -209,85 +156,103 @@
     }
 }
 
-@keyframes left-hand-ani-02 {
-    from{
-        transform: rotate(140deg);
-    }
-
-    to{
-        transform: rotate(110deg);
-    }
+/* 왼팔 애니1 호출 */
+.arm1 {
+    animation: left-arm-ani-01 .3s ease-in 9s forwards;
 }
-
-@keyframes left-hand-ani-02-set {
-    
-}
-
-.arm1 span{
+/* 왼팔 애니2 호출 */
+.arm1 span {
     transform-origin: top;
-    animation: 
-    left-hand-ani-02 0.5s ease-in-out 2.6s 11,
-    left-arm-ani-02 0.3s ease-in 7.7s forwards;
+    animation: left-arm-ani-02 .3s ease-in 9s forwards;
 }
-
-.arm1 span::after{
+/* 왼팔 애니3 호출 */
+.arm1 span::after {
     transform-origin: top;
-    animation: left-arm-ani-03 0.3s ease-in 7.9s forwards;
+    animation: left-arm-ani-03 .3s ease-in 9s forwards;
 }
 
 
 
-/* 오른팔 애니1 키프레임 */
+/* 오른팔 애니1 키프레임 : 올리기 */
 @keyframes right-arm-ani-01 {
     to{
-        transform: rotate(-90deg);
+        transform: rotate(-136deg);
     }
 }
-
-/* 오른팔 애니2 키프레임 */
+/* 오른팔 애니2 키프레임 : 흔들기 */
 @keyframes right-arm-ani-02 {
-    to{
-        transform: rotate(120deg);
-    }
     from{
-        transform: rotate(40deg);
+        transform: rotate(-136deg);
+    }
+    to{
+        transform: rotate(-156deg);
     }
 }
-
-.arm2{
-    animation: right-arm-ani-01 .4s ease-in 7.7s forwards;
+/* 오른팔 애니3 키프레임 : 흔들기2 */
+@keyframes right-arm-ani-03 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-15deg);
+    }
 }
-
-.arm2 span{
+/* 오른팔 애니4 키프레임 : 손목흔들기 */
+@keyframes right-arm-ani-04 {
+    from{
+        transform: rotate(10deg);
+    }
+    to{
+        transform: rotate(-10deg);
+    }
+}
+/* 오른팔 애니1,2 호출 */
+.arm2 {
+    transform-origin: right top;
+    right: -45px;/* 위치조정 */
+    animation: 
+    /* 팔들기 */
+    right-arm-ani-01 .4s ease-in-out 10s forwards,
+    /* 팔흔들기 */
+    right-arm-ani-02 .4s ease-in-out 10.4s infinite alternate;
+}
+/* 오른팔 애니3 호출 : 대상 - .arm2 span */
+.arm2 span {
     transform-origin: top;
-    animation: right-arm-ani-02 1s ease-in-out 7.7s infinite alternate;
+    /* 팔흔들기3 */
+    animation: 
+    right-arm-ani-03 .4s ease-in-out 10.4s infinite alternate;
 }
-
+/* 오른팔 애니3 호출 : 대상 - .arm2 span */
+.arm2 span::after {
+    transform-origin: top;
+    /* 손목흔들기 */
+    animation: 
+    right-arm-ani-04 .4s ease-in-out 10.4s infinite alternate;
+}
 
 /* 입 나불나불 애니 */
-
 @keyframes mouth-ani {
     to{
         transform: scaleY(.5);
     }
 }
 
-/* 입 애니 호출 */
-
+/* 입애니 호출 */
 .mouth{
-    animation: mouth-ani .03s linear 3s infinite alternate;
+    animation: 
+    mouth-ani .06s linear 10.8s infinite alternate;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* 말풍선 애니 */
+@keyframes balloon-ani {
+    to{
+        transform: scale(1);
+    }
+}
+/* 말풍선 애니 호출 */
+.link-title{
+    animation: 
+    balloon-ani .5s ease-in 10.8s forwards;
+}
 
