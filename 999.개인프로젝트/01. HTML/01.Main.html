@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>We!skey</title>
+
+        <!-- Style 영역 -->
+        <style>
+
+        /* 영역 지정을 위한 12등분 코드 */
+        .col-0-5{width: 4%;}
+        .col-1 {width: 8.33%;}
+        .col-1-5 {width: 12.1%}
+        .col-2 {width: 16.66%;}
+        .col-2-5 {width: 20%;}
+        .col-3 {width: 25%;}
+        .col-3-5 {width: 28.6%;}
+        .col-4 {width: 33.33%;}
+        .col-4-5 {width: 37.48%;}
+        .col-5 {width: 41.66%;}
+        .col-5-5 {width: 45.81%;}
+        .col-6 {width: 50%;}
+        .col-6-5 {width: 54.15%;}
+        .col-7 {width: 58.33%;}
+        .col-7-5 {width: 62.48%;}
+        .col-8 {width: 66.66%;}
+        .col-8-5 {width: 70.81%;}
+        .col-9 {width: 75%;}
+        .col-9-5 {width: 79.14%;}
+        .col-10 {width: 83.33%;}
+        .col-10-5 {width: 87.47%;}
+        .col-11 {width: 91.66%;}
+        .col-11-5 {width: 95.8%;}
+        .col-12 {width: 100%;} 
+        /* 가로 영역 지정을 위한 12등분 코드 */
+
+        /* 높이 영역 지정을 위한 12등분 코드 */
+        .height-0-5{height: 4.1%;}
+        .height-1 {height: 8.33%;}
+        .height-1-5 {height: 12.1%}
+        .height-2 {height: 16.66%;}
+        .height-2-5 {height: 20%;}
+        .height-3 {height: 25%;}
+        .height-3-5 {height: 29.15%;}
+        .height-4 {height: 33.33%;}
+        .height-4-5 {height: 37.48%;}
+        .height-5 {height: 41.66%;}
+        .height-5-5 {height: 45.81%;}
+        .height-6 {height: 50%;}
+        .height-6-5 {height: 54.15%;}
+        .height-7 {height: 58.33%;}
+        .height-7-5 {height: 62.48%;}
+        .height-8 {height: 66.66%;}
+        .height-8-5 {height: 70.81%;}
+        .height-9 {height: 75%;}
+        .height-9-5 {height: 79.14%;}
+        .height-10 {height: 83.33%;}
+        .height-10-5 {height: 87.47%;}
+        .height-11 {height: 91.66%;}
+        .height-11-5 {height: 95.8%;}
+        .height-12 {height: 100%;} 
+        /* 높이 영역 지정을 위한 12등분 코드 */
+        /* 전체에는 쓰지 않고, 정해진 부분에서 써야할 때에만 사용할 것 */
+
+        /* 기본 초기화 코드 */
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: url(../02.\ image/main_bg_img_black.png) no-repeat center;
+        }
+
+        /* 헤더 패딩 및 높이 지정 */
+        .header{
+            padding: 30px;
+            height: 100px;
+        }
+
+        /* 섹션 패딩 및 높이 지정 */
+        .section>.inbox{
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            padding-top: 60px;
+            max-height: 400px;
+        }
+
+        .section_2{
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            padding-top: 100px;
+            max-height: 200px;
+        }
+        
+        .section_3{
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            padding-top: 150px;
+            max-height: 300px;
+        }
+
+        .footer{
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            padding-top: 150px;
+            max-height: 150px;
+        }
+
+        /* 속박스 지정 */
+        .inbox{
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        /* 속박스 가상요소 설정 float 망가짐 방지 */
+        .inbox::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        /* 가로 공간을 위한 박스 */
+        .partbox_space_w{
+            float: left;
+            /* 공간 확인을 위한 임시 도트 */
+            border: 1px dotted blue;
+            height: 100%;
+        }
+
+        /* 세로 공간을 위한 박스 */
+        .partbox_space_h{
+            float: left;
+            /* 공간 확인을 위한 임시 도트 */
+            border: 1px dotted red;
+            width: 100%;
+        }
+
+        /* 헤더 버튼 */
+        .header_button{
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 로고 크기 지정 */
+        .logo{
+            max-height: 100%;
+            width: 100%;
+        }
+
+        /* 배너 이미지 부모에 맞추기 및 배너 둥글게 하기*/
+        .banner{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        </style>
+
+    </head>
+
+    <!-- **************************************************************************************************** -->
+
+                                                <!-- 헤더, 바디 구분 선 -->
+
+    <!-- **************************************************************************************************** -->
+
+    <body>
+        <div id="header">
+            <header class="header inbox">
+                <div class="partbox_space_w col-0-5"></div>
+                <div class="partbox_space_w col-1 ">
+                    <div class="partbox_space_h height-4"></div>
+                    <div class="partbox_space_h height-4">
+                        <div class="partbox_space_w col-4"></div>
+                        <div class="partbox_space_w col-4">
+                            <button id="button_1" class="header_button col-1">버튼1</button>
+                        </div>
+                    </div>
+                    <div class="partbox_space_h height-4"></div>
+                </div>
+                <div class="partbox_space_w col-0-5"></div>
+                <div class="partbox_space_w col-1">
+                    <div class="partbox_space_h height-4"></div>
+                    <div class="partbox_space_h height-4">
+                        <div class="partbox_space_w col-4"></div>
+                        <div class="partbox_space_w col-4">
+                            <button id="button_2" class="header_button col-1">버튼2</button>
+                        </div>
+                    </div>
+                    <div class="partbox_space_h height-4"></div>    
+                </div>
+                <div class="partbox_space_w col-2"></div>
+                <div class="partbox_space_w col-2">
+                    <img class="logo" src="../02. image/menu.jpg" alt="로고">
+                </div>
+                <div class="partbox_space_w col-3-5"></div>
+                <div class="partbox_space_w col-1">
+                    <div class="partbox_space_h height-4"></div>
+                    <div class="partbox_space_h height-4">
+                        <div class="partbox_space_w col-4"></div>
+                        <div class="partbox_space_w col-4">
+                            <button id="button_3" class="header_button col-1">버튼3</button>
+                        </div>
+                    </div>
+                    <div class="partbox_space_h height-4"></div>   
+                </div>
+                
+            </header>
+        </div>
+        
+    <!-- *****************************************************************************************************
+
+                                                헤더공간 구분선
+
+    ***************************************************************************************************** -->
+
+        <div id="section">
+            <section class="section inbox">
+                <div class="partbox_space_w col-0-5"></div>
+                <div class="partbox_space_w col-5-5">
+                    <img class="banner" src="../02. image/banner_1.jpg" alt="배너1">
+                </div>
+                <div class="partbox_space_w col-5-5">
+                    <img class="banner" src="../02. image/banner_1.jpg" alt="배너2">
+                </div>
+            </section>>            
+        </div>
+        
+    <!-- *********************************************************************************************************
+
+                                                배너_1 섹션 구분선
+
+    ********************************************************************************************************* -->
+
+        <div id="section_2">
+            <section class="section_2 inbox">
+                <div class="partbox_space_w col-1-5"></div>
+                <div class="partbox_space_w col-3">
+                    <img class="banner" src="../02. image/banner_1.jpg" alt="배너1">
+                </div>
+                <div class="partbox_space_w col-3">
+                    <img class="banner" src="../02. image/banner_1.jpg" alt="배너1">
+                </div>
+                <div class="partbox_space_w col-3">
+                    <img class="banner" src="../02. image/banner_1.jpg" alt="배너1">
+                </div>
+            </section>
+        </div>
+
+        
+    <!-- *********************************************************************************************************
+
+                                                배너_2 섹션 구분선
+
+    ********************************************************************************************************* -->
+
+        <div id="section_3">
+            <section class="section_3 inbox">
+                <div class="partbox_space_w col-4"></div>
+                <div class="partbox_space_w col-4">
+                    <img class="banner" src="../02. image/banner_1.jpg" alt="배너1">
+                </div>
+            </section>
+        </div>
+        
+    <!-- *********************************************************************************************************
+
+                                                배너_3 섹션 구분선
+
+    ********************************************************************************************************* -->
+
+    <footer id="footer">
+        <div class="footer">
+            
+        </div>
+    </footer>
+
+    </body>
+
+</html>
