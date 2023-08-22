@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Header CSS Area */
+.top-area{
+    height: 200px;
+}
+
+.logo{
+    width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* Header CSS Area */
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Main CSS Area */
+.main-area{
+
+}
+/* Main CSS Area */
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Footer CSS Area */
+.footer-area{
+    
+}
+/* Footer CSS Area */
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Common CSS Area */
+.in-box{
+    max-width: 1650px;
+    max-height: 100%;
+    margin: 0 auto;
+    border: 1px dotted red;
+}
+.part-box{
+    max-width: 100%;
+    max-height: 100%;
+    float: left;
+    border: 1px dotted green;
+}
+/* Common CSS Area */

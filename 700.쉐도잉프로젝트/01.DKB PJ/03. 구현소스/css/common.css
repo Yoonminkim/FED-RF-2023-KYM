@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/* 도깨비 PJ : 공통 모듈 CSS - common.css */
+/* 공유기능 요소 셋팅 */
+
+/************* 1. 상단영역 *************/
+#header {
+    background-color: lightblue;
+}
+.header .partbox {
+    height: 120px;
+}
+
+/************* 3. 메인영역 : .group-part *************/
+#main {
+    /* 본문영역 최소 높이 셋팅! */
+    min-height: 800px;
+    background-color: rgb(220, 241, 159);
+}
+
+/************* 4. 하단영역 *************/
+#footer {
+    background-color: lightskyblue;
+}
+.footer .partbox {
+    height: 100px;
+}
+
+/* 12 그리드 클래스 : 
+        한줄에 합이 12컬럼이 되도록 셋팅! */
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+/* 참고: https://www.w3schools.com/css/css_rwd_grid.asp */
