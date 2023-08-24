@@ -8,7 +8,7 @@
 
 /* 공사중표시 */
 body * {
-    outline: 2px dashed #ccc;
+    /* outline: 2px dashed #ccc; */
 }
 body > div > * {
     outline-color: red;
@@ -21,7 +21,7 @@ body > div > * {
 
 /************* 2. 캐릭터 소개 배너영역 *************/
 #banner {
-    background-color: lightgreen;
+    background: url(../images/bg_mainvisual_2.jpg) no-repeat center/auto 100%;
 }
 .banner .partbox {
     height: 530px;

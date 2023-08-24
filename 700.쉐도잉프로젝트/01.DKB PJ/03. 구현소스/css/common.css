@@ -5,11 +5,141 @@
 
 /************* 1. 상단영역 *************/
 #header {
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 .header .partbox {
     height: 120px;
 }
+
+/* 1-1. 로고박스 */
+.header__logo img{
+    margin-top: 60px;
+    width: 110px;
+}
+
+/* 1-2-1 TOP 메뉴 */
+.top-menu ul{
+    /* 플렉스박스 */
+    display: flex;
+    /* 진행방향정렬 */
+    justify-content: flex-end;
+}
+
+.top-menu ul{
+    font-size: 1.3rem;
+    padding: 14px 0 7px;
+}
+
+/* 두 번째 li부터 마진 넣기 */
+.top-menu li+li{
+    margin-left: 7px;
+}
+
+/* 1-2-2 GNB 메뉴 */
+.gnb-menu ul{
+    /* 플렉스박스 */
+    display: flex;
+    /* 진행방향정렬 */
+    justify-content: flex-end;
+}
+
+/* GNB 메뉴 상위 메뉴a */
+.gnb-menu ul>li{
+    font-size: 1.6rem;
+    display: block;
+    padding: 28px 16px;
+    /* 줄바꿈방지 */
+    white-space: nowrap;
+}
+
+/* GNB 메뉴 4번째 ~ 6번째 옆에 V표시 */
+.gnb-menu ul>li:nth-child(3)~li:nth-child(-n+6)::after{
+    content: 'ˇ';
+    display: inline-block;
+    transform: scale(1.5, .7);
+    margin-left: 3px;
+}
+
+/* GNB 상위li 메뉴 호버 시 a */
+.gnb-menu ul>li:hover>a{
+    color: red
+}
+
+.gnb-menu ul>li:hover{
+    color: red
+}
+
+/************* 2-5. 도깨비 영역 : .group-part *************/
+
+#dokebi-menu{
+    position: sticky;
+    top: 0;
+}
+
+.dokebi-menu ul{
+    display: flex;
+    color: #222;
+}
+
+/* 도깨비 메뉴 상위 메뉴a */
+.dokebi-menu ul>li{
+    font-size: 1.5rem;
+    display: block;
+    padding: 20px 15px;
+    /* 줄바꿈방지 */
+    white-space: nowrap;
+}
+
+/* 도깨비 메뉴 프로그램, 사진첩  옆에 V표시 */
+.dokebi-menu ul>li.be-sub::after{
+    content: 'ˇ';
+    display: inline-block;
+    transform: scale(1.5, .7);
+}
+
+/* 도깨비 메뉴 프로그램 상위li 메뉴 호버 시 a */
+.dokebi-menu ul>li:hover>a{
+    color: red
+}
+
+.dokebi-menu ul>li:hover{
+    color: red
+}
+
+/* 현재 선택된 메뉴 a 클래스 */
+.dokebi-menu ul>li.on>a{
+    background-color: red;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* 2-5 도깨비 서브 메뉴 */
+.dokebi-sub-menu{
+    margin-top: 20px;
+    position: absolute;
+    border: 2px solid red;
+    border-radius: 15px;
+    width: 170px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: #fff;
+
+    display: none;
+}
+
+/* 상위li에 마우스 오버시 보이기 */
+
+.dokebi-menu ul>li:hover .dokebi-sub-menu{
+    display: block;
+}
+
+.dokebi-sub-menu a{
+    display: block;
+    padding: 10px 15px;
+}
+
 
 /************* 3. 메인영역 : .group-part *************/
 #main {
