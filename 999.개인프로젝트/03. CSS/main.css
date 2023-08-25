@@ -29,19 +29,22 @@
 .col-12 {width: 100%;}
 /* Width setting */
 
-.clb::after {
-    content: '';
-    display: block;
-    clear: both;
+html::-webkit-scrollbar{
+    display: none;
 }
 
 html, body, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 /* background Image Set */
 body{
     background: #222222 url(../02.\ image/main_bg_img_black.png) no-repeat fixed center/100%;
+}
+
+.clb::after {
+    content: '';
+    display: block;
+    clear: both;
 }

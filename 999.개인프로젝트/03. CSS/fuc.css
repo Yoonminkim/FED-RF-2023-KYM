@@ -1,33 +1,51 @@
 @charset "utf-8";
 
 /* Button & Text & Image Area */
-.menu-Btn-1{
+.menu-Btn-1, .menu-Btn-2, .menu-Btn-3{
+    width: 100%;
+    height: 100%;
     background: rgba(255, 0, 0, 0);
     border: 0px solid;
     color: white;
-    font-size: 1.5rem;
-    margin-left: 30px;
+    font-size: 1.8rem;
+    position: relative;
+    text-align: center;
 }
 
-.menu-Btn-2{
-    background: rgba(255, 0, 0, 0);
-    border: 0px solid;
-    color: white;
-    font-size: 1.5rem;
-}
-
-.menu-Btn-3{
-    background: rgba(255, 0, 0, 0);
-    border: 0px solid;
-    color: white;
-    font-size: 1.5rem;
+.menu-Btn-4{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    border-radius: 30px;
+    background: #444;
+    white-space: nowrap;
+    text-size-adjust: auto;
+    overflow: hidden;
 }
 
 /* Button & Text & Image Area */
 
+.banner_1, .banner_3 {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid rgba(86, 86, 86, 0.658);
+}
 
-.banner_1{
-    position: relative;
-    width: auto;
-    height: 700px;
+.banner_2, .banner_4 {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid rgba(86, 86, 86, 0.658);
+}
+
+.banner_5{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(150, 150, 150, 0.637);
 }

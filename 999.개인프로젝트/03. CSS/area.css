@@ -1,16 +1,31 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap');
+
+.logo-font{
+    font-family: 'Qwitcher Grypen', cursive;
+    color: #fff;
+    font-size: 5em;
+}
+
 /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /* Header CSS Area */
 .top-area{
+    margin-top: 60px;
+    margin-bottom: 70px;
     height: 90px;
+    position: sticky;
+    background: #000000aa;
+    top: 5px;
 }
 
 .logo{
     width: 100%;
-    height: 90px;
+    height: 100%;
     box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
 }
 
 /* Header CSS Area */
@@ -19,16 +34,37 @@
 
 /* Main CSS Area */
 .main-area{
-    width: 100%;
+    height: 450px;
+}
+
+.second-area{
+    margin-top: 100px;
+    height: 200px;
+}
+
+.bar-area{
+    margin-top: 10px;
+    height: 10px;
+}
+
+.third-area{
+    margin-top: 100px;
     height: 700px;
 }
+
+.four-area{
+    margin-top: 20px;
+    height: 70px;
+}
+
 /* Main CSS Area */
 
 /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /* Footer CSS Area */
-.footer-area{
-    
+.footer-area_1{
+    margin-top: 50px;
+    height: 200px
 }
 /* Footer CSS Area */
 
@@ -36,22 +72,17 @@
 
 /* Common CSS Area */
 .in-box{
-    padding-top: 20px;
     max-width: 1650px;
+    height: 100%;
     margin: 0 auto;
-    border: 1px dotted red;
 }
 .part-box{
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     float: left;
-    border: 1px dotted green;
 }
 
 .part-box>button{
     padding: 25px 40px;
-}
-
-.part-box>.menu-Btn-3{
-    margin-left: 90px;
 }
 /* Common CSS Area */
