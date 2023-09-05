@@ -68,17 +68,17 @@
                 - deg 는 각도의 단위(도:degree)
             */
             #trans1:hover img {
-                transform: rotateY(180deg);
-                filter: brightness(200%)
                 /* 트랜스폼 Y축회전 - tfry */
-                
+                transform: rotateY(180deg);
                 /* CSS 필터적용하기 
                 : 필터속성은 흑백, 흐림, 세피아, 명암,
                 채도 등 출력 이미지를 변경하고자 할때
                 사용하는 속성
                 (참고) 
                 https://www.w3schools.com/cssref/playit.php?filename=playcss_filter&preval=blur(5px)
+                
                 */
+                filter: grayscale(100%);
                 
             }
 
@@ -87,18 +87,16 @@
                 - deg 는 각도의 단위(도:degree)
             */
             #trans2 img {
-                transform: rotateX(180deg);
-                filter: blur(2px);
                 /* 트랜스폼 X축회전 : tfrx */
-                
+                transform: rotateX(180deg);
                 /* 필터 흐림효과 */
-                
+                filter: blur(2px);
             }
             #trans2:hover img {
                 /* 트랜스폼 X축회전 : tfrx */
                 transform: rotateX(0deg);
-                filter: blur(0);
                 /* 흐림 복원 */
+                filter: blur(0);
                 
             }
 
@@ -111,9 +109,8 @@
                 - 이동방향: + 오른쪽, -는 왼쪽
             */
             #trans3:hover img {
-                transform: translateX(100%);
                 /* 트랜스폼 X축 위치이동 tftx */
-                
+                transform: translateX(-50%);
             }
             /* 
                 4. translateY(거리) - Y축이동
@@ -124,9 +121,8 @@
                 - 이동방향: + 아랫쪽, -는 윗쪽
             */
             #trans4:hover img {
-                transform: translateY(200%);
                 /* 트랜스폼 Y축 위치이동 tfty */
-                
+                transform: translateY(200%);
             }
             /* 
                 5. translate(x축거리,y축거리) - X,Y축이동
@@ -138,9 +134,8 @@
                 - 이동방향: + 오른쪽/아랫쪽, -는 왼쪽/윗쪽
             */
             #trans5:hover img {
-                transform: translate(100%, 100%);
                 /* 트랜스폼 X,Y축 위치이동 tft */
-                
+                transform: translate(-500px, 300px);
             }
 
             /* 
@@ -152,25 +147,27 @@
             */
             #trans6:hover img {
                 /* 평면회전 tfr */
-                transform: rotate(8765000deg);
+                transform: rotate(8756deg);
                 /* 트랜지션 시간 늘리기 */
                 transition-duration: 20s;
-                /* 
+                /*******************************
                 transition: 속시이지
                 개별 설정이 가능함!
+
                 1. 속성 : 
                     transition-property
                 2. 시간 :
                     transition-duration
-                3. 이징(가속도) :                                   transition-timing-function
+                3. 이징(가속도) :
+                    transition-timing-function
                 4. 지연시간 :
                     transition-delay
-
-                */
+                *******************************/
             }
 
             /* 회전축 변경하기 */
             #trans6 img {
+                /* transform-origin: right bottom; */
                 transform-origin: 20% 30%;
                 /* 
                 [ 트랜스폼 회전축 변경속성 ]
@@ -201,12 +198,12 @@
             */
             #trans8:hover img {
                 /* 트랜스폼 스케일 tf:s */
-                transform: scale(5);
+                transform: scale(2);
                 
             }
             /* 초기배율설정 */
             #trans8 img {
-                
+                transform: scale(.5);                
             }
 
             /* 
@@ -216,11 +213,10 @@
 
             #trans9:hover img {
                 /* 다중 트랜스폼 tf */
-                transform:scale(5) translate(-200%, -100%)
+                transform: scale(5) translate(-200%, -100%) 
                 rotateX(1200deg) skewX(50deg) rotate(5300deg);
-                
                 /* 트랜지션 시간늘리기 */
-                
+                transition-duration: 30s;                
             }
 
             /* 
@@ -236,7 +232,6 @@
                 height: 200px;
                 /* 가운데정렬풀기 */
                 text-align: left;
-                max-width: 0 auto;
                 /* outline: 2px dashed lime; */
             }
             /* 이미지에 겹치도록 앱솔루트 포지션 셋팅 */
@@ -249,31 +244,26 @@
 
             /* 1. 보거미 원본 */
             #trans10 img:last-child{
-                /* 0도 회전하기 */
-                transition: .4s .4s;
-                
+                /* 0도 회전하기 - 안써도 초기값 0deg임!*/                
+                transform: rotateY(0deg);
                 /* 트랜지션: 속시이지 - 0.4초기다림 */
-                
+                transition: .4s ease-out .4s;
                 /* ease-out 나중에 천천히 처음엔 등속도 */
             }
             /* 2. 보거미 오버시 */
             #trans10:hover img:last-child{
                 /* 90도 회전하기 */
-                
-                /* 트랜지션: 속시이지 - 기다림없음 */
                 transform: rotateY(90deg);
+                /* 트랜지션: 속시이지 - 기다림없음 */
                 transition: .4s ease-in;
-                
                 /* ease-in 처음에 천천히 나중엔 등속도 */
             }
             /* 3. 유정이 원본 */
             #trans10 img:first-child{
                 /* 90도 회전하기(처음상태) */
                 transform: rotateY(90deg);
-                transition: .4s ease-in;
-                
                 /* 트랜지션: 속시이지 - 기다림없음 */
-                
+                transition: .4s ease-in;
                 /* ease-in 처음에 천천히 나중엔 등속도 */
                 
             }
@@ -281,9 +271,9 @@
             #trans10:hover img:first-child{
                 /* 0도 회전하기 */
                 transform: rotateY(0deg);
-                transition: .4s .4s;
-                /* 트랜지션: 속시이지 - 0.4초기다림 */
                 
+                /* 트랜지션: 속시이지 - 0.4초기다림 */
+                transition: .4s ease-out .4s;
                 /* ease-out 나중에 천천히 처음엔 등속도 */
             }
 

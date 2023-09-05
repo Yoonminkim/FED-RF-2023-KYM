@@ -10,6 +10,7 @@
 body * {
     /* outline: 2px dashed #ccc; */
 }
+
 body > div > * {
     outline-color: red;
 }
@@ -23,9 +24,91 @@ body > div > * {
 #banner {
     background: url(../images/bg_mainvisual_2.jpg) no-repeat center/auto 100%;
 }
+
 .banner .partbox {
-    height: 530px;
+    aspect-ratio: 2/1;
+    /* height: 530px */
 }
+
+/* 개별 캐릭터 박스 */
+
+.cat-area{
+    position: relative;
+    aspect-ratio: 2/1;
+    /* 파트박스에 비율만들기
+    -> height값을 절대 주지말것! */
+}
+
+.cat-box{
+    position: absolute;
+    bottom: 5%;
+    /* 플렉스 박스 */
+    display: flex;
+    flex-wrap: wrap;
+    /* 진행방향 정렬 */
+    justify-content: center;
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 캐릭터 개별박스 */
+.cat-box article{
+    position: relative;
+    width: calc(95%/4);
+    /* 개별박스 비율설정: height 설정 안함! */
+    aspect-ratio: 2/1.2;
+    outline: 2px dashed blue;
+}
+
+/* 캐릭터 컨텐츠 박스 */
+.cat-content{
+    position: absolute;
+    top: -100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 200%;
+}
+
+.cat-content .part{
+    flex: 1;
+    /* 등분할 */
+}
+
+/* 이미지 박스 - 캐릭터 이미지*/
+.img-box>img{
+    width: 100%;
+}
+
+/* 이미지설명박스 - 캐릭터이름 이미지 */
+.img-box figcaption{
+    text-align: center;
+    margin-top: -20%;
+    /* 싸고있는 박스 높이를 기준한 %로 마진을 설정함
+    동적인 크기변경시 마진도 변경되어야 위치가 일정함 */
+}
+
+/* 이미지설명박스 */
+.img-box figcaption img{
+    width: 40%;
+}
+
+/* 마지막 이미지(진한글자) 숨기기 */
+.img-box figcaption img:last-child{
+    display: none;
+}
+
+/* 개별박스 오버시 보이기 */
+.cat-box article:hover .img-box figcaption img:last-child{
+    display: inline;
+}
+
+/* 개별박스 오버시 흐림글자 숨기기 */
+.cat-box article:hover .img-box figcaption img:first-child{
+    display: none;
+}
+
 /************* 3. 메인영역 : .group-part *************/
 
 /* 방송편성소개파트 */

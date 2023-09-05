@@ -117,15 +117,13 @@
 
 /* 2-5 도깨비 서브 메뉴 */
 .dokebi-sub-menu{
-    margin-top: 20px;
     position: absolute;
-    border: 2px solid red;
-    border-radius: 15px;
-    width: 170px;
-    font-size: 1.6rem;
-    font-weight: 700;
+    border: 1px solid red;
+    border-radius: 20px;
+    width: 180px;
     background-color: #fff;
 
+    /* 처음에 숨김 */
     display: none;
 }
 
@@ -139,7 +137,6 @@
     display: block;
     padding: 10px 15px;
 }
-
 
 /************* 3. 메인영역 : .group-part *************/
 #main {

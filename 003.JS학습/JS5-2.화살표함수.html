@@ -63,73 +63,75 @@
 
         // 일반적인 할당형 함수 /////
         let x = function(a,b){
-            return a*b;
-        }; //////////////////// x함수 ///////////////
+            return a * b;
+        }; ////////// x 함수 ///////
 
-        //함수 호출하기
-        console.log('x(100,20) 함수호출', x(100,20));
-        
-        
+        // 함수호출하기
+        console.log('x(100,20) 함수호출:',x(100,20));
+
+
         // 축약형 화살표함수 /////
         let y = (a,b)=>{
-            return a*b;
-        }; //////////////////// y함수 ///////////////
+            return a * b;
+        }; ////////// y 함수 ///////
 
-        //함수 호출하기
-        console.log('y(300,20) 함수호출', y(300,20));
+        // 함수호출하기
+        console.log('y(300,20) 함수호출:',y(300,20));
 
         // 축약형 화살표함수 좀 더 축약! /////
-        let z = (a,b)=> a*b;
-        console.log('z(300,20) 함수호출', z(400,20));
+        let z = (a,b)=>a * b;
+        ////////// z 함수 ///////
+
+        // 함수호출하기
+        console.log('z(400,20) 함수호출:',z(400,20));
 
         // 일반적인 함수 할당
         const my = function(x){
             return `나는 ${x}다!`;
-        }; /////////////////////// my함수
+        }; //////// my 함수 //////////
         
         // 함수호출하기
-        console.log(my('프론트 앤드 개발자입니다'));
-        
+        console.log(my('프론트엔드 개발자'));
+
+
         // 완전축약형!
-        const we = x => `우리는 ${x}다!`
-        
+        const we = x => `우리는 ${x}다!`;
+        /////////// we함수 ///////
+
         // 함수호출하기
         console.log(we('프론트엔드 개발자'));
-        
-        /////////// we함수 ///////
 
 
         // querySelect 함수를 짧게 만들기!
         const qs = x => document.querySelector(x);
         const qsa = x => document.querySelectorAll(x);
-        
 
-        // 로딩 구역 ////////////////////////////////////////////
-        window.addEventListener('DOMContentLoaded', ()=>{
-
+        // 로딩구역 //////////////////////////
+        window.addEventListener('DOMContentLoaded',
+        ()=>{
             console.log('로딩완료!');
 
             // 1. 대상선정: .btn
+            let btn = qsa(".btn");
+            console.log('버튼들:',btn);
 
-            let btn = qsa('.btn');
-            console.log(btn);
-
-            // 버튼요소 클릭시 글자 바꾸기 /////
-            // 기존 익명함수 사용 /////////////
-
+            // 버튼요소 클릭시 글자바꾸기 ////
+            // 기존익명함수 사용 : 첫번째 버튼
             btn[0].onclick = function(){
-                console.log('익명함수에서 this', this);
-                // 글자변경 this 키워드로 하기
-                this.innerText = "올드익명함수다"
+                console.log('익명함수에서 this:',this);
+                // 글자변경 this키워드를 사용해 하기
+                this.innerText = "올드익명함수다!";
+            }; //////// click이벤트 함수 //////
 
-            }; //////////////////////// click 이벤트 함수 ////////////
-            
+            // 화살표함수 사용 : 두번째 버튼
             btn[1].onclick = ()=>{
-                console.log('익명함수에서 this', this);
-                console.log('익명함수에서 currentTarget', event.currentTarget);
+                console.log('화살표함수에서 this:',this);
+                console.log('화살표함수에서 currentTarget:',
+                event.currentTarget);
                 // currentTarget을 사용하여 글자변경하기
-                event.currentTarget.innerText = '화살표함수다!';
-            }; //////////////////////// click 이벤트 함수 ////////////
+                event.currentTarget.innerText =
+                '화살표함수다!';
+            }; //////// click이벤트 함수 //////
 
             /************************************ 
                 화살표함수를 사용할때
@@ -149,8 +151,8 @@
 
             ************************************/
 
-        }); /////////////////////// 로드 구역 ///////////
-
+        }); /////////// 로드구역 //////////////
+        
 
 </script>
 

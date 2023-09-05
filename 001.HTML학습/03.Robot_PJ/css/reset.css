@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+/* 어벤저스 : 리셋 CSS - reset.css */
+/* 기본 초기화 셋팅 */
+
 /* 기본 초기화 */
 html,
 body,
@@ -21,8 +24,8 @@ figcaption {
     padding: 0;
 }
 
-/* ul,ol 순번, 블릿 없앰 */
-ul, ol{
+/* ul,ol 순번,블릿없앰 */
+ul,ol{
     list-style: none;
 }
 
@@ -33,7 +36,8 @@ a{
 }
 
 /* heading 요소 글자크기 */
-h1, h2, h3, h4, h5, h6{
+h1,h2,h3,h4,h5,h6{
     font-size: 100%;
-    /* 박스 디자인시 글자크기로 인한 영향으로 없애기 위한 초기화 */
+    /* 박스 디자인시 글자크기로 인한
+    영향을 없애기 위한 초기화! */
 }
