@@ -2,6 +2,9 @@
 
 // HTML태그 로딩후 loadFn함수 호출! ///
 window.addEventListener("DOMContentLoaded", loadFn);
+const qs = (x) => document.querySelector(x);
+const qsa = (x) => document.querySelectorAll(x);
+const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
 
 /***************************************************** 
     [ 슬라이드 이동 기능정의 ]
@@ -38,6 +41,79 @@ window.addEventListener("DOMContentLoaded", loadFn);
 ******************************************/
 function loadFn() {
     console.log("로딩완료!");
+
+    // 1. 대상선정
+    // 이벤트 대상 : .abtn
+    const abtn = qsa('.abtn');
+    // 변경 대상 : #silde
+    const slide = qs('#slide');
+
+    // 대상확인
+    console.log('대상:', abtn);
+
+    // 2. 이벤트 설정하기 : 버튼요소들 -> forEach
+    abtn
+
+    abtn.forEach(ele=>{
+        addEvt(ele, 'click', goSlide)
+    });
+
+    // 3. 함수만들기
+    function goSlide(){
+        console.log('나야나', this.classList.contains('ab2'));
+
+        // classList.contains(클래스명)
+        // 선택요소에 해당클래스가 있으면 true
+
+        // 1. 오른쪽 버튼 여부 알아내기
+        let isRight = this.classList.contains('ab2')
+
+        // 2. 슬라이드 li 새로 읽기
+        let eachOne = slide.querySelectorAll('li');
+
+        // 3. 버튼 분기하기 '.ab2' 이면 오른쪽 버튼
+        if(isRight){ // 오른쪽버튼
+            // 1. 대상 이동하기
+            slide.style.left = '-100%';
+            // 2. 트랜지션 주기
+            slide.style.transition = '.4s ease-in-out';
+            // 이동시간 후 맨앞 li 잘라서 맨뒤로 이동하기
+            // appendChild(요소)
+            setTimeout(() => {
+                // 3. 맨앞li 맨 뒤로 이동
+                slide.appendChild(eachOne[0])
+                // 4. slide left값 0
+                slide.style.left = '0';
+                // 5. 트랜지션 없애기
+                slide.style.transition = 'none';
+            }, 400);
+        } ////////////// if문 /////////////////
+        else{ // 왼쪽버튼
+            // 1. 맨뒤 li 맨 앞으로 이동
+            // 놈.놈.놈! -> insertBefore(넣을놈, 넣을놈전놈)
+            slide.insertBefore(
+                eachOne[eachOne.length-1], eachOne[0]);
+                // 2. left값 -100% 만들기 : 들어올 준비 위치!
+                slide.style.left = '-100%';
+                // 3. 트랜지션 없애기
+                slide.style.transition = 'none';
+                
+                // 같은 left값을 동시에 변경하면 효가가 없음!
+                // 비동기적으로 처리해야함!
+                // -> setTimeout으로 싸주기!
+
+                setTimeout(() => {
+                    // 4. left값 0으로 들어오기
+                    slide.style.left = '0';
+                    // 5. 트랜지션주기
+                    slide.style.transition = '.4s ease-in-out';
+                }, 0);
+        } ///////////// else ///////////////
+
+    }   /////////// goSlide 함수 ////////////////////////
+
+    
+
 
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
