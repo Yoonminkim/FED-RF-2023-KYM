@@ -1,0 +1,23 @@
+setAttribute = 속성값 바꾸기,
+ㄴ src 링크 변경 가능
+
+event.stopPropagation();
+ㄴ 이벤트 버블링 막기
+
+
+JS8-2.DOM_메서드
+배너에 들어가는 이미지를 잘라서 뒤로 보내기: appendChild(요소)
+맨 뒤에 있는 친구를 맨앞으로 가져오기 : insertBefore(넣을놈, 넣을놈 전놈)
+
+nav02.css
+네비게이션 마우스 오버 + 가상요소를 이용한 밑줄 생성
+
+
+position - relative = 부모자격
+position - absolute = 부모에 맞춤!
+
+
+배너 제작시 09. shoppingmall_PJ - 1. 가로방향 참고
+
+
+CSS학습 > DisplayGrid 들어가면 그리드 확인 가능
