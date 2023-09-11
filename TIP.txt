@@ -21,3 +21,9 @@ position - absolute = 부모에 맞춤!
 
 
 CSS학습 > DisplayGrid 들어가면 그리드 확인 가능
+
+
+Position이 없으면 z-index도 안먹힌다!
+
+
+가상요소까지 전체 박스 쉐도우를 주고 싶다면, filter: drop-shadow 사용하면 됨!
