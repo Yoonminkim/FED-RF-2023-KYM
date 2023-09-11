@@ -28,32 +28,37 @@ body{
     font-family: 'Jua', sans-serif;
     text-align: center;
     line-height: 80px;
-    /* 글자 글로우 효과 */
+    /* 글자 글로우효과 */
     text-shadow: 0 0 4px aquamarine;
-    /* 애니메이션 호출 */
-    animation: tit-ani 1s ease-in alternate infinite;
+    /* 애니메이션 */
+    animation: tit-ani .5s ease-in infinite alternate;
+
 }
 /* 타이틀 애니 키프레임 */
 @keyframes tit-ani {
     to{
-        text-shadow: 0 0 20px aquamarine;
+        text-shadow: 0 0 12px aquamarine;
     }
 }
+
 /**************** 2.메인영역 ****************/
 .main{
     position: relative;
     /* 부모자격 */
-    height: 788px;
-    background: url(../images/bg.jpg) no-repeat center/cover;
+    /* height: 788px; */
+    /* 비율박스는 높이값을 주지 않는다! */
+    aspect-ratio: 1200/788;
+    background: url(../images/bg.jpg) no-repeat 0/100%;
 }
-/* 2-1. 스크린 */
+/* 2-1.스크린 */
 .screen{
     position: absolute;
-    top: 137px;
-    left: 258px;
-    width: 698px;
-    height: 398px;
-    background-color: red;
+    top: 17.2%;
+    left: 21.4%;
+    width: 58.5%;
+    height: 50.5%;
+    /* 비율박스 부모기준 크기값,위치값% 설정 */
+    background-color: #000;
 }
 /* 아이프레임 */
 .screen iframe{
@@ -61,63 +66,91 @@ body{
     height: 100%;
     border: none;
 }
-/* 2-2. 포스터 */
+/* 2-2. 포스터메뉴 */
 .poster-menu{
     position: absolute;
-    width: 700px;
+    width: 60%;
+    /* 비율박스 부모기준 가로크기%설정 */
     left: 50%;
     bottom: 5%;
     transform: translateX(-50%);
 }
-
 .poster-menu ul{
-    /* 플렉스 박스 */
+    /* 플렉스박스 */
     display: flex;
     /* 가로사이간격 */
     gap: 0 10px;
+    /* 원근설정 */
+    perspective: 50vh;
 }
-
 .poster-menu>ul>li{
-    /* 등분할 */
     position: relative;
     /* 부모자격 */
-    flex: 1;
+    
+    /* 앱솔루트 영화정보 
+    부모자격요소가 숨길 수 있다! */
     overflow: hidden;
-    /* 부모 자격이 있어야만 히든으로 자식을 숨길 수 있음 */
+    
+    /* 등분할 */
+    flex: 1;
+    
+    /* X축 회전 */
+    transform: rotateX(30deg);
+    /* 회전축 하단으로 변경 */
+    transform-origin: bottom;
+    /* 트랜지션 */
+    transition: .3s;
+    
+}
+/* 포스터메뉴 각 li에 오버시 + 클래스on적용시 */
+.poster-menu>ul>li:hover,
+.poster-menu>ul>li.on{
+    transform: rotateX(0);
+    outline: 1px solid aqua;
+
+    /* 일어서는 li가 항상위! */
+    z-index: 1;
 }
 
 .poster-menu img{
     /* li에 이미지 가로채움! */
     width: 100%;
 }
-
-/* 2-3 영화 정보 */
+/* 영화정보박스 */
 .mv-info{
-    /* 부모는? 싸고있는 li */
     position: absolute;
-    top: 100%; /* 100%를 주면서 아래쪽으로 내리기 */
     width: 100%;
     height: 100%;
+    top: 100%;/* 아랫쪽 바깥에 위치 */
+    /* 부모는? 싸고있는 li */
     text-align: center;
-    background-color: #00000060;
+    background-color: rgb(0 0 0 / 49%);
 
-    /* 트랜지션 적용하기 */
-    transition: top .15s ease-in;
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: min(1.3vw,14px);
+    /* 줄바꿈방지 */
+    white-space: nowrap;
+
+    /* 트랜지션 */
+    transition: top .3s ease-out;
 }
-
-.mv-info ol{
-    display: flex;
-    gap: 7% 0;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
+/* 영화정보박스 제목만 변경 */
+.mv-info li:first-child {
+    font-size: min(1.5vw,17px);
+    color: aqua;
 }
-
 /* 상위 li에 오버시 영화정보박스 보이기 */
 .poster-menu>ul>li:hover .mv-info{
     top: 0;
 }
-
+.mv-info ol{
+    display: flex;
+    gap: 7% 0;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
 /**************** 3.하단영역 ****************/
 .footer{
     height: 100px;

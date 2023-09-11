@@ -8,83 +8,159 @@
         <!-- 메인페이지 외부CSS -->
         <link rel="stylesheet" href="./css/main.css" />
         <!-- 메인 미디어쿼리 CSS : main.css하단위치 중요! -->
-        <link rel="stylesheet" href="./css/media.css" />
+        <link rel="stylesheet" href="./css/media.css">
 
+        
         <!-- 자바스크립트 코드 외부파일 호출 : 익스터널방식 -->
-        <script src="./js/main.js"></script>
+        <script src="./js/main.js" defer></script>
     </head>
     <body>
         <!-- 1.상단영역 -->
         <div>
             <header class="header inbox">
-                <!-- 1-1. 로고 -->
-                <h1 class="tit">CGV 예고편 상영관</h1>
-                <!-- 2-2. GNB -->
+                <!-- 1-1.로고 -->
+                <h1 class="tit">
+                    CGV 예고편 상영관
+                </h1>
+                <!-- 2-2.GNB -->
             </header>
         </div>
-
         <!-- 2.메인영역 -->
         <div>
             <main class="main inbox">
-                <!-- 2-1. 스크린 -->
+                <!-- 2-1.스크린 -->
                 <div class="screen">
-                    <iframe src="https://www.youtube.com/embed/vteD1f-SV5I?autoplay=1&mute=1&loop=1&playlist=vteD1f-SV5I" allow=autoplay>
-                    </iframe>
+                    <iframe src="https://www.youtube.com/embed/vteD1f-SV5I?autoplay=1&mute=1&loop=1&playlist=vteD1f-SV5I" allow="autoplay"></iframe>
                 </div>
-                <!-- 2-2. 포스터 메뉴 -->
+                <!-- 2-2.포스터메뉴 -->
                 <nav class="poster-menu">
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 <img src="./images/m1.jpg" alt="포스터">
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>
+                                            닥터스트레인지2
+                                        </li>
+                                        <li>
+                                            베네딕트 컴버배치
+                                        </li>
+                                        <li>
+                                            액션, 판타지, 모험
+                                        </li>
+                                    </ol>
+                                </div>
                             </a>
-                            <!-- 영화정보박스 -->
-                            <div class="mv-info">
-                                <ol>
-                                    <li>
-                                        <a href="#">닥터스트레인지2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">베네딕트 컴버배치</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">액션, 판타지, 모험</a>
-                                    </li>
-                                </ol>
-                            </div>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 <img src="./images/m2.jpg" alt="포스터">
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>
+                                            쥬라기월드:도미니언
+                                        </li>
+                                        <li>
+                                            크리스 프랫
+                                        </li>
+                                        <li>
+                                            액션, 모험
+                                        </li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 <img src="./images/m3.jpg" alt="포스터">
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>
+                                            브로커
+                                        </li>
+                                        <li>
+                                            송강호, 강동원
+                                        </li>
+                                        <li>
+                                            드라마
+                                        </li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 <img src="./images/m4.jpg" alt="포스터">
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>
+                                            범죄도시2
+                                        </li>
+                                        <li>
+                                            마동석, 손석구
+                                        </li>
+                                        <li>
+                                            범죄, 액션
+                                        </li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 <img src="./images/m5.jpg" alt="포스터">
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>
+                                            잠
+                                        </li>
+                                        <li>
+                                            정유미,이선균
+                                        </li>
+                                        <li>
+                                            미스터리
+                                        </li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 <img src="./images/m6.jpg" alt="포스터">
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>
+                                            스파이더맨:노웨이홈
+                                        </li>
+                                        <li>
+                                            톰 홀랜드
+                                        </li>
+                                        <li>
+                                            액션,모험
+                                        </li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </main>
         </div>
+        
         <!-- 3.하단영역 -->
         <div>
-            <footer class="footer inbox"></footer>
+            <footer class="footer inbox">
+
+            </footer>
         </div>
+        
+
     </body>
 </html>
