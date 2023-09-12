@@ -27,3 +27,7 @@ Position이 없으면 z-index도 안먹힌다!
 
 
 가상요소까지 전체 박스 쉐도우를 주고 싶다면, filter: drop-shadow 사용하면 됨!
+
+
+사용할 DOM메서드 : 요소.isSameNode(비교요소)
+    // -> 같은 요소면 true / 다른요소면 false값 리턴
