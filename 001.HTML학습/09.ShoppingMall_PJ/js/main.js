@@ -133,7 +133,6 @@ function loadFn() {
                 // 5. 트랜지션주기
                 slide.style.transition = 
                     TIME_SLIDE+'ms ease-in-out';
- 
             }, 0);
 
 
