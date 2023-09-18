@@ -72,3 +72,19 @@ const domFn = {
       ele.parentElement.classList.add("on");
     });
   }); ////// forEach //////////
+
+  const btnmap = domFn.qs('.btn-map');
+  const gmap = domFn.qs('.gmap');
+  const cbtn = domFn.qs('.cbtn');
+
+  console.log(btnmap, gmap);
+
+  domFn.addEvt(btnmap, 'click', ()=>{
+      gmap.classList.add('on');
+      document.body.classList.add('on');
+  });
+  domFn.addEvt(cbtn, 'click', ()=>{
+      gmap.classList.remove('on');
+      document.body.classList.remove('on');
+  });
+
