@@ -1,9 +1,14 @@
 @charset "utf-8";
-/* 네비 유형6 시코르  */
+/* 네비 유형6 시코르 상단공통 CSS - common.css */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
 
 body{
-    background-image: linear-gradient(to bottom, lightcoral, lightgreen);
+    background-image: linear-gradient(to bottom,lightcoral,lightgreen);
     height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 속박스 */
@@ -11,13 +16,14 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-    outline: 1px dashed thistle;
+    outline: 2px dashed yellow;
 }
-/* 1. 상단영역 */
+
+/* 1.상단영역 */
 #top-area{
     background-color: #000;
 }
-/* 상단 속박스 */
+/* 상단속박스 */
 .top-area{
     /* position: relative; */
     /* 부모자격 - .smenu */
@@ -26,28 +32,27 @@ body{
 .top-menu{
     padding-top: 28px;
 }
-/* 로고 박스 */
+/* 로고박스 */
 .logo-box{
     text-align: center;
 }
-/****************** GNB박스 ******************/
-.gnb{
+/********* GNB박스 *********/
+.gnb {
     display: flex;
-    gap: 0 50px;
+    gap: 0 20px;
     line-height: 60px;
-    justify-content: center;
 }
 
 /* gnb공통 a */
 .gnb>ul>li:first-child>a{
     color: #fff;
 }
-/* 서브메뉴박스 : 100%차지 서브영역 */
+/* 서브메뉴 박스 : 100%차지 서브영역 */
 .smenu{
     position: absolute;
     left: 0;
     width: 100%;
-    /* 숨김박스 */
+    /* 숨김박스 */ 
     height: 0;
     overflow: hidden;
     background-color: #fff;
@@ -55,19 +60,19 @@ body{
     /* 트랜지션 */
     transition: .4s ease-in-out;
 }
-/* -> 동적 높이값은 JS로 함! (+이벤트)
+/* -> 동적 높이값은 JS로 함!(+이벤트)
 .gnb>ul>li:hover .smenu{
-    height: 400px;
+    height: 300px;
 } */
 /* 임시 첫번째 */
 /* .gnb>ul:first-child .smenu{
     display: block;
 } */
-/* 서브 첫 타이틀 */
+/* 서브 첫타이틀 */
 .stit{
     font-size: 30px;
 }
-/* 서브 내부 랩핑박스 : 최대 1200px 중앙박스*/
+/* 서브 내부 랩핑박스 : 최대1200px 중앙박스 */
 .smbx{
     display: flex;
     gap: 0 70px;
@@ -84,17 +89,17 @@ body{
 .swrap{
     display: flex;
     flex-wrap: wrap;
-    /* 랩핑 플렉스 박스 */
+    /* 랩핑 플렉스박스 */
 }
 /* 서브 dl */
 .swrap dl{
     width: 180px;
 }
-/* 2차 메뉴 : dt */
+/* 2차메뉴 : dt */
 .swrap dt{
     font-size: 20px;
 }
-/* 3차 메뉴 : dd */
+/* 3차메뉴 : dd */
 .swrap dd{
     font-size: 14px;
     line-height: 2;
