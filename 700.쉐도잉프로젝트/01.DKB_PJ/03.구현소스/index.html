@@ -4,13 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="도깨비,공유,김고은 | tvN" />
+        <link rel="shortcut icon" href="https://poc-cf-image.cjenm.com/public/share/systemmng/site/sitemng/pavicon_tvN.png"/>
         <title>쓸쓸하고 찬란하神 도깨비 드라마 소개</title>
         <!-- 메인CSS -->
         <link rel="stylesheet" href="./css/main.css" />
         <!-- 부드러운 스크롤 JS -->
         <script src="./js/smoothScroll23.js"></script>
+        <!-- 데이터 JS -->
+        <script src="./js/data_drama.js"></script>
         <!-- 메인 JS -->
-        <script src="./js/main.js"></script>
+        <script src="./js/main.js" defer></script>
     </head>
     <body class="scbar">
         <!-- 확장형 레이아웃 -->
@@ -284,13 +287,13 @@
             <main class="main inbox">
                 <!-- 파트그룹박스 5개 -->
                 <div class="group-part group-part-01">
-                    <h2>방송편성소개파트</h2>
+                    <h2 class="stit">방송편성소개파트</h2>
                     <!-- 파트박스 2개 -->
                     <div class="partbox col-6"></div>
                     <div class="partbox col-6"></div>
                 </div>
                 <div class="group-part group-part-02">
-                    <h2>미리보기</h2>
+                    <h2 class="stit">미리보기</h2>
                     <!-- 파트박스 8개 -->
                     <div class="partbox col-3"></div>
                     <div class="partbox col-3"></div>
@@ -301,20 +304,12 @@
                     <div class="partbox col-3"></div>
                     <div class="partbox col-3"></div>
                 </div>
-                <div class="group-part group-part-03">
-                    <h2>현장포토</h2>
-                    <!-- 파트박스 8개 -->
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
-                    <div class="partbox col-3"></div>
+                <div class="group-part group-part-03 live-photo-area">
+                    <h2 class="stit">현장포토</h2>
+                    <div class="live-box part-box col-12"></div>
                 </div>
                 <div class="group-part group-part-04">
-                    <h2>대표이미지</h2>
+                    <h2 class="stit">대표이미지</h2>
                     <!-- 파트박스 4개 -->
                     <div class="partbox col-3"></div>
                     <div class="partbox col-3"></div>
@@ -322,7 +317,7 @@
                     <div class="partbox col-3"></div>
                 </div>
                 <div class="group-part group-part-05">
-                    <h2>최신동영상</h2>
+                    <h2 class="stit">최신동영상</h2>
                     <!-- 파트박스 4개 -->
                     <div class="partbox col-3"></div>
                     <div class="partbox col-3"></div>

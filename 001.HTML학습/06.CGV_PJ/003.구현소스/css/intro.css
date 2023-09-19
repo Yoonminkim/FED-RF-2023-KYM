@@ -5,8 +5,29 @@
 @import url(./reset.css);
 @import url(./core.css);
 
+/* 전체 페이지 채우기 */
+html, body{
+    width: 100vw;
+    height: 100vh;
+    /* 스크롤바 없앰 */
+    overflow: hidden;
+}
 
+/* 비디오 */
+#myvid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
+    /* 필터의 명도값을 조정하여 어두워보이게함 */
+    filter: brightness(50%);
+    /* 1~0 사이 소수값 또는 0%~N% 값으로 처리 */
+    /* 
+        용어체크:
+        1) 오버레이효과(overlay) - 어둡게 처리
+        2) 트렌스페런트효과(transparent) - 밝게 처리
+    */
+}
 /* 
     [ object-fit 속성 ]
     -> img, video 요쇼에 사용하는 맞춤속성
@@ -38,3 +59,58 @@
         -> 기본값은 가로값,세로값 모두 center임!
 
     */
+
+    /* 2.들어가기 버튼 */
+#enter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 트랜스폼 정중앙이동! */
+    transform: translate(-50%, -50%);
+
+    /* outline: 4px dotted lime; */
+}
+/* Click Here 글자박스 */
+#enter span{
+    display: block;
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+    font-size: 3.4rem;
+    /* 트랜지션: 속시이지 */
+    transition: all .4s ease-out;
+}
+/* 엔터박스 오버시 글자박스변경 */
+#enter:hover span{
+    transform: scale(2) rotateX(360deg);
+    color: chartreuse;
+}
+
+img:hover{
+    transform: scale(1.2);
+    animation: logo-ani .5s linear forwards;
+    animation: logo-ani2 1s ease-in .5s infinite alternate;
+}
+
+/* 로고 애니 키프레임 */
+@keyframes logo-ani {
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes logo-ani2 {
+    0%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(10deg) scale(1.2);
+    }
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width:800px){
+    
+}

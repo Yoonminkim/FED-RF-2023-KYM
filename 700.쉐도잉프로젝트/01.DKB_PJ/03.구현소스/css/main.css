@@ -42,7 +42,7 @@ body > div > * {
     /* 진행방향정렬 */
     justify-content: center;
     /* 사이간격 */
-    gap: 0 1.2vw;
+    gap: 0 min(1.1vw,5px);
 
     width: 100%;
     margin: 0 auto;
@@ -196,25 +196,43 @@ body > div > * {
 
 /************* 4. 메인영역 : .group-part *************/
 #main {
-    background-color: lightgoldenrodyellow;
+    /* background-color: lightgoldenrodyellow; */
 }
-/* 방송편성소개파트 */
+/*********** 방송편성소개파트 ***********/
 .main .group-part-01 .partbox {
     height: 455px;
 }
-/* 미리보기파트 */
+/*********** 미리보기파트 ***********/
 .main .group-part-02 .partbox {
     height: 298px;
 }
-/* 현장포토파트 */
-.main .group-part-03 .partbox {
-    height: 300px;
+/*********** 현장포토파트 ***********/
+
+/* 현장포토 그리드 구성박스 */
+.live-box ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 48px;
 }
-/* 대표이미지파트 */
+/* 현장포토 이미지 공통 */
+.live-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* 현장포토 이미지 설명 타이틀 */
+.live-box figcaption{
+    font-size: 2rem;
+    font-weight: 500;
+    padding-top: 14px;
+}
+
+
+/*********** 대표이미지파트 ***********/
 .main .group-part-04 .partbox {
     height: 542px;
 }
-/* 최신동영상파트 */
+/*********** 최신동영상파트 ***********/
 .main .group-part-05 .partbox {
     height: 376px;
 }

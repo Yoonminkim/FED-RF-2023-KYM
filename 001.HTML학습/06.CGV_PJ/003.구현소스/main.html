@@ -9,82 +9,259 @@
         <link rel="stylesheet" href="./css/main.css" />
         <!-- 메인 미디어쿼리 CSS : main.css하단위치 중요! -->
         <link rel="stylesheet" href="./css/media.css" />
-
+        <!-- 링크아이콘 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <!-- 자바스크립트 코드 외부파일 호출 : 익스터널방식 -->
-        <script src="./js/main.js"></script>
+        <script src="./js/main.js" defer></script>
     </head>
     <body>
         <!-- 1.상단영역 -->
         <div>
             <header class="header inbox">
-                <!-- 1-1. 로고 -->
+                <!-- 1-1.로고 -->
                 <h1 class="tit">CGV 예고편 상영관</h1>
-                <!-- 2-2. GNB -->
-            </header>
-        </div>
-
-        <!-- 2.메인영역 -->
-        <div>
-            <main class="main inbox">
-                <!-- 2-1. 스크린 -->
-                <div class="screen">
-                    <iframe src="https://www.youtube.com/embed/vteD1f-SV5I?autoplay=1&mute=1&loop=1&playlist=vteD1f-SV5I" allow=autoplay>
-                    </iframe>
-                </div>
-                <!-- 2-2. 포스터 메뉴 -->
-                <nav class="poster-menu">
+                <!-- 2-2.GNB -->
+                <nav class="gnb">
                     <ul>
                         <li>
-                            <a href="">
-                                <img src="./images/m1.jpg" alt="포스터">
-                            </a>
-                            <!-- 영화정보박스 -->
-                            <div class="mv-info">
+                            <a href="#">영화</a>
+                            <div class="smenu">
                                 <ol>
                                     <li>
-                                        <a href="#">닥터스트레인지2</a>
+                                        <a href="#">무비차트</a>
                                     </li>
                                     <li>
-                                        <a href="#">베네딕트 컴버배치</a>
+                                        <a href="#">HD 트레일러</a>
                                     </li>
                                     <li>
-                                        <a href="#">액션, 판타지, 모험</a>
+                                        <a href="#">무비파인더</a>
+                                    </li>
+                                    <li class="bd-top">
+                                        <a href="#">CGV아트하우스</a>
                                     </li>
                                 </ol>
                             </div>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="./images/m2.jpg" alt="포스터">
+                            <a href="#">예매</a>
+                            <div class="smenu">
+                                <ol>
+                                    <li>
+                                        <a href="#">빠른예매</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상영시간표</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">극장</a>
+                            <div class="smenu">
+                                <ol>
+                                    <li>
+                                        <a href="#">CGV 극장</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">특별관</a>
+                                    </li>
+                                    <li class="bd-top">
+                                        <a href="#">CLUB 서비스</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">이벤트&컬처</a>
+                            <div class="smenu">
+                                <ol>
+                                    <li>
+                                        <a href="#">이벤트</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">기프트샵</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">매거진</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 영사기박스 -->
+                    <aside class="cam">
+                        <!-- 영사기 이미지 -->
+                        <img src="./images/gnb.png" alt="영사기" />
+                        <!-- 빔박스 -->
+                        <div class="beam"></div>
+                    </aside>
+                </nav>
+                <!-- 찾아오시는 길 버튼박스 -->
+                <aside class="btn-map">
+
+                </aside>
+            </header>
+        </div>
+        <!-- 2.메인영역 -->
+        <div>
+            <main class="main inbox">
+                <!-- 2-1.스크린 -->
+                <div class="screen">
+                    <iframe src="https://www.youtube.com/embed/vteD1f-SV5I?autoplay=1&mute=1&loop=1&playlist=vteD1f-SV5I" allow="autoplay"></iframe>
+                </div>
+                <!-- 2-2.포스터메뉴 -->
+                <nav class="poster-menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="./images/m1.jpg" alt="포스터" />
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>닥터스트레인지2</li>
+                                        <li>베네딕트 컴버배치</li>
+                                        <li>액션, 판타지, 모험</li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="./images/m3.jpg" alt="포스터">
+                            <a href="#">
+                                <img src="./images/m2.jpg" alt="포스터" />
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>쥬라기월드:도미니언</li>
+                                        <li>크리스 프랫</li>
+                                        <li>액션, 모험</li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="./images/m4.jpg" alt="포스터">
+                            <a href="#">
+                                <img src="./images/m3.jpg" alt="포스터" />
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>브로커</li>
+                                        <li>송강호, 강동원</li>
+                                        <li>드라마</li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="./images/m5.jpg" alt="포스터">
+                            <a href="#">
+                                <img src="./images/m4.jpg" alt="포스터" />
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>범죄도시2</li>
+                                        <li>마동석, 손석구</li>
+                                        <li>범죄, 액션</li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="./images/m6.jpg" alt="포스터">
+                            <a href="#">
+                                <img src="./images/m5.jpg" alt="포스터" />
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>잠</li>
+                                        <li>정유미,이선균</li>
+                                        <li>미스터리</li>
+                                    </ol>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/m6.jpg" alt="포스터" />
+                                <!-- 영화정보박스 -->
+                                <div class="mv-info">
+                                    <ol>
+                                        <li>스파이더맨:노웨이홈</li>
+                                        <li>톰 홀랜드</li>
+                                        <li>액션,모험</li>
+                                    </ol>
+                                </div>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </main>
         </div>
+
         <!-- 3.하단영역 -->
         <div>
-            <footer class="footer inbox"></footer>
-        </div>
+            <footer class="footer inbox">
+                <!-- 3-1. 로고 -->
+                <div class="logo">
+                    <img src="./images/blogo.png" alt="하단로고" />
+                </div>
+                <!-- 3-2. 회사정보 -->
+                <div class="co-info">
+                    <address>
+                        (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동) <br />
+                        대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 <br />
+                        개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                    </address>
+                </div>
+                <!-- 3-3. SNS -->
+                <div class="sns-box">
+                    <ol>
+                        <li>
+                            <a href="#" class="fa-brands fa-square-facebook">
+                                <span class="ir">
+                                    페이스북 바로가기
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa-brands fa-square-twitter">
+                                <span class="ir">
+                                    트위터 바로가기
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa-brands fa-square-instagram">
+                                <span class="ir">
+                                    인스타그램 바로가기
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa-brands fa-square-youtube">
+                                <span class="ir">
+                                    유튜브 바로가기
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+                <!-- 구글맵 박스 -->
+                <div class="gmap">
+                    <!-- 구글맵 아이프레임 -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.0649019240905!2d127.02374407635976!3d37.50156292785037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca158f52f0673%3A0x7e2247a87da80045!2zQ0dWIOqwleuCqA!5e1!3m2!1sko!2skr!4v1695006019570!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- 닫기버튼 -->
+                    <button class="cbtn">×</button>
+                </div>
+            </footer>
+        </div>        
+
+        <!-- 
+            [ 구글맵 소스 가져오기 ]
+            1. 구글맵 사이트로 이동하여 원하는 위치를
+            검색한다.(https://www.google.com/maps)
+            2. 왼쪽 햄버거 버튼을 클릭하여
+            "지도공유 또는 퍼가기"메뉴를 클릭한다.
+            3. "공유"별창의 "지도퍼가기"탭을 선택후
+            HTML복사 버튼을 클릭하여 소스를 카피한다.
+            4. 자신의 지도넣을 요소의 내부에 붙여넣기한다.
+         -->
     </body>
 </html>

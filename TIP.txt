@@ -21,3 +21,24 @@ position - absolute = 부모에 맞춤!
 
 
 CSS학습 > DisplayGrid 들어가면 그리드 확인 가능
+
+
+Position이 없으면 z-index도 안먹힌다!
+
+
+가상요소까지 전체 박스 쉐도우를 주고 싶다면, filter: drop-shadow 사용하면 됨!
+
+사용할 DOM메서드 : 요소.isSameNode(비교요소)
+    // -> 같은 요소면 true / 다른요소면 false값 리턴
+
+플렉스 슈링크 값이 1이라 width: 100% 했을 때 잘 들어가버림!
+
+
+let isR = this.classList.contains('ab2'); 클래스 리스트 true / false 값 구분
+
+// 3. 해당 li에 클래스 "on" 넣기
+slide[snum].classList.add("on"); 클래스 리스트 add 쓰면 클래스 넣어버리기~
+
+
+map을 이용해서 배열 데이터를 만져보자!
+map을 사용한 뒤, join(' ')을 추가할 경우 구분자가 없는 태그로만 구성된 최종 데이터를 그자리에 뿌려줌!
