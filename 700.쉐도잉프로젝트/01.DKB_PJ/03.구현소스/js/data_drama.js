@@ -45,6 +45,11 @@ const posterData = [
 ]; /////////// posterData 배열 /////////
 
 
+// liveData와 posterData 배열로 합치기
+// -> 그리드 스타일 모듈 데이터 하나로 보내기!
+const gridData = [liveData,posterData];
+
+
   const gnbData = {
     "드라마":[
       "[예정] 반짝이는 워터멜론",
@@ -74,3 +79,5 @@ const posterData = [
       "[종영] 그때 나는 내가 되기로 했다",
     ],
   };
+
+  export { gridData, gnbData };

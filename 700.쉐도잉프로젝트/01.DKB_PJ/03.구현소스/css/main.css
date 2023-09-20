@@ -206,25 +206,40 @@ body > div > * {
 .main .group-part-02 .partbox {
     height: 298px;
 }
-/*********** 현장포토파트 ***********/
+/*********** 그리드 박스 공통파트 ***********/
+/* 현장포토(.live-box) / 대표이미지(.poster-box) */
 
 /* 현장포토 그리드 구성박스 */
-.live-box ul{
+.grid-box ul{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-column-gap: 24px;
     grid-row-gap: 48px;
 }
 /* 현장포토 이미지 공통 */
-.live-box img {
+.grid-box img {
     width: 100%;
     border-radius: 10px;
 }
 /* 현장포토 이미지 설명 타이틀 */
-.live-box figcaption{
+.grid-box figcaption{
     font-size: 2rem;
     font-weight: 500;
     padding-top: 14px;
+}
+
+/* 대표이미지 박스 조정 */
+.poster-box ul{
+    grid-template-rows: repeat(2,min(16.5vw,240px));
+    /* min()으로 최대사이즈 지정, 작아질때 화면맞춤(vw) */
+    /* -> 결과적으로 일정한 높이값을 줌으로해서 첫번째 줄의 이미지가 큰 박스가 아래쪽으로 나가있고
+    두번째 줄은 박스 크기에 맞게 바로 첫번째 박스 아래에 위치하게됨! */
+}
+
+/* 마지막 박스 그리드 줄조정 */
+.poster-box ul li:last-child{
+    /* 윗줄로 올라오게 그리드 줄 위치속성 셋팅! */
+    grid-row: 2/3;
 }
 
 
