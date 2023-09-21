@@ -199,13 +199,121 @@ body > div > * {
     /* background-color: lightgoldenrodyellow; */
 }
 /*********** 방송편성소개파트 ***********/
-.main .group-part-01 .partbox {
+.main .intro-part .partbox {
     height: 455px;
 }
-/*********** 미리보기파트 ***********/
+/* 서브타이틀 */
+.intro-part .stit{
+    padding: 0;
+}
+/* 하위제목 + 아이콘 박스 */
+.intro-desc{
+    display: flex;
+    font-size: 2.5rem;
+}
+.intro-desc h3{
+    margin-right: 20px;
+}
+.intro-desc ul{
+    display: flex;
+    gap: 0 15px;
+}
+/* 설명박스 */
+.intro-txt{
+    padding: 20px;
+    font-size: 2.2rem;
+    line-height: 2;
+    color: #555;
+}
+/* 인트로 버튼 */
+.intro-btn{
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid #000;
+}
+
+/* 인트로 동영상 박스 */
+.intro-mv-img{
+    position: relative;
+    /* 부모자격 */
+    aspect-ratio: 2/1.1;
+    
+}
+/* 가상요소로 플레이버튼 만들기 */
+.intro-mv-img.off::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    background: url(../images/icon_play.png) no-repeat;
+    cursor: pointer;
+}
+
+/* 하위 이미지/동영상 */
+.intro-mv-img img,
+.intro-mv-img video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* 동영상 설명박스 */
+.intro-mv-box figcaption{
+    padding-top: 10px;
+    font-size: 1.75rem;
+}
+
+/*********** 미리보기파트 : .preview-part***********/
 .main .group-part-02 .partbox {
     height: 298px;
 }
+.preview-box .partbox{
+    padding: 15px;
+    color: #888;
+}
+
+.preview-box .partbox:hover{
+    padding: 15px;
+    color: #222;
+    cursor: pointer;
+}
+
+/* 각 미리보기 타이틀 */
+.preview-box h3{
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+/* 각 미리보기 내용박스 */
+.preview-box p{
+    font-size: 1.5rem;
+    line-height: 2;
+
+    /* 여러줄 말줄임 표시 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 /*********** 그리드 박스 공통파트 ***********/
 /* 현장포토(.live-box) / 대표이미지(.poster-box) */
 
