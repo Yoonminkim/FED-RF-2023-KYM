@@ -37,6 +37,17 @@
 
         // forEach 메서드를 사용하여 위와 같이 새배열 만들기
         let newArr2 = [];
+        let newArr4 = [];
+
+        arr1.forEach((val,idx)=>{
+
+            newArr4[idx] = val;
+
+        })
+
+        console.log(newArr4);
+
+
         arr1.forEach((val,idx)=>{
 
             newArr2[idx] = `<h1>${val}</h1>`;
@@ -46,6 +57,8 @@
         console.log('새배열2:', newArr2);
 
         // 위의 새로운 배열변수를 만들고 새로 할당하는 수고를 줄여주는 메서드가 map이다!
+        const newArr5 = arr1.map(val=>val);
+        console.log('새배열5:', newArr5);
         const newArr3 = arr1.map(val=>`<h1>${val}</h1>`);
         console.log('새배열3:', newArr3);
 
