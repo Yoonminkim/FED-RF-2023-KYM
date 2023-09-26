@@ -306,14 +306,6 @@ body > div > * {
 
 
 
-
-
-
-
-
-
-
-
 /*********** 그리드 박스 공통파트 ***********/
 /* 현장포토(.live-box) / 대표이미지(.poster-box) */
 
@@ -356,6 +348,29 @@ body > div > * {
     height: 542px;
 }
 /*********** 최신동영상파트 ***********/
-.main .group-part-05 .partbox {
-    height: 376px;
+.clip-box{
+    overflow: hidden;
+}
+
+.clip-box ul{
+    display: flex;
+    gap: 0 2vw;
+}
+
+.clip-box li {
+    flex-basis: calc(25% - 2%);
+    flex-shrink: 0;
+}
+
+.clip-box h4{
+    font-size: 1.8rem;
+}
+
+.clip-box h3{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.clip-box iframe {
+    width: 100%;
 }
