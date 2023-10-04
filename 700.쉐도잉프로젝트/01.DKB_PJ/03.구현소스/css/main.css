@@ -198,21 +198,21 @@ body > div > * {
 #main {
     /* background-color: lightgoldenrodyellow; */
 }
-/*********** 방송편성소개파트 ***********/
+/*********** 방송편성소개파트 : .intro-part ***********/
 .main .intro-part .partbox {
     height: 455px;
 }
 /* 서브타이틀 */
 .intro-part .stit{
-    padding: 0;
+    padding-bottom: 0;
 }
-/* 하위제목 + 아이콘 박스 */
+/* 하위제목+아이콘 박스 */
 .intro-desc{
     display: flex;
     font-size: 2.5rem;
 }
 .intro-desc h3{
-    margin-right: 20px;
+    margin-right: 10px;
 }
 .intro-desc ul{
     display: flex;
@@ -225,22 +225,20 @@ body > div > * {
     line-height: 2;
     color: #555;
 }
-/* 인트로 버튼 */
+/* 인트로버튼 */
 .intro-btn{
-    padding: 20px 40px;
+    padding: 20px 50px;
     border-radius: 10px;
     font-size: 1.8rem;
-    font-weight: 700;
     background-color: transparent;
     border: 1px solid #000;
+    font-weight: bold;
 }
-
 /* 인트로 동영상 박스 */
 .intro-mv-img{
     position: relative;
     /* 부모자격 */
     aspect-ratio: 2/1.1;
-    
 }
 /* 가상요소로 플레이버튼 만들기 */
 .intro-mv-img.off::after{
@@ -263,28 +261,34 @@ body > div > * {
     object-fit: cover;
     border-radius: 5px;
 }
-
 /* 동영상 설명박스 */
 .intro-mv-box figcaption{
+    font-size: 2rem;
     padding-top: 10px;
-    font-size: 1.75rem;
 }
 
-/*********** 미리보기파트 : .preview-part***********/
-.main .group-part-02 .partbox {
+
+/*********** 미리보기파트 : .preview-part ***********/
+.main .preview-part .partbox {
     height: 298px;
 }
 .preview-box .partbox{
     padding: 15px;
     color: #888;
-}
-
-.preview-box .partbox:hover{
-    padding: 15px;
-    color: #222;
     cursor: pointer;
 }
-
+.preview-box .partbox:hover{
+    color: #222;
+}
+/* 각 박스 외곽선 디자인 */
+.preview-box .partbox>div{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.504);
+}
 /* 각 미리보기 타이틀 */
 .preview-box h3{
     font-size: 2rem;
@@ -295,18 +299,16 @@ body > div > * {
     font-size: 1.5rem;
     line-height: 2;
 
-    /* 여러줄 말줄임 표시 */
+    /* 여러줄 말줄임표시 */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
-
 }
 
 
-
-/*********** 그리드 박스 공통파트 ***********/
+/*********** 그리드박스 공통파트 ***********/
 /* 현장포토(.live-box) / 대표이미지(.poster-box) */
 
 /* 현장포토 그리드 구성박스 */
@@ -330,47 +332,98 @@ body > div > * {
 
 /* 대표이미지 박스 조정 */
 .poster-box ul{
-    grid-template-rows: repeat(2,min(16.5vw,240px));
-    /* min()으로 최대사이즈 지정, 작아질때 화면맞춤(vw) */
-    /* -> 결과적으로 일정한 높이값을 줌으로해서 첫번째 줄의 이미지가 큰 박스가 아래쪽으로 나가있고
-    두번째 줄은 박스 크기에 맞게 바로 첫번째 박스 아래에 위치하게됨! */
+    /* 그리드 템플릿 줄속성 반복 사이즈 지정하기 */
+    grid-template-rows: repeat(2,min(16.5vw,238px));
+    /* min() 으로 최대사이즈 지정, 작아질때 화면맞춤(vw) 
+    -> 결과적으로 일정한 높이값을 줌으로해서 첫번째 줄의
+    이미지의 큰 박스가 아랫쪽으로 나가있고 두번째줄은
+    박스크기에 맞게 바로 첫번째 박스 아래에 위치하게됨! */
 }
-
-/* 마지막 박스 그리드 줄조정 */
-.poster-box ul li:last-child{
-    /* 윗줄로 올라오게 그리드 줄 위치속성 셋팅! */
-    grid-row: 2/3;
-}
-
 
 /*********** 대표이미지파트 ***********/
 .main .group-part-04 .partbox {
     height: 542px;
 }
 /*********** 최신동영상파트 ***********/
-.clip-box{
-    overflow: hidden;
+.clip-area{
+    position: relative;
+    /* 부모자격 */
 }
-
-.clip-box ul{
+.clip-box ul {
+    position: relative;
+    left: 0;/* 이동초기값 */
     display: flex;
-    gap: 0 2vw;
+    gap: 0 2%;
+    /* 트랜지션 */
+    transition: left .4s ease-in-out;
 }
 
 .clip-box li {
-    flex-basis: calc(25% - 2%);
+    flex-basis: calc(25.5% - 2%);
     flex-shrink: 0;
 }
 
-.clip-box h4{
-    font-size: 1.8rem;
+/* 동영상 이미지박스 */
+.clip-mv-box {
+    position: relative;
+    /* 부모자격 */
+}
+/* 동영상 이미지박스 이미지 */
+.clip-mv-box img {
+    width: 100%;
+}
+/* 동영상 이미지박스 가상요소로 플레이버튼 */
+.clip-mv-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+    background: url(../images/icon_play.png) no-repeat 0/100%;
+    cursor: pointer;
 }
 
-.clip-box h3{
-    font-size: 1.5rem;
+.clip-box h4 {
+    font-size: 18px;
     font-weight: normal;
 }
 
-.clip-box iframe {
-    width: 100%;
+.clip-box h3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #555;
 }
+
+.clip-box {
+    overflow: hidden;
+}
+
+
+/* 양쪽버튼만들기 */
+.btn-box button{
+    position: absolute;
+    z-index: 999;
+    top: 43%;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 65px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+/* 왼쪽버튼 */
+.btn-box button:first-child{
+    left: -35px;
+    /* 처음에 안보임 */
+    display: none;
+}
+/* 오른쪽버튼 */
+.btn-box button:last-child{
+    right: -35px;
+}
+

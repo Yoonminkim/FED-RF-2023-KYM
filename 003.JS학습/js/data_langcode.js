@@ -25,6 +25,7 @@ const langCode = {
         "메뉴": ["Casa", "Hombres", "Mujeres", "Anuncios"],
         "주소": "94, JJ Building, 34-22, Cheongdam-dong, Gangnam-gu, Seúl, Representante: James Hong"
     }
-}
+}; /////////// langCode객체 /////////
 
+// 내보내기
 export default langCode;

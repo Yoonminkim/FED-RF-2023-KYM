@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 네비게이션 유형1 CSS - flex적용 - nav01_flex.css */
+/* 네비게이션 유형1 CSS : flex적용 - nav01_flex.css */
 
 
 html,
@@ -31,8 +31,8 @@ a {
     text-decoration: none;
 }
 /* 클리어설정 가상요소
-- .clb가 설정된 요소는 clear가 셋팅됨! */
-/* -> 플렉스에서는 불필요! */
+- .clb가 설정된 요소는 clear가 셋팅됨!
+-> 플렉스에서는 불필요! */
 /* ul::after,
 ol::after,
 .clb::after {
@@ -116,7 +116,7 @@ ol::after,
 .gnb > ul > li {
     position: relative;
     /* 부모자격 - .sub-menu */
-    /* float: left; -> 플렉스에선 안씀! */
+    /* float: left;->플렉스에선 안씀! */
     /* 나는 왼쪽, 너는 오른쪽으로 올라와! */
     padding: 29px 0;
 }

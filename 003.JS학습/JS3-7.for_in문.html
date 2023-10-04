@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>객체를 위한 for in문</title>
+    <title>JS3-7. 객체를 위한 for in문</title>
     <style>
       h1,
       .btns,
@@ -190,65 +190,73 @@
                 function qs(x) {
                     return document.querySelector(x)
                 }
-        */
+            */
 
-        // html 코드 변수
-        let hcode = '';
+            // html코드 변수
+            let hcode = '';
 
-        // 객체를 for in 문으로 순회하여 코드만들기 ///
-        for(let x in mvi){
+            // 1. 객체를 for in문으로 순회하여 코드만들기 ///
+            for(let x in mvi){ // x는 속성명
+                // console.log('속성',x);
+                // console.log('값',mvi[x]['포스터']);
+
+                // 코드를 변수에 대입
+                hcode +=
+                `
+                <section class="cbx">
+                    <div class="minfo">
+                        <!-- 1. 포스터 -->
+                        <div class="photo">
+                            <img src="${mvi[x]['포스터']}" 
+                            alt="${mvi[x]['제목']}의 포스터">  
+                        </div>
+                        <div class="cont">
+                            <!-- 2. 제목 -->
+                            <h2 class="tit">
+                                ${mvi[x]['제목']}</h2>
+                            <!-- 3. 개요 -->
+                            <h3 class="sum">
+                                ★장르 : ${mvi[x]['개요']}</h3>
+                            <!-- 4. 감독 -->
+                            <h3 class="dir">
+                                ★감독 : ${mvi[x]['감독']}</h3>
+                            <!-- 5. 출연 -->
+                            <h3 class="act">
+                                ★출연 : ${mvi[x]['출연']}</h3>
+                        </div>
+                    </div>
+        
+                    <!-- 영화 한마디 -->
+                    <h2 class="showtit">♥ 영화한마디!</h2>
+                    <!-- 6. 문구 -->
+                    <div class="show">
+                        ${wrapSpan(mvi[x]['문구'])}
+                    </div>
+                </section>
                 
-            console.log('속성:', x);
-            console.log('값:', mvi[x]['포스터']);
-
-            hcode +=
-            `
-            <section class="cbx">
-                            <div class="minfo">
-                                <!-- 1. 포스터 -->
-                                <div class="photo">
-                                    <img src="${mvi[x]['포스터']}" alt="${mvi[x]['제목']}의 포스터">  
-                                </div>
-                                <div class="cont">
-                                    <!-- 2. 제목 -->
-                                    <h2 class="tit">
-                                        ${mvi[x]['제목']}</h2>
-                                    <!-- 3. 개요 -->
-                                    <h3 class="sum">
-                                        ★장르 : ${mvi[x]['개요']}</h3>
-                                    <!-- 4. 감독 -->
-                                    <h3 class="dir">
-                                        ★감독 : ${mvi[x]['감독']}</h3>
-                                    <!-- 5. 출연 -->
-                                    <h3 class="act">
-                                        ★출연 : ${mvi[x]['출연']}</h3>
-                                </div>
-                            </div>
-                            <!-- 영화 한마디 -->
-                            <h2 class="showtit">♥ 영화한마디!</h2>
-                            <!-- 6. 문구 -->
-                            <div class="show"> ${wrapSpan(mvi[x]['문구'])}</h3>
-                        </section>
                 `
 
-            } ////////////// for in 문 ///////////////
 
-            console.log('코드 :' ,hcode);
+            } //////////// for in ////////////
 
+            // 코드확인
+            console.log('코드:',hcode);
+
+            // 2. 페이지 요소에 코드 넣기
             qs('.wrap').innerHTML = hcode;
 
-            // 3. 영화 한마디 처리함수 : 한글자씩 span 싸기
-            function wrapSpan(txt){
 
+            // 3. 영화한마디 처리함수 : 한글자씩 span싸기
+            function wrapSpan(txt){
                 let hcode = '';
                 for(let x of txt){
-                    if(x==' ') hcode += '&nbsp;';
+                    if(x==' ') hcode += '&nbsp;&nbsp;';
                     else hcode += `<span>${x}</span>`;
-                } ////////////for of ///////////////
+                } ///// for of //////
 
                 // 결과리턴 : 만들어진 코드
                 return hcode;
-            } //////////////////// wrapSpan 함수 //////////////
+            } ///////////// wrapSpan 함수 ///////
 
         /************************************************* 
                 [ 객체를 위한 for in 문 ]
@@ -271,8 +279,9 @@
   </head>
 
   <body>
+    <h1 style="text-align: center;">객체를 위한 for in문</h1>
     <main class="cont ibx">
-      <h2>무비차트</h2>
+      <h2 style="text-align: center;">무비차트</h2>
       <!-- 영화정보박스 -->
       <div class="wrap"></div>
     </main>

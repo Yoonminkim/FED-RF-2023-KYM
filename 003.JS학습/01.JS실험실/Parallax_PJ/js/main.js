@@ -1,5 +1,4 @@
 // 패럴렉스 PJ JS - main.js
-// 패럴렉스 PJ JS - main.js
 
 // 부드러운 스크롤 불러오기
 import { startSS, setPos } from "./smoothScroll20.js";

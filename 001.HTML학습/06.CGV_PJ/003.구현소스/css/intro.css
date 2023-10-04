@@ -6,10 +6,10 @@
 @import url(./core.css);
 
 /* 전체 페이지 채우기 */
-html, body{
+html,body{
     width: 100vw;
     height: 100vh;
-    /* 스크롤바 없앰 */
+    /* 스크롤바 없앰! */
     overflow: hidden;
 }
 
@@ -20,14 +20,15 @@ html, body{
     object-fit: cover;
 
     /* 필터의 명도값을 조정하여 어두워보이게함 */
-    filter: brightness(50%);
-    /* 1~0 사이 소수값 또는 0%~N% 값으로 처리 */
+    filter: brightness(0.5); 
+    /* 1~0사이 소수값 또는 0%~몇% 값을 처리 */
     /* 
         용어체크:
-        1) 오버레이효과(overlay) - 어둡게 처리
-        2) 트렌스페런트효과(transparent) - 밝게 처리
+        1) 오버레이효과(overlay) - 어둡게처리
+        2) 트렌스페런트효과(transparent) - 밝게처리
     */
 }
+
 /* 
     [ object-fit 속성 ]
     -> img, video 요쇼에 사용하는 맞춤속성
@@ -60,7 +61,9 @@ html, body{
 
     */
 
-    /* 2.들어가기 버튼 */
+
+    
+/* 2.들어가기 버튼 */
 #enter{
     position: absolute;
     top: 50%;
@@ -85,32 +88,29 @@ html, body{
     color: chartreuse;
 }
 
-img:hover{
-    transform: scale(1.2);
-    animation: logo-ani .5s linear forwards;
-    animation: logo-ani2 1s ease-in .5s infinite alternate;
+/* 엔터박스 오버시 로고이미지 애니적용 2가지 */
+#enter:hover img{
+    /* 애니메이션 */
+    animation: 
+    logo-ani .4s linear forwards,
+    logo-ani2 .4s linear .4s infinite alternate;
 }
 
-/* 로고 애니 키프레임 */
+/* 로고 애니 키프레임 (오버시 한번만,마지막상태유지) */
 @keyframes logo-ani {
     50%{
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(1.5);
     }
     100%{
-        transform: rotate(-10deg);
+        transform: rotate(-15deg) scale(1.5);
     }
 }
-
+/* 로고 애니 키프레임2 (오버시 계속) */
 @keyframes logo-ani2 {
     0%{
-        transform: rotate(-10deg);
+        transform: rotate(-15deg) scale(1.5);
     }
     100%{
-        transform: rotate(10deg) scale(1.2);
+        transform: rotate(15deg) scale(2);
     }
-}
-
-/* 미디어쿼리 */
-@media screen and (max-width:800px){
-    
 }

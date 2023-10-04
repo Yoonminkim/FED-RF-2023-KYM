@@ -24,7 +24,7 @@
                 left: 100%;
                 width: 40vw;
                 border-radius: 50%;
-                transition: 0.4s;
+                transition: .4s;
             }
 
             ul#letterBox {
@@ -70,10 +70,13 @@
             }
         </style>
 
+        
         <!-- 제이쿼리 라이브러리 CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
         <!-- 제이쿼리 UI CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
         <script>
             /////// 전역변수 구역 ////////////////
             var pno = 0; /// 현재 페이지번호 전역변수
@@ -115,64 +118,78 @@
                     console.log("순번: " + pno);
 
                     //// 4. 내맘대로~!!!!
-                    if (pno === 1) {
-                        my.css({ left: "50%" });
-                    } else if (pno === 2) {
+                    if(pno===1){
+                        my.css({left:"50%"})
+                    }
+                    else if(pno===2){
                         my.css({
-                            top: "20%",
-                            left: "20%",
-                        });
-                    } else if (pno === 3) {
+                            top:"20%",
+                            left:"20%"
+                        })
+                    }
+                    else if(pno===3){
                         my.css({
-                            transform: "rotate(180deg)",
-                        });
-                    } else if (pno === 4) {
+                            transform: "rotate(180deg)"
+                        })
+                    }
+                    else if(pno===4){
                         my.css({
-                            top: "100%",
-                        });
-                    } else if (pno === 5) {
-                        my.attr("src", "https://cdn.ggilbo.com/news/photo/202007/783102_616528_5337.jpg");
+                            top:"100%"
+                        })
+                    }
+                    else if(pno===5){
+                        my.attr("src","https://cdn.ggilbo.com/news/photo/202007/783102_616528_5337.jpg");
                         my.css({
-                            top: "50%",
-                            transform: "rotate(0deg)",
-                        });
-                    } else if (pno === 6) {
-                        my.attr("src", "https://cdn.ggilbo.com/news/photo/202007/783102_616528_5337.jpg");
+                            top:"50%",                            
+                            transform: "rotate(0deg)"
+                        })
+                    }
+                    else if(pno===6){
+                        my.attr("src","https://cdn.ggilbo.com/news/photo/202007/783102_616528_5337.jpg");
                         my.css({
-                            left: "50%",
+                            left:"50%",                            
                             transform: "translate(-50%,-50%)",
-                        });
-                    } else if (pno === 7) {
-                        my.css({
-                            left: "50%",
-                            transform: "translate(-50%,-50%) rotateY(90deg)",
-                        });
-                    } else if (pno === 8) {
-                        my.attr("src", "https://img4.yna.co.kr/etc/inner/KR/2017/01/20/AKR20170120166300033_09_i_P2.jpg");
 
+                        })
+                    }
+                    else if(pno===7){
                         my.css({
-                            transform: "translate(-50%,-50%) rotateY(0deg)",
-                        });
-                    } else if (pno === 9) {
-                        my.css({
-                            borderRadius: "50%",
-                            width: "40vw",
+                            left:"50%",                            
                             transform: "translate(-50%,-50%) rotateY(90deg)",
-                            transition: `.4s`,
-                        });
-                    } else if (pno === 10) {
-                        my.attr("src", "https://img.postshare.co.kr/images/2021/09/29112128/maxresdefault-1024x576.jpg");
 
-                        my.css({
-                            width: "100vw",
-                            borderRadius: "0",
+                        })
+                    }
+                    else if(pno===8){
+                        my.attr("src","https://img4.yna.co.kr/etc/inner/KR/2017/01/20/AKR20170120166300033_09_i_P2.jpg");
+                        
+                        my.css({                         
                             transform: "translate(-50%,-50%) rotateY(0deg)",
-                            transition: `
+
+                        })
+                    }
+                    else if(pno===9){
+                        my.css({    
+                            borderRadius:"50%",   
+                            width:"40vw",                     
+                            transform: "translate(-50%,-50%) rotateY(90deg)",
+                            transition:`.4s`
+                        })
+                    }
+                    else if(pno===10){
+                        my.attr("src","https://img.postshare.co.kr/images/2021/09/29112128/maxresdefault-1024x576.jpg");
+                        
+                        my.css({ 
+                            width:"100vw",
+                            borderRadius:"0",                        
+                            transform: "translate(-50%,-50%) rotateY(0deg)",
+                            transition:`
                             .4s,border-radius .8s .4s,
-                            width 5s 1.2s`,
-                        });
+                            width 5s 1.2s`
+
+                        })
                     }
                 }); /////////// on 이벤트 함수 ///////////
+
 
                 // 대상선정: #mymy
                 const my = $("#mymy");

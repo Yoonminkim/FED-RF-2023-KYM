@@ -1,18 +1,20 @@
 // 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 //
 
 // DOM 모듈함수
-import dFn from './dom.js';
+import dFn from "./dom.js";
+
 
 // 슬라이드 대상요소 : .banbx
 const banBox = dFn.qsa('.banbx');
-console.log('슬라이드 대상:', banBox);
+console.log('슬라이드 대상:',banBox);
 
 // 슬라이드 만큼 모두 호출하기!
 banBox.forEach(ele=>{
+    // 슬라이드 함수 호출하기
     slideFn(ele);
-    // 실제 DOM 요소를 보낸다!
-});
+    // 실제 DOM요소를 보낸다!
 
+}); /////// forEach ///////////
 
 /***************************************************** 
     [ 슬라이드 이동 기능정의 ]
@@ -55,47 +57,45 @@ banBox.forEach(ele=>{
  함수명: slideFn
  기능: 로딩 후 버튼 이벤트 및 기능구현
  ******************************************/
-function slideFn(selEl) { // selEl 선택 슬라이드 요소
-    console.log("로딩완료!");
-    // 슬라이드 공통변수 //// 
-    // 전역변수구역 //////////
-    // 1. 광클금지상태변수 : 0-허용,1-불허용
+function slideFn(selEl) { // selEl 선택 슬라이드 부모 요소
+    console.log("슬라이드 함수 호출확인!");
+
+    // 0.슬라이드 공통변수 /////
+    // 0-1. 광클금지상태변수 : 0-허용,1-불허용
     let clickSts = 0;
-    // 2. 슬라이드 이동시간 : 상수로 설정
+    // 0-2. 슬라이드 이동시간 : 상수로 설정
     const TIME_SLIDE = 400;
     
     // 1. 대상선정
-    // 1-1. 슬라이드 부모요소
-    const sldWrap = selEl; // DOM요소를 직접 받음!!!
-    // 1-1.변경 대상: 선택요소 하위 .slide
+    // 1-1. 슬라이드 부모요소 : 전달된 선택요소 -> selEl
+    const sldWrap = selEl;// DOM요소를 직접 받음!!!
+    // 1-2.변경 대상: 선택요소 하위 .slide
     const slide = dFn.qsEl(sldWrap,'.slide');
-    // 1-2.이벤트 대상: 선택요소 하위 .abtn
+    // 1-3.이벤트 대상: 선택요소 하위 .abtn
     const abtn = dFn.qsaEl(sldWrap,'.abtn');
-    // 1-3.블릿박스 대상: 선택요소 하위 .indic
+    // 1-4.블릿박스 대상: 선택요소 하위 .indic li
     let indic = dFn.qsEl(sldWrap,'.indic');
+
 
     // 대상확인
     console.log('대상',abtn,slide,indic);
 
-    // 1-4. 슬라이드 개수와 동일한 불릿 동적생성
-    // 대상: .indic -> indic 변수
-    // 슬라이드 개수
+    // 1.4. 슬라이드 개수와 동일한 블릿동적생성
+    // 대상: .indic -> indic변수
+    // 슬라이드개수
     let sldCnt = dFn.qsaEl(slide,'li').length;
-    // for문으로 블릿li 생성 (0번만 클래스 on 넣기)
-    for(let i=0 ; i < sldCnt; i++){
-        indic.innerHTML += 
-        `
-        <li ${i==0?'class="on"':''}>
-            <img src="images/dot1.png" alt="흰색">
-            <img src="images/dot2.png" alt="회색">
-        </li>
+    // for문으로 블릿li생성(0번만 클래스 on넣기)
+    for(let i=0; i< sldCnt; i++){
+        indic.innerHTML += `
+            <li ${i==0?'class="on"':''}>
+                <img src="images/dot1.png" alt="흰색">
+                <img src="images/dot2.png" alt="회색">
+            </li>
         `;
-    }//////////////for문/////////////////////////
+    } /////// for문 ////////////
 
-    // 불릿 li 재선택 할당하기 ///////////////////
+    // 블릿li 재선택할당하기 /////
     indic = dFn.qsaEl(sldWrap,'.indic li');
-
-    console.log(indic);
 
 
     // 1.5. li리스트에 순번속성 만들어 넣기
@@ -113,7 +113,7 @@ function slideFn(selEl) { // selEl 선택 슬라이드 요소
     // 3. 함수만들기
     function goSlide(){
 
-        // a요소 기본이동막기
+        // a요소 기본이동 막기
         event.preventDefault();
 
         // 광클금지 //////////////
@@ -156,7 +156,7 @@ function slideFn(selEl) { // selEl 선택 슬라이드 요소
             // 시간은 0이어도 비동기 처리므로 효과있음!
 
             setTimeout(() => {
-                // 4. left값 -220% 으로 들어오기
+                // 4. left값 -220%으로 들어오기
                 slide.style.left = '-220%';
                 
                 // 5. 트랜지션주기
@@ -200,7 +200,7 @@ function slideFn(selEl) { // selEl 선택 슬라이드 요소
 
     // 슬라이드 오른쪽방향 함수 ////////////
     function rightSlide(){
-        //1.대상이동하기 원래자리로 -330%
+        //1.대상이동하기 : -330%
         slide.style.left = '-330%';
         //2.트랜지션주기
         slide.style.transition = 
@@ -276,8 +276,5 @@ function slideFn(selEl) { // selEl 선택 슬라이드 요소
 
 
 
-
-
-
-} //////////////// loadFn 함수 ///////////////
+} //////////////// slideFn 함수 ///////////////
 /////////////////////////////////////////////

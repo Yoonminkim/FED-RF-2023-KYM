@@ -15,7 +15,7 @@
 body{
     background-color: #000;
 }
-
+/* 전체반투명가림막 body가상요소 */
 body.on::after {
     content: '';
     position: fixed;
@@ -25,7 +25,8 @@ body.on::after {
     height: 100vh;
     background-color: #000;
     opacity: 0.7;
-    z-index: 99;
+    z-index: 9999;
+    /* 보여줄 요소는 이것보다 숫자가 크면됨! */
 }
 
 /**************** 1.상단영역 ****************/
@@ -35,10 +36,10 @@ body.on::after {
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 
-    /* 상단영역 박스 가장위! */
+    /* 상단영역박스 가장위! */
     z-index: 999;
 }
-/* 1-0. 맵버튼 박스 */
+/* 1-0.맵버튼박스 */
 .btn-map{
     position: absolute;
     top: 0;
@@ -46,7 +47,11 @@ body.on::after {
     width: 120px;
     height: 80px;
     /* outline: 2px dashed yellow; */
+    /* 나간배경 숨기기 */
     overflow: hidden;
+
+    /* 손가락모양 */
+    cursor: pointer;
 }
 /* 맵버튼 가상요소로 무한이동 배경넣기 */
 .btn-map::before{
@@ -56,6 +61,7 @@ body.on::after {
     width: 200%;
     height: 100%;
     background: url(../images/street.jpg) repeat-x 0/50% 100%;
+    /* 애니메이션 */
     animation: bg-ani 2s linear infinite;
 }
 /* 무한반복 배경애니 키프레임 */
@@ -64,7 +70,6 @@ body.on::after {
         left: -100%;
     }
 }
-
 /* 1-1.로고 */
 .tit{
     color: aquamarine;
@@ -91,7 +96,7 @@ body.on::after {
     right: 10px;
 }
 .gnb ul{
-    /* 플랙스박스 */
+    /* 플렉스박스 */
     display: flex;
     /* 사이간격 */
     gap: 0 20px;
@@ -109,16 +114,16 @@ body.on::after {
 /* 상위메뉴 a */
 .gnb ul>li>a{
     display: inline-block;
-    /* a는 원래 inline이라 트랜스폼이 적용안됨!
-    따라서 inline-block으로 변경해야 적용됨! */
+    /* a는 원래 inline인데 트랜스폼이 적용안됨!
+    따라서 inline-block로 변경해야 적용됨! */
     font-size: 2rem;
     padding-bottom: 10px;
     /* 패딩으로 젠틀앱솔루트인 .smenu를 아랫쪽으로
-        밀려서 이동되게함! li에 연결상태유지! */
+    밀려서 이동되게함! li에 연결상태유지! */
     /* 트랜지션 */
     transition: .3s;
 }
-/* 상위메뉴 li오버시 */
+/* 상위메뉴 li오버시 a */
 .gnb ul>li:hover>a{
     color: aquamarine;
     /* 글자확대 */
@@ -129,8 +134,8 @@ body.on::after {
     animation: tit-ani .5s ease-in infinite alternate;
 }
 
-/* GNB서브메뉴 */
-.smenu {
+/* GNB 서브메뉴 */
+.smenu{
     position: absolute;
     left: 50%;
     /* x축방향 중앙이동 */
@@ -141,9 +146,9 @@ body.on::after {
     background: url(../images/bg_smenu.png) no-repeat center/cover;
 
     /* 필터를 이용한 그림자로 글로우효과주기
-     -> box-shadow를 사용하면 본 박스에만 효과가 적용되고
-     가상요소 삼각형에는 적용안됨. 필터는 내부 구성요소
-     모두의 외곽선에 그림자효과를 적용함! */
+    -> box-shadow를 사용하면 본 박스에만 효과가 적용되고
+    가상요소 삼각형에는 적용안됨. 필터는 내부 구성요소
+    모두의 외곽선에 그림자효과를 적용함!  */
     filter: drop-shadow(0 0 5px #fff);
 
     /* 처음에 숨기기 */
@@ -157,13 +162,13 @@ body.on::after {
 .smenu::before{
     content: '';
     position: absolute;
-    top: -18px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
     width: 20px;
-    height: 20px;
+    height: 15px;
     background-color: #373737;
-    clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 /* 서브메뉴 ol */
 .smenu ol{
@@ -175,26 +180,26 @@ body.on::after {
     font-size: 1.6rem;
     line-height: 1.7;
 }
-/* 서브메뉴 a오버시 */
+/* 서브메뉴 li오버시 a */
 .smenu li:hover a{
     color: orangered;
 }
-/* 서브메뉴 a 오버시 가상요소로 이미지 넣기 */
+/* 서브메뉴 li오버시 a가상요소로 이미지넣기! */
 .smenu li:hover a::after{
-    content: '🎃';
+    content: '🎪';
     float: right;
 }
-/* 서브메뉴 li별 이모지 변경하기 */
-.gnb ul>li:nth-child(2) .smenu li:hover a::after{
-    content: '🎧';
+/* 서브메뉴 li별 이미지변경하기 */
+.gnb ul>li:nth-child(2) .smenu li:hover  a::after{
+    content: '🎃';
 }
-/* 서브메뉴 li별 이모지 변경하기 */
-.gnb ul>li:nth-child(3) .smenu li:hover a::after{
-    content: '🧨';
+/* 서브메뉴 li별 이미지변경하기 */
+.gnb ul>li:nth-child(3) .smenu li:hover  a::after{
+    content: '✨';
 }
-/* 서브메뉴 li별 이모지 변경하기 */
-.gnb ul>li:nth-child(4) .smenu li:hover a::after{
-    content: '💨';
+/* 서브메뉴 li별 이미지변경하기 */
+.gnb ul>li:nth-child(4) .smenu li:hover  a::after{
+    content: '📣';
 }
 
 /* 개별 구분 보더 넣기 클래스 */
@@ -206,22 +211,22 @@ body.on::after {
 .cam{
     position: absolute;
     /* 부모는? .gnb */
-    top: -11px;
-    right: -80px;
+    top: -12px;
+    right: -70px;
 }
 /* 영사기 이미지 */
 .cam>img{
     position: relative;
     z-index: 1;
     width: 50px;
-    transform: rotate(10deg);
-    /* 트랜지션 돌아올 때 빔 회수시간 기다림 */
-    transition: .3s .3s;
+    transform: rotate(30deg);
+    /* 트랜지션 : 돌아올때 빔회수시간 기다림 */
+    transition: .3s .2s;
 }
-/* .gnb에 오버시 영사기 돌기 */
+/* .gnb에 오버시 영상기 돌기 */
 .gnb:hover .cam>img{
     transform: rotate(0);
-    /* 트랜지션 딜레이 없음*/
+    /* 트랜지션 딜레이 없음 */
     transition-delay: 0s;
 }
 /* 빔박스 */
@@ -231,25 +236,29 @@ body.on::after {
     right: 9px;
     width: 0;
     height: 70px;
-    background: url(../images/bim.png) no-repeat right/auto 100%;
-    /* 트랜지션 : 먼저 빔 회수하기 */
-    transition: width .3s linear;
+    background: url(../images/bim.png) no-repeat right/auto 100%;  
+    /* 트랜지션 : 먼저 빔회수하기 */
+    transition: width .2s linear;
+
 }
-/* .gnb 오버시 빔박스 빔쏘기 */
+/* .gnb오버시 빔박스 빔쏘기 */
 .gnb:hover .beam{
     width: 200px;
-    /* 트랜지션 : 영사기 도는 0.3초 기다림*/
+    /* 트랜지션 : 영사기 도는 0.3초 기다림 */
     transition-delay: .3s;
-    /* 빔떨림 애니메이션 호출 */
+    /* 빔떨림애니 호출 */
     animation: beam-ani .01s linear infinite alternate;
 }
 
-/* 빔 떨림애니 키프레임 */
+/* 빔떨림애니 키프레임 */
 @keyframes beam-ani {
     to{
-        opacity: 0.8;
+        opacity: 0.5;
     }
 }
+
+
+
 
 /**************** 2.메인영역 ****************/
 .main{
@@ -368,47 +377,47 @@ body.on::after {
     height: 100px;
     padding: 0 15px;
 }
-/* 3-1. 로고박스 */
+/* 3-1.로고박스 */
 .logo{
     margin-right: 15px;
 }
 
-/* 3-2. 회사주소 */
+/* 3-2.회사주소 */
 .co-info address{
-    color: white;
+    color: #fff;
     font-family: 'cute font';
     font-size: 1.6rem;
     font-style: normal;
 }
 
-/* 3-3. SNS박스 */
+/* 3-3.SNS박스 */
 .sns-box{
     margin-left: auto;
 }
-
 .sns-box ol{
     display: flex;
-    gap: 0 20px;
+    gap: 0 15px;
 }
-
 .sns-box a{
-    font-size: 3.5rem;
+    font-size: 4rem;
 }
-
-/* 각 SNS별 오버시 글자색(아이콘색) 넣기 */
-
+/* 각 sns별 오버시 아이콘색(글자색)넣기 */
 .fa-square-facebook:hover{
-    color: cornflowerblue
+    color: cornflowerblue;
 }
 .fa-square-twitter:hover{
-    color: lightblue
+    color: lightskyblue;
 }
 .fa-square-instagram:hover{
-    color: palevioletred
+    color: orange;
 }
 .fa-square-youtube:hover{
-    color: tomato
+    color: orangered;
 }
+
+
+
+
 
 
 
@@ -427,7 +436,7 @@ body.on::after {
     border: 20px solid hotpink;
     border-radius: 10px;
 
-    z-index: 999;
+    z-index: 999999;
     /* 트랜지션: 속시이지 */
     transition: top .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
@@ -435,7 +444,6 @@ body.on::after {
 .gmap.on{
     top: 50%;
 }
-
 /* 닫기버튼 */
 .cbtn{
     position: absolute;

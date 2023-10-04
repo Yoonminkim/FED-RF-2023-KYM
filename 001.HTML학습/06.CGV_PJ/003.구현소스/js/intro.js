@@ -5,14 +5,15 @@
 
 // 대상: #myvid
 const myvid = document.querySelector('#myvid');
-// 이벤트: timeupdate -> 동영상 재생중 발생이벤트
 
+// 이벤트 : timeupdate -> 동영상재생중 발생이벤트
 myvid.addEventListener('timeupdate',()=>{
-    // 1. 동영상 멈춤여부 알아내기
+    // 1.동영상 멈춤여부 알아내기 : 비디오요소.paused -> 멈춤상태면 true
     let isStop = myvid.paused;
-    console.log('동영상 재생중~!');
+    console.log('동영상재생중~!',isStop);
     
-    // 2. 멈춤상태면 페이지 이동
-        if(isStop == 1) location.href = 'main.html';
-
-}); ////////////////////// timeupdate 이벤트 함수 ///////////
+    // 2. 멈춤상태이면 페이지이동
+    if(isStop){
+        location.href = 'main.html';
+    } ///////// if //////
+}); /////////// timeupdate함수 ///////////

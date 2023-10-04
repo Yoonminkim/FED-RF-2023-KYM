@@ -21,13 +21,15 @@ window.addEventListener('wheel',(e)=>{
     // 아랫방향은 윈도우높이값만큼 가고 윗방향은 위치값 0임!
 
     // 두번째 페이지일때 동영상 플레이하기
-    if(e.wheelDelta<0){ // 아래로 내려갈 때 - 자동플레이
-        qs('.trailer-box iframe').src='https://www.youtube.com/embed/Ko2NWhXI9e8?autoplay=1';
-    }
-
+    if(e.wheelDelta<0){ // 아래로 내려갈때 - 자동플레이
+        qs('.trailer-box iframe').src=
+        'https://www.youtube.com/embed/Ko2NWhXI9e8?autoplay=1';
+    } ///// if ////////////
     else{ // 위로 올라올때 - 멈춤
-        qs('.trailer-box iframe').src='src','https://www.youtube.com/embed/Ko2NWhXI9e8?';
-    }
+        qs('.trailer-box iframe').src=
+        'https://www.youtube.com/embed/Ko2NWhXI9e8';
+    } ////// else ///////////////
+
 
 },{passive:false});
 

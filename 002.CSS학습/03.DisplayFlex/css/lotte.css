@@ -46,8 +46,8 @@
     flex-wrap: wrap;
     /* gap : 위아래 양쪽 간격 */
     gap: 25px 30px;
-    /* 수평정렬 : 등분할공간 */
-    justify-content: space-evenly;
+    /* 수평정렬 : 사이간격일정 */
+    justify-content: space-between;
     /* 수직정렬(여러줄) : 중앙 */
     align-content: center;
 }
@@ -113,11 +113,10 @@
 .cont>ul>li:hover{
    flex: 1.4;
    /* 
-        flex 속성의 숫자는
-        1을 쓸 경우 분할 되며
-        다른 숫자를 쓸 때 기본 1로부터
+        flex 속성의 숫자는 
+        1을 쓸 경우 등분할 되며
+        다른 숫자를 쓸때 기본 1로부터
         비교하여 배수로 생각하면 된다!
-   
    */
 }
 /* 가상요소 암전 밝아지기 */
