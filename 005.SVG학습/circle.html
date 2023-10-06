@@ -1,199 +1,270 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG 기본원리 및 애니메이션</title>
-    <style>
-        html,body{
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        body{
-            background-image: linear-gradient(to bottom,lightgreen,lightpink,lightblue);
-        }
-        /* 로고 */
-        
-        /* 전체박스 */
-        .wrap{
-            /* 플렉스박스 */
-            display: flex;
-            /* 플렉스 랩핑박스 */
-            flex-wrap: wrap;
-            width: 100vw;
-            height: 100vh;
-        }
-        /* 내부구역박스 */
-        .wrap>section {
-            /* 렐러티브 부모자격 */
-            position: relative;
-            /* 가로, 세로 등분할 채우기 */
-            flex: 1;
-            /* 한줄에 2개씩 */
-            flex-basis: 50%;
-        }
-        /* 컨텐츠 박스 */
-        .cbx{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* 정중앙이동 */
-            width: 300px;
-            height: 300px;
-            outline: 2px dotted blue;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SVG 기본원리 및 애니메이션</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            body {
+                background-image: linear-gradient(to bottom, lightgreen, lightpink, lightblue);
+            }
 
-        /* svg요소 공통 */
-        .cbx svg{
-            width: 100%;
-            height: 100%;
-        }
+            /* 로고 */
+            .mv-logo{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 37.5vw;
+                height: 15vh;
+                z-index: 9;
+            }
+            .mv-logo svg{
+                width: 100%;
+                height: 100%;
+            }
 
-        /* 1. 아이언맨 */
-        .svg1 {
-            background: url(./images/man.jpg) no-repeat top/cover;
-            /* 원형박스 */
-            border-radius: 50%;
-        }
+            /* 전체박스 */
+            .wrap {
+                /* 플렉스박스 */
+                display: flex;
+                /* 플렉스 랩핑박스 */
+                flex-wrap: wrap;
+                width: 100vw;
+                height: 100vh;
+            }
+            /* 내부구역박스 */
+            .wrap > section {
+                /* 렐러티브 부모자격 */
+                position: relative;
+                /* 가로, 세로 등분할 채우기 */
+                flex: 1;
+                /* 한줄에 2개씩 */
+                flex-basis: 50%;
+            }
+            /* 컨텐츠 박스 */
+            .cbx {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                /* 정중앙이동 */
+                width: 300px;
+                height: 300px;
+                /* outline: 2px dotted blue; */
+            }
 
-        /* circle 설정 */
-        .c1{
-            /* 채우기색 - 기본색 검정 
+            /* svg요소 공통 */
+            .cbx svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            /* 1. 아이언맨 */
+            .svg1 {
+                background: url(./images/man.jpg) no-repeat top/cover;
+                /* 원형박스 */
+                border-radius: 50%;
+            }
+
+            /* circle 설정 */
+            .c1 {
+                /* 채우기색 - 기본색 검정 
                 투명 - transparent
                 없음 - none (뚫린상태)
             */
-            /* 선색 - 기본은 안나옴 */
-            stroke: red;
-            /* 선두께 - 기본값은 1px
+                /* 선색 - 기본은 안나옴 */
+                stroke: red;
+                /* 선두께 - 기본값은 1px
             단위를 안쓰면 모두 px단위
             선두께는 선의 중심선으로부터 생김 */
-            stroke-width: 20;
-            fill: none;
-            
-            /* 
+                stroke-width: 20;
+                fill: none;
+
+                /* 
             [ 데쉬선 속성 : stroke-dasharray ]
             - 선, 공백 순으로 데쉬선 셋팅함
             - 선부터 전체 채우기 위해 일단 50%를 주고 선, 공백이 몇조각나는지 센다
             - 여기서는 50%를 주면 6조각이 나옴
             - 50% * 6 = 300%로 계산하여 선으로 모두 채우기가 됨
             */
-            stroke-dasharray: 300%;
-            
-            /* 
+                stroke-dasharray: 300%;
+
+                /* 
                 [ 데쉬어레이 시작위치 밀기 ]
                  : stroke-dashoffset
                  - 특정 숫자값을 주면 px만큼 밀어준다
                  */
-                 stroke-dashoffset: 300%;
-                 /* 
+                stroke-dashoffset: 300%;
+                /* 
                  [ SVG 라인 애니메이션의 원리 ]
                  - 데쉬 설정을 공백부터 시작하여 stroke-dashoffset 값을 0으로 변경할 때
                  애니메이션 설정으로 하면 선이 그려지는 효과의 애니가 완성된다.
                  */
-                 
-                 /* 트랜지션 : 속시이지 */
-                 transition: stroke-dashoffset .8s ease-in-out;
-                 
-                 /* 트랜스폼 적용되나? */
-                 /* transform: rotate(90deg); 안됨! */
-                 /* 클래스로 주면 안먹고, 부모요소의 하위 svg에 넣어야 시작점을 바꿀 수 있다! */
-                }
-        
-        .c2{
-            stroke: red;
-            stroke-width: 20;
-            fill: none;
-            stroke-dasharray: 300%;
-            stroke-dashoffset: 300%;
-            transition: stroke-dashoffset .8s ease-in-out;
-        }
 
-        .svg1:hover .c1{
-            stroke-dashoffset: 0;
-        }
-        
-        .svg1:hover .c2{
-            stroke-dashoffset: 0;
-        }
+                /* 트랜지션 : 속시이지 */
+                transition: stroke-dashoffset 0.8s ease-in-out;
 
+                /* 트랜스폼 적용되나? */
+                /* transform: rotate(90deg); 안됨! */
+                /* 클래스로 주면 안먹고, 부모요소의 하위 svg에 넣어야 시작점을 바꿀 수 있다! */
+            }
 
+            .c2 {
+                stroke: red;
+                stroke-width: 20;
+                fill: none;
+                stroke-dasharray: 300%;
+                stroke-dashoffset: 300%;
+                transition: stroke-dashoffset 0.8s ease-in-out;
+            }
 
-        /* 2. 블랙위도우 */
-        .svg2 {
-            background: url(./images/black.jpg) no-repeat top/cover;
-        }
-        /* 사각형 svg - rect */
-        
-        .rt1{
-            fill: transparent;
-            stroke: blue;
-            stroke-width: 20;
-            stroke-linecap: round;
+            .svg1:hover .c1 {
+                stroke-dashoffset: 0;
+            }
 
-            /* 선끝처리 : stroke-linecap 
+            .svg1:hover .c2 {
+                stroke-dashoffset: 0;
+            }
+
+            /* 2. 블랙위도우 */
+            .svg2 {
+                background: url(./images/black.jpg) no-repeat top/cover;
+            }
+            /* 사각형 svg - rect */
+
+            .rt1 {
+                fill: transparent;
+                stroke: blue;
+                stroke-width: 20;
+                stroke-linecap: round;
+
+                /* 선끝처리 : stroke-linecap 
                 1) butt : 끝에 중심선이 보임(기본값)
                 2) square : 끝에 사각형으로 덮음
                 3) round : 끝에 둥근모양으로 덮음
             */
 
-            /* 데쉬선 */
-            stroke-dasharray: 15%;
-            stroke-dashoffset: 102%;
-            transition: .6s;
-        }
- 
-        /* 트렌지션 줄거야! */
-        .svg2:hover .rt1{
-            stroke-dashoffset: 0;
-        }
+                /* 데쉬선 */
+                stroke-dasharray: 15%;
+                stroke-dashoffset: 102%;
+                transition: 0.6s;
+            }
+
+            /* 트렌지션 줄거야! */
+            .svg2:hover .rt1 {
+                stroke-dashoffset: 0;
+            }
+
+            /* 3. 닥스박스 : 다각형(6각형) */
+            .svg3 {
+                background: url(./images/doc.jpg) no-repeat top/cover;
+                clip-path: polygon(150px 10px, 290px 100px, 290px 200px, 150px 290px, 10px 200px, 10px 100px);
+            }
+
+            /* 다각형 */
+
+            .pg1 {
+                fill: none;
+                stroke: lightblue;
+                stroke-width: 20;
+                stroke-linecap: round;
+                /* 대쉬선 */
+                stroke-dasharray: 300%;
+                stroke-dashoffset: 300%;
+                /* 트랜지션 */
+                transition: 0.6s;
+            }
+            /* 오버시 선 보이기 */
+
+            .svg3:hover .pg1 {
+                stroke-dashoffset: 0;
+            }
+
+            /* 4. 완다 : path */
+            .svg4 svg {
+                background: url(./images/wan.jpg) no-repeat top/cover;
+                /* 클리핑 SVG 모양대로 보이게 하기 */
+                clip-path: url(#myClip);
+            }
+            /* 패스 */
+            .pa1 {
+                fill: none;
+                stroke: orangered;
+                stroke-width: 20;
+                stroke-linecap: round;
+
+                /* 데쉬선 설정 */
+                stroke-dasharray: 340%;
+                stroke-dashoffset: 340%;
+
+                /* 트랜지션 */
+                transition: 0.7s ease-out;
+            }
+
+            /* 완다에 오버시 선 그리기 */
+            .svg4:hover .pa1 {
+                stroke-dashoffset: 0;
+            }
+
+            /* 미디어쿼리 */
+            @media screen and (max-width: 1000px) {
+                /* 컨텐츠 박스 */
+                .cbx {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                /* 닥터스트레인지 SVG */
+                /* .svg3{
+                clip-path: polygon(100px 5px, 275px 125px, 275px 150px, 100px 150px, 10px 100px, 10px 100px);
+            } */
+
+                /* 완다 클리핑 SVG */
+                #myClip {
+                    transform: scale(0.67);
+                }
+
+                /* 
+            .svg1, .svg2, .svg3, .svg4{
+                transform: scale(.8);
+            } */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- SVG 코드를 symbol로 처리하기
+            1. 실제 svg가 나올 곳에 간단히 호출코딩
+            <svg>
+                <use xlink:href="#심볼아이디명"/>
+            </svg>
+
+            2. 별도의 코딩구역에 박스를 안보이게 처리함
+            <div style="display:none">
+                <svg>
+                    <symbol viewBox="원본위치크기" id="아이디명">
+                        원본 svg코드를 넣어둔다.
+                    </symbol
+                </svg>
+            </div>
+         -->
 
 
-
-        /* 3. 닥스박스 : 다각형(6각형) */
-        .svg3{
-            background: url(./images/doc.jpg) no-repeat top/cover;
-            clip-path: polygon(150px 10px, 290px 100px, 290px 200px, 150px 290px, 10px 200px, 10px 100px);
-        }
-
-        /* 다각형 */
-
-        .pg1{
-            fill: none;
-            stroke: lightblue;
-            stroke-width: 20;
-            stroke-linecap: round;
-            /* 대쉬선 */
-            stroke-dasharray: 300%;
-            stroke-dashoffset: 300%;
-            /* 트랜지션 */
-            transition: .6s;
-            
-        }
-        /* 오버시 선 보이기 */
-        
-        .svg3:hover .pg1{
-            stroke-dashoffset: 0;
-        }
-        
-
-        /* 4. 완다 : path */
-        .svg4 svg{
-            background: url(./images/wan.jpg) no-repeat top/cover;
-        }
-        /* 패스 */
-        
-        
-
-        /* 미디어쿼리 */
-        
-    </style>
-</head>
-<body>
-    
-    <div class="wrap">
-        <!-- 1.아이언맨 : 원 
+        <!-- 마블로고 SVG -->
+        <div class="mv-logo">
+            <svg>
+                <use xlink:href="#mvlogo"></use>
+            </svg>
+        </div>
+        <!-- 전체 랩핑박스 -->
+        <div class="wrap">
+            <!-- 1.아이언맨 : 원 
         [ circle 요소 : 원 ]
         - cx : 중심원 x좌표 (center x), 단위없는 숫자는 px
         - cy : 중심원 y좌표 (center y), 단위없는 숫자는 px
@@ -205,59 +276,97 @@
             적용되지 않기 때문임!
             (svg요소 transform이 적용됨!)
         -->
-        <section>
-            <div class="cbx svg1">
-                <svg>
-                    <circle class="c1" cx="150" cy="150" r="140" transform="rotate(-90,50,50)"></circle>
-                    <circle class="c2" cx="150" cy="150" r="140" transform="rotate(-90,250,250)"></circle>
-                </svg>
-            </div>
-        </section>
+            <section>
+                <div class="cbx svg1">
+                    <!-- 가로 세로위치 + 가로 세로 길이 -->
+                    <svg viewBox="0 0 300 300">
+                        <circle class="c1" cx="150" cy="150" r="140" transform="rotate(-90,50,50)"></circle>
+                        <circle class="c2" cx="150" cy="150" r="140" transform="rotate(-90,250,250)"></circle>
+                    </svg>
+                </div>
+            </section>
 
-
-        <!-- 2. 블랙위도우 : 사각형 
+            <!-- 2. 블랙위도우 : 사각형 
         [ rect 요소 : 사각형 ]
         - rectangle(사각형) 이라는 말에서 나온 요소명
         - width : 가로크기
         - height : 세로크기
         - x, y : x축, y축
         -->
-        <section>
-            <div class="cbx svg2">
-                <svg>
-                    <rect class="rt1" width="280" height="280" x="10" y="10"/>
-                </svg>
-            </div>
-        </section>
+            <section>
+                <div class="cbx svg2">
+                    <svg viewBox="0 0 300 300">
+                        <rect class="rt1" width="280" height="280" x="10" y="10" />
+                    </svg>
+                </div>
+            </section>
 
-
-        <!-- 3.닥스박스 : 다각형(6각형)
+            <!-- 3.닥스박스 : 다각형(6각형)
             [ polygon 요소 : 다각형 ]
              - points 속성
             - 표현법: <polygon points="x1,y1 x2,y2 ...">
             -> x,y 좌표를 콤마로 구분하고
             다른 좌표는 띄어쓰기로 구분함
         -->
-        <section>
-            <div class="cbx svg3">
-                <svg>
-                    <!-- 꼭지점을 생각하면서 그리면 쉬움! x,y 좌표를 생각하자! -->
-                    <polygon class="pg1" points="150,10 290,100 290,200 150,290 10,200 10,100"/>
-                </svg>
-            </div>
-        </section>
-        
-        <!-- 4.완다박스 : 자유도형 -->
-        <section>
-            <div class="cbx svg4">
-                <svg></svg>
-            </div>
-        </section>
-    </div>
+            <section>
+                <div class="cbx svg3">
+                    <svg viewBox="0 0 300 300">
+                        <!-- 
+                        [defs요소] : 요소에 효과를 정의함
 
+                        [linearGradient요소] : 선형그라데이션
+                        - id속성 : 적용할 요소에 이 id명을 연결함
+                            예) stroke:url(#아이디명)
+                        - x1,y1 하나의점에서 x2,y2 하나의 점
+                         방향으로 그라데이션이 적용된다!
 
+                        [stop요소] : 색상옵션 설정요소
+                        - offset속성: 색상변경 지점
+                        - stop-color속성: 실제색적용
+                     -->
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="red" />
+                                <stop offset="30%" stop-color="blue" />
+                                <stop offset="60%" stop-color="green" />
+                                <stop offset="100%" stop-color="orange" />
+                            </linearGradient>
+                        </defs>
 
-    <!-- 
+                        <!-- 꼭지점을 생각하면서 그리면 쉬움! x,y 좌표를 생각하자! -->
+                        <polygon style="stroke: url(#grad1)" class="pg1" points="150,10 290,100 290,200 150,290 10,200 10,100" />
+                    </svg>
+                </div>
+            </section>
+
+            <!-- 4.완다박스 : 자유도형 -->
+            <section>
+                <div class="cbx svg4">
+                    <svg viewBox="0 0 300 300">
+                            <path class="pa1"
+                                d="M27.72,33.29c0,0,45.99,49.6,18.04,101c0,0-36.97,45.99-15.33,82.96c0,0,11.72,18.04,24.35,24.35c0,
+                        0,21.64,4.51-7.21,37.87c0,0-23.45,24.35,99.2-7.21c0,0,64.93,3.61,78.46-29.76c0,0,81.16-74.85,18.94-101c0,
+                        0-35.17-26.15,7.21-53.21c0,0,54.11-54.11-14.43-46.89c0,0-151.5,27.05-120.84-7.21c0,0,17.13-20.74-41.48-8.12C74.61,26.08-2.94,14.35,27.72,33.29z"/>
+                    </svg>
+                </div>
+            </section>
+        </div>
+
+        <!-- 완다 클리핑용 SVG -->
+        <svg>
+            <defs>
+                <clippath id="myClip">
+                    <path
+                        class="pa1"
+                        d="M27.72,33.29c0,0,45.99,49.6,18.04,101c0,0-36.97,45.99-15.33,82.96c0,0,11.72,18.04,24.35,24.35c0,
+                    0,21.64,4.51-7.21,37.87c0,0-23.45,24.35,99.2-7.21c0,0,64.93,3.61,78.46-29.76c0,0,81.16-74.85,18.94-101c0,
+                    0-35.17-26.15,7.21-53.21c0,0,54.11-54.11-14.43-46.89c0,0-151.5,27.05-120.84-7.21c0,0,17.13-20.74-41.48-8.12C74.61,26.08-2.94,14.35,27.72,33.29z"
+                    />
+                </clippath>
+            </defs>
+        </svg>
+
+        <!-- 
         [ SVG란? ]
         SVG - Scalable Vector Graphic
         -> 이미지를 확대해도 깨지지 않는 백처방식의 그래픽요소
@@ -321,8 +430,32 @@
         -> 이 셋팅을 하면 스테이지가 크기 변경을 할때 svg의
         크기를 비율을 유지하여 축소확대를 하게된다!
 
-
-
      -->
-</body>
+
+     <!-- SVG 심볼 코드구역 -->
+     <!-- 안보이게 하려고 display:none 넣은거임! -->
+     <div style="display:none">
+        <svg>
+            <symbol viewBox="0 0 130 52" id="mvlogo">
+                <!-- 원본 svg코드를 넣어둔다. -->
+                <rect fill="#EC1D24" width="100%" height="100%"></rect>
+                <path fill="#FEFEFE" d="M126.222 40.059v7.906H111.58V4h7.885v36.059h6.757zm-62.564-14.5c-.61.294-1.248.44-1.87.442v-14.14h.04c.622-.005 5.264.184 5.264 6.993 0 3.559-1.58 5.804-3.434 6.705zM40.55 34.24l2.183-18.799 2.265 18.799H40.55zm69.655-22.215V4.007H87.879l-3.675 26.779-3.63-26.78h-8.052l.901 7.15c-.928-1.832-4.224-7.15-11.48-7.15-.047-.002-8.06 0-8.06 0l-.031 39.032-5.868-39.031-10.545-.005-6.072 40.44.002-40.435H21.278L17.64 26.724 14.096 4.006H4v43.966h7.95V26.78l3.618 21.192h4.226l3.565-21.192v21.192h15.327l.928-6.762h6.17l.927 6.762 15.047.008h.01v-.008h.02V33.702l1.845-.27 3.817 14.55h7.784l-.002-.01h.022l-5.011-17.048c2.538-1.88 5.406-6.644 4.643-11.203v-.002C74.894 19.777 79.615 48 79.615 48l9.256-.027 6.327-39.85v39.85h15.007v-7.908h-7.124v-10.08h7.124v-8.03h-7.124v-9.931h7.124z"></path>
+                <path fill="#EC1D24" d="M0 0h30v52H0z"></path>
+                <path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+            </symbol>
+        </svg>
+    </div>
+<!-- 
+    <div style="display: none">
+        <svg>
+            <symbol viewBox="0 0 300 300" id="wanda-svg">
+                    <path class="pa1"
+                        d="M27.72,33.29c0,0,45.99,49.6,18.04,101c0,0-36.97,45.99-15.33,82.96c0,0,11.72,18.04,24.35,24.35c0,
+                0,21.64,4.51-7.21,37.87c0,0-23.45,24.35,99.2-7.21c0,0,64.93,3.61,78.46-29.76c0,0,81.16-74.85,18.94-101c0,
+                0-35.17-26.15,7.21-53.21c0,0,54.11-54.11-14.43-46.89c0,0-151.5,27.05-120.84-7.21c0,0,17.13-20.74-41.48-8.12C74.61,26.08-2.94,14.35,27.72,33.29z"/>
+            </symbol>
+        </svg>
+    </div> -->
+
+    </body>
 </html>
