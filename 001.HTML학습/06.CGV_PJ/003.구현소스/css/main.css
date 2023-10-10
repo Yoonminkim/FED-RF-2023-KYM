@@ -62,7 +62,7 @@ body.on::after {
     height: 100%;
     background: url(../images/street.jpg) repeat-x 0/50% 100%;
     /* 애니메이션 */
-    animation: bg-ani 2s linear infinite;
+    animation: bg-ani .1s linear infinite;
 }
 /* 무한반복 배경애니 키프레임 */
 @keyframes bg-ani {
@@ -459,4 +459,30 @@ body.on::after {
 /* 기본 포커스 아웃라인 제거 */
 .cbtn:focus{
     outline: none;
+}
+
+.spani1{
+    position: absolute;
+    width: 100px;
+    height: 176px;
+    margin: 0 auto;
+    margin-top: -40px;
+    transform: scale(.3);
+
+    background: url(../../../07.SpritesAni_PJ/images/spAni03.png) no-repeat;
+    background-size: auto 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: spani1 .1s steps(8) infinite ;
+    /* outline: 5px solid red; */
+}
+
+/* 걷는존 키프레임 */
+@keyframes spani1 {
+    to{
+        background-position-x: -800px;
+    }
+    /* 배경이미지 x축 이동일 경우
+    줄였을때 이미지 전체 가로크기를
+    마이너스 값으로 써주면된다! */
 }
