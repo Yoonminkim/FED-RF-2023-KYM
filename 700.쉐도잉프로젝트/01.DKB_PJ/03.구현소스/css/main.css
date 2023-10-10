@@ -7,12 +7,12 @@
 @import url(./common.css);
 
 /* 공사중표시 */
-body * {
-    /* outline: 2px dashed #ccc; */
-}
-body > div > * {
-    /* outline-color: red; */
-}
+/* body * {
+    outline: 2px dashed #ccc;
+} */
+/* body > div > * {
+    outline-color: red;
+} */
 
 
 /* 개별영역 박스 -> 확장형 박스

@@ -51,3 +51,5 @@ const tableCode = (
 // 화면출력 /////////
 // ReactDOM.render(출력할요소,대상요소)
 ReactDOM.render(tableCode,document.querySelector('#root'));
+
+
