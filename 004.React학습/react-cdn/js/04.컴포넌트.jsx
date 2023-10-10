@@ -101,7 +101,7 @@ function Favorite(헐) {
 // 컴포넌트를 호출하면 개별적으로 속성을 구분할 수 있다!
 // 출력: #root3
 ReactDOM.render(
-  <Favorite color="빨간색" food="피자" hobby="게임" />,
+  <Favorite color="빨간색" food="피자" hobby="게임이" />,
   document.querySelector("#root3")
 );
 
