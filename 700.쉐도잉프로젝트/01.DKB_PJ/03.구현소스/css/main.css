@@ -432,45 +432,40 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #000;
     color: #fff;
-    z-index: 999999999;
+    z-index: 999999;
     overflow: hidden;
     display: none;
-    opacity: .9;
 }
-
 .sub-cont a{
     color: #fff;
 }
-
 /* 닫기버튼 */
 .cbtn{
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 80px;
     position: absolute;
     top: 5%;
     right: 5%;
+
+    background: none;
+    border: none;
+    font-size: 80px;
+    color: #fff;
     cursor: pointer;
 }
-
 /* 서브 내부박스 */
 .sub-inbox{
-    outline: 1px dashed yellow;
+    outline: 2px dashed yellow;
     min-height: 100vh;
 }
-
+/* 제목박스 */
 .sub-inbox h1{
     font-size: 4rem;
     text-align: center;
 }
-
-/* 서브 아이템 */
+/* 내용박스 */
 .sub-item{
     font-size: 3rem;
-    color: #ccc;
 }

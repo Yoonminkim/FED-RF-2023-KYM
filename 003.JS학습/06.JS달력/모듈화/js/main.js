@@ -74,3 +74,5 @@ $('.dalcom input').click(function(){
 myCal.hide().mouseleave(function(){
     $(this).hide();
 }); ///////////// mouseleave ///////////
+
+
