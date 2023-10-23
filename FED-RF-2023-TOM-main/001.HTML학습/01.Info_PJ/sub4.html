@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- 뷰포트: 모바일에서 실제픽셀로 변환함 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>네이버 요약뉴스 - IT/과학</title>
+        <!-- 서브용 외부CSS 불러오기 -->
+        <link rel="stylesheet" href="./css/sub.css" />
+    </head>
+    <body>
+        <!-- 1. 상단영역 : 제목, 메뉴 -->
+        <header id="top" class="bx">
+            <!-- 1-1.제목 -->
+            <h1>네이버 요약 뉴스</h1>
+            <!-- 1-2.GNB메뉴 -->
+            <!-- GNB(Global Navigation Bar) -->
+            <nav id="gnb">
+                <a href="index.html">
+                    <!-- 상대경로 -->
+                    <img src="./images/logo.png" alt="네이버로고" style="width: 24px" />
+                    <!-- style속성으로 CSS를 셋팅하는 방법은 인라인방식이라고 함! -->
+
+                    <!-- 절대상대경로 -->
+                    <!-- <img src="/001.HTML학습/01.Info_PJ/images/logo.png" alt="네이버로고"> -->
+                    <!-- 절대경로 -->
+                    <!-- <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="네이버로고"> -->
+                </a>
+                <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> | <a href="sub3.html">사회</a> |
+                <a href="sub4.html">IT/과학</a> |
+                <a href="sub5.html">TV/연예</a>
+            </nav>
+        </header>
+        <!-- 2. 메인영역 : 컨텐츠 -->
+        <main id="cont" class="bx">
+            <!-- 2-1. 서브타이틀 -->
+            <h2 class="stit st4">IT/과학 뉴스</h2>
+            <!-- 2-2. 언론사로고 -->
+            <div class="prlogo">
+                <img src="./images/prlogo4.png" alt="아이뉴스24" />
+            </div>
+            <!-- 2-3. 기사제목 -->
+            <h3 class="atit">[지금은 기후위기-영상] 찬란한 슬픔의 남·북극…"지구를 살려 주세요!"</h3>
+            <!-- 2-4. 기사사진 -->
+            <figure class="afig">
+                <!-- 이미지 -->
+                <img src="./images/afig4.jpg" alt="북극곰 가족이 녹고 있는 얼음 위에 위태롭게 서 있다" />
+                <!-- 이미지설명 -->
+                <figcaption>
+                    <small>북극곰 가족이 녹고 있는 얼음 위에 위태롭게 서 있다. [사진=극지연구소 주형민]</small>
+                </figcaption>
+            </figure>
+
+            <!-- 
+                [ figure 요소 ]
+                - 이미지나 표를 포함하는 박스요소
+                - 이미지설명은 내부 요소인 figcaption을 사용함
+                (설명이 있을 경우에만 사용)
+             -->
+
+            <!-- 2-5. 기사내용 -->
+            <section class="acont">
+                <p>
+                    <b>극지연구소(소장 강성호)</b>가 13회 극지사진콘테스트 21일 수상작을 공개했다. 우리나라 쇄빙선
+                    <b>아라온호</b><sub>Ararion</sub>를 타고 <i>남극<sup>①</sup>과 북극<sup>②</sup></i
+                    >을 오가는 <abbr title="극지연구소">극연</abbr> 연구원들이 찍은 사진들이다.
+                </p>
+
+                <p>
+                    <i>남극과 북극</i>은 현재 지구 가열화로 가장 변화가 심한 곳으로 꼽힌다.
+                    <strong> 이대로 지구 가열화가 진행되면 북극은 얼음이 없는 상황에까지 이를 수 있다는 위기감 </strong
+                    >마저 감돈다. <em>‘찬란한 슬픔’의 시간을 맞고 있다.</em>
+                </p>
+
+                <p>
+                    수상작은 총 14작품이다.
+                    <mark
+                        >대상 수상작은 북극해 바다얼음에 모여 있는 북극곰 가족을 촬영한 ‘지구를 살려주세요!’ (주형민
+                        극지연구소 차세대 쇄빙연구선 건조사업단장 촬영)가 차지했다.</mark
+                    >
+                </p>
+
+                <!-- 유튜브 동영상박스 -->
+                <div class="mvbx">
+                    <iframe
+                        src="https://www.youtube.com/embed/bVMlUarekuE"
+                        title="[지금은 기후위기] 찬란한 슬픔의 남·북극"
+                    ></iframe>
+                    <!-- 
+                        [ iframe 요소 ]
+                        - inline frame 
+                        - 한 웹페이지안에 다른 시스템의 웹을
+                        불러올 수 있는 요소
+                        - 필수속성: src - 시스템 경로
+                        - 주의: CSS설정으로 디자인을 변경하자!
+                        (width,height,frameborder 
+                        속성을 쓰지말자!)
+                     -->
+                </div>
+
+                <p>
+                    줄어드는 얼음 위에 북극곰 가족이 모여 있는 위태로운 모습을 담았다. 북극곰은 개체 수가 계속
+                    줄어들면서 지구 가열화가 가속화하면 끝내 북극에서 생존할 수 없는 상황에 처할 수 있다는 경고음까지
+                    나오고 있다.
+                    <del
+                        >만약 배고픈 북극곰이 민가로 내려와 우리집 쓰레기통을 뒤지고 있을때 만난다면...윽! 상상도 하기
+                        싫어!!!</del
+                    >
+                </p>
+
+                <!-- 추가 기사사진 -->
+                <figure class="afig">
+                    <!-- 이미지 -->
+                    <img src="./images/afig4-2.jpg" alt="세종과학기지에서 일몰과 함께 젠투펭귄이 카메라에 포착됐다" />
+                    <!-- 이미지설명 -->
+                    <figcaption>
+                        <small
+                            >세종과학기지에서 일몰과 함께 젠투펭귄이 카메라에 포착됐다. [사진=극지연구소 최동건]</small
+                        >
+                    </figcaption>
+                </figure>
+
+                <p>
+                    남극의 상징인 <ins>귀여운</ins>펭귄도 북극곰 운명과 크게 다르지 않다. 지구 가열화로 먹이 활동이
+                    여의치 않으면서 황제펭귄 등 개체수가 감소하고 있다는 연구결과가 계속 보고되고 있다.
+                </p>
+
+                <p>
+                    수상작에는 이외에도 남극에서 고래와 펭귄이 마주치는 장면, 남극의 젠투와 황제펭귄의 아름다운 모습도
+                    담겼다. 하늘에서 본 세종과학기지와 먼 거리에서 본 남극의 산, 연구원들의 현장 사진도 눈길을 끈다.
+                    수상자가 말했다.<q>이런 사진이 찍힐줄은 꿈에도 몰랐어요! 우연히 찍혔는데 상까지 받았어요!</q>
+                </p>
+
+                <p>장보고과학기지에서 남극점까지 길을 뚫고 있는 ‘K-루트 탐사대’의 활동 상황도 카메라에 잡혔다.</p>
+
+                <!-- 인용블록 영역 -->
+                <article class="bqbx atbx">
+                    <h5>장보고과학기지 소개</h5>
+                    <blockquote
+                        cite="https://namu.wiki/w/%EC%9E%A5%EB%B3%B4%EA%B3%A0%20%EA%B3%BC%ED%95%99%EA%B8%B0%EC%A7%80"
+                    >
+                        <img src="./images/jang.jpg" alt="장보고과학기지전경" />
+                        세종 과학기지에 이어 대한민국이 남극에 두 번째로 건설한 과학 기지이자, 최초로 남극 대륙에 세워진
+                        기지이다. 통일 신라 시대의 장수인 해상왕 장보고의 이름을 따 명명되었다. 남극 북빅토리아 랜드의
+                        테라노바 만 연안에 있으며 2005년부터 계획이 시작되어 후보지 답사와 정밀조사 끝에 2010년 건설지가
+                        확정되었고, 실제 공사는 2012년부터 2014년까지 진행하였다. 장보고 과학기지가 건설됨으로써
+                        대한민국은 세계에서 10번째로 남극에 2개 이상의 상주 기지를 운영하는 국가가 되었다.
+                    </blockquote>
+                </article>
+
+                <p>
+                    한편 우리나라는 남극에 세종과학기지와 장보고과학기지를 운영하고 있다. 북극에는 노르웨이에
+                    다산과학기지가 있다.
+                </p>
+            </section>
+
+            <!-- 
+                [ p 요소 : 문단(paragraph) ]
+                - 문단을 구분하기위한 요소
+                - 주의: 내부에 div와 같은 block요소를 넣을 수 없다!
+             -->
+
+            <!-- 2-6. 기자정보 -->
+            <div class="rpt">정종오 기자 ikokid@inews24.com</div>
+            <!-- 2-7. 기사원문 -->
+            <h5 class="alink">
+                <a
+                    href="https://n.news.naver.com/mnews/hotissue/article/031/0000760697?type=series&cid=1087779"
+                    target="_blank"
+                    title="원본기사 바로가기"
+                    >기사원문</a
+                >
+            </h5>
+
+            <!-- <hr /> -->
+            <!-- 구분선요소 hr : horizontal -->
+
+            <!-- 주해영역 -->
+            <article class="desc atbx">
+                <h5>주해</h5>
+                <div>
+                    ① 남극은 지구의 최남단의 대륙으로, 한가운데 남극점이 있다. 남극 대륙은 거의 대부분 남극권 이남에
+                    자리 잡고 있으며, 주변에는 남극지구와 남극해가 있다. 면적은 약 1,400만 km²로서 아시아, 아메리카,
+                    아프리카에 이어 세계에서 4번째로 큰 대륙이다.
+                    <br />
+                    <br />
+                    ② 북극은 지구 북극점 근처의 지역이다. 북극점을 '북극'으로 부르기도 한다. 북극은 북극해뿐만 아니라
+                    러시아, 시베리아, 알래스카, 캐나다, 그린란드, 아이슬란드, 스칸디나비아를 포함한다. 남극과 마찬가지로
+                    북극에도 대한민국을 포함한 여러 나라가 연구 기지를 설치하였다.
+                </div>
+            </article>
+
+            <!-- 오늘의 작품 & 느낌 -->
+            <article class="work">
+                <h3>오늘의 작품 &amp; 느낌</h3>
+                <figure>
+                    <img src="./images/img_the_scream.jpg" alt="뭉크의 절규" />
+                    <figcaption>뭉크의 &lt;<cite>절규</cite>&gt;</figcaption>
+                </figure>
+            </article>
+            <!-- 
+                [ html 요소에서 특수문자 처리 ]
+                & 엔퍼센드 &amp;
+                < 여는꺽쇠 &lt; (lt는 less than ~ 보다 작은)
+                > 닫는꺽쇠 &gt; (gt는 greater than ~ 보다 큰)
+             -->
+
+            <!-- <bdo dir="rtl">우리나라대한민국만세</bdo> -->
+
+            <!-- 
+                [ 순서없는 리스트 : ul ]
+                unordered list 
+                (참고: 블릿옵션
+                https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css)
+
+                [ 순서있는 리스트 : ol ]
+                ordered list
+                (참고: 순서표시옵션
+                https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css)
+                - start 속성 : 시작번호
+                - reverse 속성 : 일련번호를 거꾸로 진행
+
+                [ul/ol 공통사항]
+                - 하위필수요소: li (개별리스트)
+                - 주의: 하위에 li이외의 블록요소나 그 어떤요소도
+                쓸 수 없다!!!
+              -->
+
+            <!-- 주요뉴스 : ul -->
+            <article class="cnews nbx">
+                <h3>주요뉴스</h3>
+                <!-- <ul style="list-style-type: square;"> -->
+                <ul>
+                    <li>
+                        <a href="http://www.inews24.com/view/1614390" target="_blank"
+                            >[단독] "돈 있어도 못 산다"… 삼성 제습기, 재고도 동나자 판매중단</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://www.inews24.com/view/1614386" target="_blank"
+                            >"원하는대로 맞춰드립니다" 고개 드는 '갭투자'</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://www.inews24.com/view/1614601" target="_blank"
+                            >[종합] "폭우 피해 지원 어벤저스 떴다"…이재용 등 6대 그룹 총수 성금 '쾌척'</a
+                        >
+                    </li>
+                </ul>
+            </article>
+
+            <!-- 랭킹뉴스 : ol -->
+            <article class="rnews nbx">
+                <h3>랭킹뉴스</h3>
+                <!-- <ol style="list-style-type: upper-roman;" start="3" reversed> -->
+                <ol>
+                    <li>
+                        <a
+                            href="https://n.news.naver.com/mnews/ranking/article/031/0000763243?ntype=RANKING"
+                            target="_blank"
+                            >1. "도대체 머릿 속에 뭐가 들었어?" 주호민 자폐아들이 들은 말</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://n.news.naver.com/mnews/ranking/article/031/0000763265?ntype=RANKING"
+                            target="_blank"
+                            >2. "우리가 더 덥다" 쿠팡 물류센터 파업에 뿔난 야외 근로자들</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://n.news.naver.com/mnews/ranking/article/031/0000763264?ntype=RANKING"
+                            target="_blank"
+                            >3. [단독] 시도 때도 없이 오르는 명품…버버리 8일 인상</a
+                        >
+                    </li>
+                </ol>
+            </article>
+
+            <!-- 
+                 [ 용어정의리스트 : dl ]
+               
+                dl > dt + dd
+                ___________________
+
+                dl : 용어리스트
+                (defines the description list)
+                dt : 용어정의
+                (defines the term)
+                dd : 용어설명
+                (description each term)
+                _____________________
+                주의 - dl은 반드시 자식요소로 dt와 dd를
+                한번이상 사용해야한다!
+                또주의 - dt와 dd는 형제다! dt>dd 아니다!!!
+             -->
+
+            <!-- 분야별 뉴스 : dl -->
+            <article class="snews nbx">
+                <h3>분야별 뉴스</h3>
+                <dl>
+                    <dt>경제</dt>
+                    <dd>
+                        <a href="https://n.news.naver.com/mnews/article/001/0014107084?sid=101" target="_blank"
+                            >LH 논란에…서울시, SH '무량판 아파트' 9년 전까지 전수조사</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="https://n.news.naver.com/mnews/article/366/0000921690?sid=101" target="_blank"
+                            >IBK證 “美 신용등급 강등에 따른 증시 조정 단기적일 것”</a
+                        >
+                    </dd>
+
+                    <dt>사회</dt>
+                    <dd>
+                        <a href="https://n.news.naver.com/mnews/article/277/0005295220?sid=102	" target="_blank"
+                            >서울3호선 연장·경기남부광역철도 사업 본격화…경기도, 3일 용역</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="https://n.news.naver.com/mnews/article/018/0005542565?sid=102	" target="_blank"
+                            >조희연 "교장에게 수업방해 학생 등교정지 권한 부여해야"</a
+                        >
+                    </dd>
+
+                    <dt>TV/연예</dt>
+                    <dd>
+                        <a href="https://entertain.naver.com/ranking/read?oid=076&aid=0004039619" target="_blank"
+                            >임지연, '한예종 전도연' 시절 공개..연진이로 송혜교→김태희 '언니 컬렉터' 등극
+                            ('유퀴즈')[종합]</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="https://entertain.naver.com/ranking/read?oid=311&aid=0001623391" target="_blank"
+                            >성시경, 김종국에게 맞을 뻔한 과거 폭로 "지금은 유재석 됐더라" (옥문아들)[종합]</a
+                        >
+                    </dd>
+                </dl>
+            </article>
+
+            <!-- 
+                [ 테이블 요소 : table ]
+                table > tbody > tr > td
+
+                -> tbody는 안써도 브라우저가 그려준다!
+                -> 직계자식으로 선택할 경우
+                table > tr 로 선택하면 적용되지 않는
+                이유가 바로 이것이다!!!(주의!)
+                ___________________
+
+                table : 테이블 박스 부모요소
+                tr : 테이블 행요소(table row)
+                td : 테이블 데이터요소(table data)
+             -->
+
+            <!-- 사진뉴스 : table -->
+            <article class="pnews nbx">
+                <h3>사진뉴스</h3>
+                <!-- 3행3열 구성 테이블 -->
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <a href="https://n.news.naver.com/mnews/ranking/article/437/0000353805?ntype=RANKING&sid=001" target="_blank"><div>방향 튼 태풍 카눈, 어디로?…한반도 '열기' 밀어올려 더 덥다는데 언제 비가 오려나?</div></a>
+                        </td>
+                        <td>
+                            <a href="https://n.news.naver.com/mnews/ranking/article/437/0000353805?ntype=RANKING&sid=001" target="_blank">
+                                <img src="./images/pnews1.jpg" alt="사진뉴스1" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <a href="https://n.news.naver.com/mnews/ranking/article/009/0005167648?ntype=RANKING&sid=001" target="_blank"><div>“자격 박탈하라”…베트남 미인대회 우승한 20대女에 무슨일이 일어났을까 너무나 궁금하다!</div></a>
+                        </td>
+                        <td>
+                            <a href="https://n.news.naver.com/mnews/ranking/article/009/0005167648?ntype=RANKING&sid=001" target="_blank">
+                                <img src="./images/pnews2.jpg" alt="사진뉴스2" />
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <a href="https://n.news.naver.com/mnews/ranking/article/047/0002401327?ntype=RANKING&sid=001" target="_blank"><div>잼버리 개막식 중 83명 집단 탈진... 행사 중단에 비상 발령까지 정부는 어떻게 하려나?</div></a>
+                        </td>
+                        <td>
+                            <a href="https://n.news.naver.com/mnews/ranking/article/047/0002401327?ntype=RANKING&sid=001" target="_blank">
+                                <img src="./images/pnews3.jpg" alt="사진뉴스3" />
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </main>
+        <!-- 3. 하단영역 : 회사정보 -->
+        <footer id="info" class="bx">
+            <address>
+                서울시 강남구 역삼동 119 대호B 8F <br />
+                대표: <span class="utxt">Tom Brace Parker</span> <br />
+                전화: <b class="utxt">010-2222-3333</b>
+            </address>
+        </footer>
+        <!-- 
+            [ 1. HTML 서식관련 요소들 ]
+            1. 두꺼운글자
+            <b>- 굵은 텍스트(Bold text - 단순글자만 두꺼움)
+            <strong>- 중요 텍스트(Important text - 중요함의 의미)
+
+            2. 이탤릭글자
+            <i>- 기울임꼴 텍스트(Italic text - 글자만 이탤릭처리)
+            <em>- 강조된 텍스트(Emphasized text - 강조의 의미)
+
+            3. 색상표시
+            <mark>- 표시된 텍스트(Marked text - 눈에 띄게 표시)
+
+            4. 작은글자
+            <small>- 더 작은 텍스트(Smaller text)
+                -> h5 요소의 글자크기와 같음
+                -> 상속된 글자크기에 대한 상대적인 크기이므로
+                브라우저에서 소수점으로 표시될 수 있음
+
+            5. 삭제된 글자표시
+            <del>- 삭제된 텍스트(Deleted text)
+                -> text-decoration: line-through
+
+            6. 삽입된 글자표시
+            <ins>- 삽입된 텍스트(Inserted text)
+                -> text-decoration: underline
+
+            7. 첨자표시
+            <sub>- 아래 첨자 텍스트
+                - 약간 아랫쪽 작은글자(Subscript text)
+                - 병행표시글자(영문,한문 등)
+            <sup>- 위첨자 텍스트
+                - 약간 윗쪽 작은글자(Superscript text)
+                - 주석표시숫자(숫자와 설명을 연결함)
+
+            ___________________________________
+
+            [ 2. HTML 인용관련 요소 ]
+            1. 블록인용요소
+            <blockquote>
+                - 블록요소로 별도의 인용구를 구분하는 박스
+                - 주의: 내부에 p요소와 같은 다른 블록요소 사용불가!
+                - cite 속성 : 출처표시
+                (필수속성은 아니지만 url 주소가 들어가기 때문에
+                링크로 오해할 수 있으나 아님! 단순출처정보임)
+
+            2. 인라인 인용요소
+            <q>
+                - 작은 이용구(쌍따옴표가 자동생성됨!)
+                - 주의: 인라인요소임(blockquote와 구분할것!)
+
+            3. 줄임말 인용
+            <abbr>
+                - 줄임말의 원래 뜻을 표시하는 요소
+                - 필수속성 ->> title 속성 -> 툴팁으로 원래뜻을 표시
+            (참고: title 툴팁속성은 어느요소든 사용가능함!)
+                - 기본디자인 : 점선 밑줄
+
+            4. 주소인용
+            <address>
+                - 주소, 대표자, 전화번호 등 사이트 정보표시
+            
+            5. 작품명 인용
+            <cite>
+                - 인용하고 있는 작품을 표시하기 위한 요소
+
+            6. 반대방향글 인용
+            <bdo>
+                - 글방향이 반대일때 사용함
+                - Bi-Directional Override(줄임)
+                - dir 속성 :  rtl(right to left : 오른쪽에서 왼쪽으로 진행)
+                - 아랍어, 이스라엘어 등 반대방향으로 
+                출력해야하는 문자를 인용할때 사용함!
+
+            __________________________________
+
+            [ 시멘틱 태그란? ]
+            - sementic(의미론적인, 의미있는)
+            즉, 태그가 어떤 구분하는 의미가 있을 경우
+            이런 요소를 시멘틱태그라고 부른다!
+            예) strong, em, address, header,footer 등
+
+            -> 시멘틱 태그를 쓸때 장점은?
+            1) 정보에 대한 의미있는 별도의 컨트롤이 가능함!
+            2) DB서버에서 데이터 수집 및 분석시에 활용하여
+            더 정교한 데이터 검색이 되도록 할 수 있다!
+
+
+
+
+         -->
+    </body>
+</html>

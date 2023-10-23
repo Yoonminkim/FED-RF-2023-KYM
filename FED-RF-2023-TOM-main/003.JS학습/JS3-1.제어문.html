@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS3-1. 제어문 - if문, switch case문, for문, while문</title>
+        <!-- JS코드구역 -->
+        <script>
+            /****************************************** 
+            함수명: jumsu
+            기능: 점수에 따른 평가출력하기
+                1. 점수에 따른 메시지 출력
+                2. 점수에 따른 메시지 글자색 변경
+                3. 점수에 따른 칭찬스티커 보이기
+        ******************************************/
+            function jumsu() {
+                // 1. 호출확인!
+                // console.log('점수함보자!');
+
+                // 2. 대상선정 //////////
+                // 2-1. 점수입력요소 : input#jumsu
+                var jumsu = document.querySelector("#jumsu");
+
+                // 2-2. 출력요소 : #jexp
+                var jexp = document.querySelector("#jexp");
+
+                // 2-3. 칭찬스티커 : .jshow
+                var jshow = document.querySelector(".jshow");
+
+                console.log("요소확인:", jumsu, jexp, jshow);
+
+                // 3. 입력값 읽어오기 ////////////
+                var score = jumsu.value;
+                // value속성 - 입력된 값을 읽기/쓰기
+                console.log("입력된값:", score);
+
+                /********************************* 
+                [ 입력값 유효성검사하기! ]
+                1. 위치 : 입력값읽은후 
+                        메시지만들기전
+
+                2. 검사내용 : 
+                    (1) 빈값인지 여부검사
+                    (2) 숫자인지 여부검사
+                    (3) 숫자범위 검사(0~100)
+            *********************************/
+                // 매번 검사후 메시지넣고 지우고 포커스넣고 return
+                // 같은 일을 하므로 메시지만 변경할 수 있게
+                // 함수를 만들어 준다!
+
+                var validateFn = function (txt) {
+                    //txt-메시지
+                    // 1. 메시지 출력하기
+                    jexp.innerText = txt;
+                    console.log(txt);
+
+                    // 2. 기존 메시지 지우기
+                    // 대상 : #jumsu -> jumsu변수
+                    // input요소.value = 값
+                    // 빈값을 넣으므로 값이 지워짐!
+                    jumsu.value = "";
+
+                    // 3. 포커스 입력창에 주기!(버튼클릭할 경우)
+                    // 대상 : #jumsu -> jumsu변수
+                    // input요소.focus()
+                    jumsu.focus();
+
+                    // 4. 글자색 초기화
+                    // 대상: jexp
+                    jexp.style.color = "#000";
+
+                    // 5. 칭찬스티커 배경위치 초기화
+                    // 대상: jshow
+                    jshow.style.backgroundPosition = "-50% 0%";
+                }; ////////// validateFn 함수 ///////////
+
+                // (1) 빈값인지 여부검사
+                // 스페이스문자도 공백문자로 취급하므로
+                // 이것을 제거하여 검사한다!
+                // 제거메서드 : 트림() -> trim() : 앞뒤공백제거
+                if (score.trim() == "") {
+                    // 1. 메시지처리하기
+                    validateFn("값을 꼭 입력하세요!");
+
+                    // 2.함수를 나가라! 리턴! return!
+                    // 리턴은 함수를 나가는 것!
+                    // 함수내의 리턴 아래쪽 코드는 실행하지 않음!
+                    // 따라서 위치가 매우 중요하다!!!
+                    // return 값 -> 리턴시 뒤에 값을 쓰면
+                    // 호출한 곳을 갈때 값을 가져갈 수 있다!
+                    return;
+                } /////// if ////////
+
+                //  (2) 숫자인지 여부검사
+                // 숫자인지 여부 검사 JS내장함수 -> isNaN()
+                // is Not a Number? -> 숫자가 아닌가? -> isNaN
+                // 결과값을 숫자가 아니면 true!
+                // false이면 숫자!!!
+                console.log("숫자가아닌가?", isNaN(score));
+
+                if (isNaN(score)) {
+                    // 1. 메시지처리하기
+                    validateFn("숫자만 입력하세요!");
+                    // 2. 함수나가기!
+                    return;
+                } ///////////// if ////////////
+
+                // (3) 숫자범위 검사(0~100)
+                // 조건 : 0미만 이거나 100초과
+                if (score < 0 || score > 100) {
+                    // 1. 메시지처리하기
+                    validateFn("0부터 100사이의 숫자만 입력하세요!");
+                    // 2. 함수나가기!
+                    return;
+                } ////////// if ////////////
+
+                // 4. 메시지 만들기 ////////////
+                // 점수에 따른 메시지를 if문으로 작성한다!
+                // if(true(1)/false(0)){코드}
+                // if문의 소괄호안이 true일때 코드가 실행됨!
+
+                // 메시지 변수
+                var message;
+                // 글자색 변수
+                var fontColor;
+                // 위치변수
+                var bgPosition;
+
+                // if문을 셋트로 작성시 구간처리 불필요!
+                if (score >= 90) {
+                    message = "매우잘함";
+                    fontColor = "blue";
+                    bgPosition = "100% 50%";
+                } ////// if ////
+                else if (score >= 80) {
+                    message = "잘함";
+                    fontColor = "green";
+                    bgPosition = "0% 100%";
+                } else if (score >= 70) {
+                    message = "보통";
+                    fontColor = "purple";
+                    bgPosition = "50% 50%";
+                } else if (score >= 60) {
+                    message = "노력요함";
+                    fontColor = "orange";
+                    bgPosition = "100% 100%";
+                } else {
+                    message = "재시험";
+                    fontColor = "red";
+                    bgPosition = "100% 0%";
+                }
+
+                // 메시지 완성하기 : 평가결과는 어쩌구...
+                message = "평가결과는 " + message;
+
+                console.log("결과:", message, fontColor, bgPosition);
+
+                // if문을 따로 작성하면 적용범위를 줘야함!
+                // if(score >= 80 && score < 90){
+                //     message = '';
+                // } ////// if ////
+
+                // 5. 메시지 출력하기 ///////////
+                // 출력대상 : #jexp -> jexp변수
+                jexp.innerText = message;
+
+                // 6. 출력 글자색 변경하기 /////
+                // 대상 : #jexp -> jexp변수
+                jexp.style.color = fontColor;
+
+                // 7. 칭찬스티커 배경이미지위치 변경하기 /////
+                // 대상 : .jshow -> jshow변수
+                jshow.style.backgroundPosition = bgPosition;
+            } /////////// jumsu 함수 /////////////////////
+            /////////////////////////////////////////////
+
+            /************************************************* 
+            [ if문 ]
+            - 조건문을 검사하여 true이면
+            중괄호안의 코드가 실행되는 제어문
+
+            - 조건문이란 결과가 true / false 로 나오는 구문
+            (조건문: 비교연산자, 논리연산자)
+
+            ((구문))
+            ____________________________
+
+            if(조건문){
+                실행코드
+            }
+            else if(조건문){
+                실행코드
+            }
+            ...
+            else{
+                실행코드
+            }
+            ______________________________
+
+            ((구문해석))
+            1. if문은 단독으로 따로 사용가능
+
+            2. else if문은 if문 뒤에 또는 else if문 뒤에
+            만 사용가능함!(else if로 시작못함!)
+            -> 하나의 조건에 걸리면 다른 조건문엔 안들어감!
+            -> 단독으로 else if문 사용불가!
+
+            3. else문은 모든 조건에 해당없을때
+            무조건 실행할 코드가 있을 경우 사용한다!
+            -> if문 가장 끝에 사용한다!
+            -> 단독으로 else문만 사용불가!
+
+            ※ 참고 : if문의 실행문이 하나이면 중괄호생략가능
+            예) 
+                if(aa>10){
+                    my = "ㅎㅎㅎ";
+                }
+
+                -> 위와 같음
+
+                if(aa>10) my = "ㅎㅎㅎ";
+
+       *************************************************/
+
+            /*********************************************** 
+            함수명 : showLocal
+            기능 : 지역명을 입력하면 지역국번을 안내한다
+       ***********************************************/
+            function showLocal() {
+                // 1. 함수호출확인!
+                // console.log('지역국번이 뭐야?');
+
+                // 2. 대상선정 : 변경대상
+                // 2-1. 입력요소 : input#local
+                var target = document.querySelector("#local");
+                // 2-2. 출력요소 : h3#info
+                var info = document.querySelector("#info");
+
+                // console.log('대상:',target,info);
+
+                // 3. 입력된 값 읽어오기 -> 지역명
+                // input요소.value -> 입력된 값 속성(읽기/쓰기)
+                var txt = target.value;
+
+                console.log("입력된값:", txt);
+
+                /**************************** 
+                    빈값일 경우 걸러내기!
+                ****************************/
+               if(txt.trim()==''){
+                    // 경고창띄우기
+                    alert('값을 입력후 조회하세요!');
+                    // 입력창 데이터 초기화
+                    target.value = '';
+                    // 입력창에 포커스
+                    target.focus();
+                    // 함수나감!
+                    return;// 리턴안하면 아래로 내려감!
+               } ///////// if /////////
+
+               // 체크!!! break 제어문나감/return 함수나감
+
+                // 4. 지역명을 switch case문으로 분류하여 메시지넣기
+
+                // 메시지 변수
+                var message;
+
+                switch (txt) {
+                    case "서울":
+                        message = "02";
+                        break;
+                    case "경기":
+                        message = "031";
+                        break;
+                    case "인천":
+                        message = "032";
+                        break;
+                    case "부산":
+                        message = "051";
+                        break;
+                    case "대구":
+                        message = "053";
+                        break;
+                    case "광주":
+                        message = "062";
+                        break;
+                    case "전북":
+                        message = "063";
+                        break;
+                    case "전남":
+                        message = "061";
+                        break;
+                    case "경북":
+                        message = "054";
+                        break;
+                    case "경남":
+                        message = "055";
+                        break;
+                    case "세종":
+                        message = "044";
+                        break;
+                    case "울산":
+                        message = "052";
+                        break;
+                    case "대전":
+                        message = "042";
+                        break;
+                    case "충북":
+                        message = "043";
+                        break;
+                    case "충남":
+                        message = "041";
+                        break;
+                    case "제주":
+                        message = "064";
+                        break;
+                    case "나성":
+                        message = "나성에 가면 편지를 전해줘요♬";
+                        break;
+                    default:
+                        message = "esc";
+                } ///////// switch case ///////
+
+                console.log("메시지:", message);
+
+                // 5. 메시지 만들기 //////////
+                // message 변수에 최종 출력내용을 다시 담아준다!
+                if(message == 'esc'){
+                    message = '등록되지 않은 지역입니다!';
+                } /////// if /////
+                else{
+                    message = 
+                    `${txt}의 지역번호는 ${message}입니다!`;
+                } ////// else //////
+
+                // 6. 화면출력
+                // 출력대상: #info -> info
+                info.innerText = message;
+                // 선택요소.innerText - 요소의 문자데이터 넣기
+                // -> html태그를 넣을때는 innerHTML 를 사용!
+
+
+            } ///////////// showLocal 함수 ///////////////
+            //////////////////////////////////////////////
+
+            /********************************************** 
+            [ switch case문 ]
+            - 단일조건을 분류하여 실행문을 만들어 줄때 사용하는 제어문
+
+            ((구문구조))
+            ________________________________________
+
+            switch(변수){
+                case 경우1: 실행코드; break;
+                case 경우2: 실행코드; break;
+                case 경우3: 실행코드; break;
+                ...
+                default: 실행문;
+            }
+            ________________________________________
+
+            ((구문해석))
+
+            1. 변수값에 해당하는 경우 그 값에 해당하는
+            case에 들어가서 실행코드를 실행함
+
+            2. 각 case 끝에 break 예약어를 반드시 써야함!
+            -> 안쓰면 다른 case에 또 들어가는 경우가 생김!
+            -> 일반적으로 break 키워드는 제어문을 빠져나갈때 씀!
+
+            3. default 는 if문의 else문과 비슷하여 해당 케이스가 
+            없으면 이 부분이 실행됨(단, 필요시 사용)
+            -> default문에는 break를 쓰지 않는다!
+        **********************************************/
+
+
+        /************************************* 
+            이벤트 설정 로딩구역 만들기
+        *************************************/
+    //    window.addEventListener(이벤트명,함수)
+    //    window.addEventListener('DOMContentLoaded',하하);
+
+    //    function 하하(){
+    //     console.log("나야나!");
+    //    }
+
+    // -> 외부에 함수를 만들고 이름만 써서 함수연결한 것은
+    // 내부에 직접 익명함수 코드를 작성한 것과 같다!
+    // 외부함수를 만들고 호출하는 이유는 코드의 재사용으로
+    // 효율성과 경제성을 높이기 위함이다!
+
+    //    window.addEventListener('DOMContentLoaded',
+    //    function(){
+    //     console.log("나야나!");
+    //    });
+
+    // 윈도우에 요소들이 모두 로딩된후 load이벤트 발생!
+    // 이벤트가 발생하면 동시에 등록된 코드를 실행!
+    window.addEventListener('load',function(){
+        console.log('로딩완료');
+
+        // 이제 body안의 모든요소를 선택할 수 있다!
+
+        // 구구단 선택박스에 change이벤트 설정하기
+        // 이벤트 대상선정 : select#sel
+        // 이벤트 종류 : change - 선택박스 옵션 변경시 발생
+        document.querySelector('#sel')
+        .onchange = showGugu;
+
+        // while문 구구단 이벤트 설정하기
+        // 대상 : select#sel2
+        document.querySelector('#sel2')
+        .onchange = showGugu2;
+
+
+
+    }); ////////// 로드구역 ////////////////
+
+
+
+        /************************************* 
+            함수명 : showGugu
+            기능 : 구구단을 출력한다!(for문)
+        *************************************/
+       function showGugu(){
+        // 1. 함수호출확인
+        console.log('보여줘!구구단!',this.value);
+        // this키워드 - 나자신! 
+        // -> 할당된 요소자신(여기서는 select요소 자신)
+        // this.value -> value는 option요소의 속성값
+
+        // 2. 선택값 읽기
+        var optVal = this.value;
+
+        // 구구단 저장변수
+        var result;
+
+        // 3. 구구단 만들기
+        result = `<h2>${optVal}단</h2>`;
+
+        // for(시;한;증){실행코드}
+        for(var i=1;i<=9;i++){
+            console.log('반복!',i);
+            result += `${optVal} × ${i} ＝ ${optVal*i}<br>`;
+        } /////// for //////////
+
+
+        // 4. 화면출력
+        document.querySelector('.g1').innerHTML = result;
+
+
+       } ///////////// showGugu함수 /////////////
+       //////////////////////////////////////////
+
+       /***************************************** 
+       [ for문 ]
+        - 어떤 실행문을 순서대로 여러번 반복
+        실행할 경우 사용하는 제어문
+
+        ((구문구조))
+        _____________________________________
+
+        for(시;한;증){실행코드}
+        - 시 -> 시작값(변수선언과 함께 숫자할당)
+        - 한 -> 한계값(숫자를 조건문으로 사용)
+        - 증 -> 증감(1씩증가 ++ / 1씩감소 --)
+
+        ______________________________________
+
+        ((구문해석))
+        1. 먼저 시작값을 변수에 선언 후 할당함
+        2. 중앙에 있는 한계값 조건에 맞는지 검사함
+        3. 맞으면(true) for문의 중괄호{}안의 코드를 실행함
+        4. 중괄호 안의 코드를 실행후 세번째 증감으로 감
+            ++ / -- 로 1씩 증감함
+        5. 중앙에 있는 한계값 조건에 맞는지 검사함
+        6. 조건에 맞는 동안 중괄호 안의 코드를 실행함
+        7. 중앙의 한계값 조건에 맞지 않으면(false)
+            for문을 빠져나온다!
+       *****************************************/
+
+
+       /************************************* 
+            함수명 : showGugu2
+            기능 : 구구단을 출력한다!(while문)
+        *************************************/
+        function showGugu2(){
+        // 1. 함수호출확인
+        console.log('보여줘!구구단!',this.value);
+        // this키워드 - 나자신! 
+        // -> 할당된 요소자신(여기서는 select요소 자신)
+        // this.value -> value는 option요소의 속성값
+
+        // 2. 선택값 읽기
+        var optVal = this.value;
+
+        // 구구단 저장변수
+        var result;
+
+        // 3. 구구단 만들기
+        result = `<h2>${optVal}단</h2>`;
+
+        // while문
+
+        // 시작값
+        var i=1;
+
+        // while(한계값){코드+증감}
+        while(i<=9){ // ()안이 한계값!
+            console.log('while반복!',i);
+            result += 
+            `${optVal} × ${i} ＝ ${optVal*i}<br>`;
+            // 증감 : 안쓰면 무한루프!
+            i++;
+        } //////// while //////////
+
+        // for(시;한;증){실행코드}
+        // for(var i=1;i<9;i++){
+        //     console.log('반복!',i);
+        //     result += `${optVal} × ${i} ＝ ${optVal*i}<br>`;
+        // } /////// for //////////
+
+
+        // 4. 화면출력
+        document.querySelector('.g2').innerHTML = result;
+
+
+       } ///////////// showGugu2함수 /////////////
+       //////////////////////////////////////////
+
+       /********************************************* 
+       [ while문 ]
+
+        - 반복실행코드를 위한 조건으로 만드는 제어문
+
+        ((구문구조))
+        ______________________________
+        시작값;
+
+        while(한계값){
+            실행코드;
+            증감;
+        }
+        ______________________________
+
+        ((구문해석))
+
+        - for문과 유사하나 시작값이 while문 윗쪽에 나옴
+        - 한계값은 while문 소괄호 안에 씀
+        - 증감은 while 실행코드 내부에 씀
+        (주의: 증감을 안쓰면 무한루프에 빠짐!)
+
+        - >>>>> while문과 for문은 무엇이 다른가?
+
+        시작값과 증감없이 단지 조건에 의해서
+        반복실행이 필요한 경우 사용할 수 있다!
+
+        while(조건){코드}
+
+        -> 예) 중복숫자 피하기, 직전값 피하기 등
+       *********************************************/
+
+        </script>
+        <style>
+            h1 {
+                font-size: 4vw;
+            }
+            h2 {
+                font-size: 3vw;
+            }
+            body,
+            h3,
+            input,
+            button,
+            select {
+                font-size: 2vw;
+            }
+            .tit {
+                text-align: center;
+                background-image: linear-gradient(to bottom, lightgreen, lightsalmon);
+            }
+
+            /* if문 박스 */
+            .bx-if {
+                position: relative;
+                /* 부모자격 - .jshow */
+            }
+
+            /* 칭찬스티커박스 */
+            .jshow {
+                position: absolute;
+                top: 5vw;
+                left: 73vw;
+                /* 부모는? .bx-if */
+                width: 15vw;
+                height: 15vw;
+                /* outline: 2px solid red; */
+                background: url(./images/ifshow.jpg) no-repeat;
+                /* 배경위치 : 처음에 안보임 */
+                background-position: -50% 0%;
+                /* 배경크기 */
+                background-size: 300%;
+
+                /* 트랜지션 : 배경위치만! */
+                transition: background-position 1s;
+            }
+
+            body{
+                text-align: center;
+            }
+
+            /* 구구단 출력박스 */
+            .gugu{
+                width: 40vw;
+                height: 40vw;
+                border: 2px dashed blue;
+                text-align: center;
+                margin: 3vh auto;
+                /* 박스 y축 스크롤 : 박스보다 내용 많으면
+                 스크롤바생김(스크롤바 트랙나와있음) */
+                overflow-y: scroll;
+                font-size: 2.5vw;
+            }
+            .gugu h2{
+                font-size: 3vw;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="tit">JS 제어문</h1>
+        <hr />
+        <!-- if문 연습 -->
+        <div class="bx-if">
+            <h2 class="tit">if문 연습</h2>
+            <h3 id="jexp">평가출력</h3>
+            <label for="jumsu">점수입력:</label>
+            <input
+                type="text"
+                id="jumsu"
+                placeholder="점수를 입력하세요!"
+                maxlength="3"
+                onkeypress="if(event.keyCode==13)jumsu()"
+            />
+
+            <!-- 
+            [ onkeypress 이벤트 속성 ]
+            -> 키보드를 치면 발생하는 이벤트 속성
+            if조건문
+            조건식 : event.keyCode === 13
+            -> 키보드의 키코드가 13번이냐? 엔터키 눌렀냐?
+            -> 엔터키의 키코드는 13번이다!
+            -> true이면 jumsu() 라는 함수를 호출해라!
+            -> event 브라우저 내장객체 : 이벤트관련 객체
+    
+            참고) 키코드 참조: 아스키코드 
+            (리턴키는 carriage return)
+            https://www.w3schools.com/charsets/ref_html_ascii.asp
+         -->
+
+            <!-- 버튼클릭시 클릭이벤트 속성과 미리만든 함수를 연결한다! -->
+            <button class="sbtn" onclick="jumsu()">평가하기</button>
+
+            <!-- 
+            [ label요소 ]
+            input요소의 설명라벨요소
+            - for속성 : 클릭시 아이디 input요소로 포커스이동
+    
+            [ input 요소 : 입력요소 ]
+            - type = "text" -> 글자입력창
+            - placeholder  -> 안내문구출력
+            - maxlength -> 최대입력 글자수 제한
+         -->
+
+            <!-- 칭찬스티커박스 -->
+            <div class="jshow"></div>
+        </div>
+
+        <br /><br />
+        <hr />
+
+        <!-- switch case문 연습 -->
+        <h2 class="tit">switch case문 연습</h2>
+        <h3 id="info">국번안내</h3>
+        <label for="local">지역명 입력:</label>
+        <input
+            type="text"
+            id="local"
+            placeholder="지역명을 '도'를 빼고 쓰세요!"
+            maxlength="10"
+            onkeypress="if(event.keyCode==13)showLocal()"
+        />
+        <button class="sbtn" onclick="showLocal()">국번문의</button>
+
+        <br /><br />
+        <hr />
+
+        <!-- for문 연습 -->
+        <h2 class="tit">for문 연습</h2>
+        <h3>구구단 출력하기</h3>
+        <select name="sel" id="sel">
+            <option value="1">구구단을 선택하세요!</option>
+            <option value="2">2단</option>
+            <option value="3">3단</option>
+            <option value="4">4단</option>
+            <option value="5">5단</option>
+            <option value="6">6단</option>
+            <option value="7">7단</option>
+            <option value="8">8단</option>
+            <option value="9">9단</option>
+            <option value="10">10단</option>
+            <option value="11">11단</option>
+            <option value="12">12단</option>
+            <option value="13">13단</option>
+            <option value="14">14단</option>
+            <option value="15">15단</option>
+            <option value="16">16단</option>
+            <option value="17">17단</option>
+            <option value="18">18단</option>
+            <option value="19">19단</option>
+            <option value="20">20단</option>
+        </select>
+        <!-- 
+            [ select 요소 ]
+
+            1. 보통 정해진 선택값을 나열하여 선택입력을
+            할 수 있는 입력요소
+
+            2. form요소 내부에 주로 사용되고 데이터를
+            DB에 전송하는 목적을 많이 이용됨!
+
+            3. id를 설정할때 name속성을 같이 셋팅할 경우가
+            많은데 이는 post방식 데이터 전송시 서버사이드에서
+            name으로 데이터를 읽어가기 때문에 일반적으로 씀.
+            보통 id명과 동일하게 이름짓는다
+
+            4. 필수하위 요소 : option
+                -> 속성으로 value를 쓰고 값을 사용하면
+                    JS등 프로그래밍에서 이 값을 읽어감!
+                -> value속성을 셋팅하지 않으면
+                    option의 데이터를 읽어감!
+
+         -->
+        <!-- 구구단 출력박스 -->
+        <div class="gugu g1"></div>
+
+        <br /><br />
+        <hr />
+
+        <!-- while문 연습 -->
+        <h2 class="tit">while문 연습</h2>
+        <h3>구구단 출력하기</h3>
+        <select name="sel2" id="sel2">
+            <option value="1">구구단을 선택하세요!</option>
+            <option value="2">2단</option>
+            <option value="3">3단</option>
+            <option value="4">4단</option>
+            <option value="5">5단</option>
+            <option value="6">6단</option>
+            <option value="7">7단</option>
+            <option value="8">8단</option>
+            <option value="9">9단</option>
+            <option value="10">10단</option>
+            <option value="11">11단</option>
+            <option value="12">12단</option>
+            <option value="13">13단</option>
+            <option value="14">14단</option>
+            <option value="15">15단</option>
+            <option value="16">16단</option>
+            <option value="17">17단</option>
+            <option value="18">18단</option>
+            <option value="19">19단</option>
+            <option value="20">20단</option>
+        </select>
+        <!-- 구구단 출력박스 -->
+        <div class="gugu g2"></div>
+    </body>
+</html>
