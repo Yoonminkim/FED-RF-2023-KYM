@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>drag and drop 기능</title>
         <style>
+            html,body{
+                overflow-x: hidden;
+            }
             div.draggable {
                 float: left;
                 width: 160px;
@@ -30,8 +33,8 @@
 
             /* 드롭박스 */
             .dropshow {
-                width: 500px;
-                height: 400px;
+                max-width: 500px;
+                min-height: 400px;
                 text-align: center;
                 background: url(addimg/effect2.jpg) no-repeat center/cover;
                 font: bold 36px/400px "맑은 고딕", "굴림";
@@ -44,18 +47,18 @@
 
             /* 드래그 박스 */
             .dbox {
-                width: 720px;
-                height: 170px;
+                max-width: 720px;
+                min-height: 170px;
                 margin: 0 auto;
                 border: 2px dashed blue;
             }
         </style>
 
-        <script src="jquery-3.6.0.min.js"></script>
-        <script src="jquery-ui.min.js"></script>
-        <!-- 기본적으로 드래그 기능은 모바일에서는 안됨!
-		모바일이벤트로 변환해주는 제이쿼리 플러그인을 추가해준다! 아래! -->
-        <script src="jquery-touch-punch.min.js"></script>
+        <script src="./js/jquery-3.6.0.min.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <!-- 메인 JS -->
+        <script src="./js/jquery-touch-punch.min.js"></script>
+        <script src="./js/main.js"></script>
         <!-- 
 		미리보기:
 		https://tombap8.github.io/FED211/004.jQuery학습/jQuery-02.실전연습/04.jQuery_utility/01_Postit/ready.html
@@ -63,7 +66,7 @@
         드래그 기능 공식설명서:
         https://api.jqueryui.com/draggable/
 	 -->
-        <script>
+        <!-- <script>
             // 제이쿼리 구역 /////
             $(() => {
                 // 1. 드래그대상
@@ -207,7 +210,7 @@
                     }, /////// drop 이벤트 처리 함수 /////
                 }); ///////////// droppable //////////////
             }); //////////// jQB ///////////////////////////
-        </script>
+        </script> -->
     </head>
 
     <body>
@@ -241,6 +244,11 @@
                 <p>해외여행 자유이용권</p>
                 <img src="addimg/effect1.jpg" alt="허나투어" />
             </div>
+        </div>
+
+        <!-- 유튜브 동영상 추가박스 -->
+        <div class="u-box">
+
         </div>
     </body>
 </html>
