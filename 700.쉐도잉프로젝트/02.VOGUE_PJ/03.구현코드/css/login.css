@@ -1,16 +1,18 @@
 @charset "utf-8";
-/* 보그 PJ 로그인 페이지 CSS - category.css */
+/* 보그 PJ 로그인 페이지 CSS - login.css */
 
 /* 공통 외부CSS */
 @import url(reset.css);
 @import url(core.css);
 @import url(common.css);
 
+
 /* 컨텐츠 영역 속박스 */
-.main-area {
+.main-area{
     min-height: 600px;
     padding: 15px;
 }
+
 
 /* 2-1-1. 서브타이틀 */
 .stit {
@@ -18,11 +20,11 @@
     font-weight: normal;
     font-size: 50px;
     text-align: center;
-    padding: 40px 0 20px;
+    padding: 40px 0 20px;    
 }
 
 /* 2-2. 서브 컨텐츠 박스 */
-.scont {
+.scont{
     position: relative;
     /* 부모자격 - .btnbx */
     max-width: 700px;
@@ -121,18 +123,18 @@ input:focus {
 }
 
 /* 추가링크 영역바 */
-.bar {
+.bar{
     font-weight: normal;
     /* b요소 기본 두껍게 해제 */
 }
 /* 모바일용 바(.bar1), 줄바꿈(.brk)숨기기 */
-.bar1,
-.brk {
+.bar1,.brk{
     display: none;
 }
 
 /* 미디어쿼리 690px 이하 시작 */
-@media screen and (max-width: 690px) {
+@media screen and (max-width:690px) {
+
     /* 입력창 공통라벨 */
     .minput label {
         display: block;
@@ -157,17 +159,16 @@ input:focus {
     }
 
     /* 추가링크박스 */
-    .addbx {
+    .addbx{
         line-height: 2.5;
     }
 
     /* 추가링크 바숨기기 */
-    .bar2 {
+    .bar2{
         display: none;
     }
     /* 추가링크 바,줄바꿈 보이기 */
-    .bar1,
-    .brk {
+    .bar1,.brk{
         display: inline;
     }
 }

@@ -15,7 +15,7 @@ hideBox.each((idx,ele)=>{
 }); /////////// each //////////////
 
 
-// JS용 오리지널 코드 ///////
+// JS용 오리니널 코드 ///////
 // hideBox.forEach((ele,idx)=>{
 //     if(idx!=0) ele.classList.add('scAct');
 // }); ////////// forEach ///////////
@@ -33,8 +33,8 @@ hideBox.each((idx,ele)=>{
 let winH = $(window).height()/3*2;
 console.log('윈도우 높이값:',winH);
 
-$(window).scroll(()=>{
-    // 등장액션 클래스 적용하기
+$(window).scroll(()=>{    
+    // 등장액션 클래스 적용하기 //////
     hideBox.each((idx,ele)=>{
         if(idx!=0){
             let val = dFn.getBCR(ele);

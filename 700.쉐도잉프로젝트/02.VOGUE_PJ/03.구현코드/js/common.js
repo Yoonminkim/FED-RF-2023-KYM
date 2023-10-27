@@ -22,8 +22,11 @@ comArea[0].innerHTML = tData.topArea;
 // 하단영역 html 넣기
 comArea[1].innerHTML = tData.footerArea;
 
-// 모바일 메뉴 요소 추가로 넣기
+// 모바일 메뉴버튼 요소 추가로 넣기 : .top-area 맨끝추가
 comArea[0].innerHTML += tData.mobtn;
+// 모바일 메뉴 박스 추가로 넣기 : #top-area 맨끝추가
+comArea[0].parentElement.innerHTML += tData.mobx;
+
 
 
 // [2] 부드러운 스크롤 적용 //////////
@@ -63,3 +66,19 @@ tbtn.click((e)=>{
     setPos(0);
     console.log('나클릭!');
 }); /////////// click //////////
+
+/////////////////////////////////////////////////////
+//// 모바일 버튼 클릭시 메뉴박스/검색박스 보이기/숨기기//
+/////////////////////////////////////////////////////
+// 대상: .hbtn(햄버거버튼) / .sbtn(검색버튼)
+// 요구사항: 햄버거 버튼은 #mobx 보이기/숨기기
+//          검색버튼은 .mos 보이기/숨기기
+// 제이쿼리 메서드 : click(), slideToggle()
+$('.hbtn').click(()=>$('#mobx').slideToggle(300));
+$('.sbtn').click(()=>$('.mos').slideToggle(300));
+
+// 토글이라는 말은 두가지를 전환하는 버튼을 말함
+// 제이쿼리에 있는 토글 메서드:
+// toggle() -> show() / hide() 전환
+// slideToggle() -> slideDown() / slideUp() 전환
+// fadeToggle() -> fadeIn() / fadeOut() 전환

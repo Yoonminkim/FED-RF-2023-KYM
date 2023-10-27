@@ -1,8 +1,7 @@
-// 보그 PJ 메인 페이지 JS - category.js
+// 보그 PJ 카테고리 페이지 JS - category.js
 
 // 카테고리 데이터 불러오기 : 어서써 타입 제이슨
 import catData from './data/category_data.json' assert {type:'json'};
-
 
 ///////////////////////////////////////////
 // 카테고리 페이지 기능구현하기 /////////////
@@ -16,7 +15,6 @@ console.log(pm);
 
 // 값처리함수 호출하기
 setValue();
-
 
 // 값셋팅하기 함수 ////////
 function setValue(){
@@ -83,10 +81,10 @@ function setValue(){
         $(ele).html(selData.타이틀[idx]);
     }); ////////////// each /////////////
 
-    // 5-5. 탑메뉴 타이틀 변경하기
+    //5-5. 탭메뉴 타이틀 변경하기
     // 형식: 카테고리명 | 보그 코리아 (Vogue Korea) 2023
     // 제이쿼리 prepend() 메서드 사용!
     // -> 자식요소 또는 내용의 맨앞에 넣기!
-    $('title').prepend(pm.toUpperCase()+' | ');
+    $('title').prepend(pm.toUpperCase() + ' | ');
     // toUpperCase() - 대문자로 변경
 } ////////////// setValue 함수 ///////////
