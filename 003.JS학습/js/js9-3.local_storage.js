@@ -477,17 +477,16 @@ function modifyData(){
     orgData = JSON.parse(orgData);
 
     // 2-3.해당 아이디 배열값 찾기 : 배열 find()메서드
-    // find()로 찾아서 해당값을 직접 업데이트 한다!
+    // find()로 찾아서 해당값을 직접 업데이트한다!
     orgData.find(v=>{
         if(v.idx==selIdx){ 
             // 고유idx값인 경우 입력값으로 업데이트하기
-            // 선택 배열값인 객체의 제목과 내용을
+            // 선택 배열값인 객체의 제목과 내용을 
             // 다시넣고 업데이트하기
             v.tit = modTit.value;
             v.cont = modCont.value;
         } /////// if /////////
     }); // find() 메서드 /////////////////
-
 
     console.log('변경후배열:',orgData);
 
@@ -501,9 +500,6 @@ function modifyData(){
 
     // 5. 수정 선택박스 업데이트
     bindMod(); 
-
-    
-
 } ////////////// modifyData 함수 //////////
 
 
@@ -577,3 +573,6 @@ function sessionSFn(){
     } /////// else if : 보여줘 ////////////
 
 } //////////// sessionSFn 함수 ////////////////
+
+
+
